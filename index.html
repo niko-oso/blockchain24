@@ -692,7 +692,6 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 @media (max-width:560px){.sub-app{padding:24px 20px 300px;min-height:0}.iph-wrap{right:50%;margin-right:-86px;top:auto;bottom:-120px}}
 .iph-chg.neg{background:var(--downbg);color:var(--down)}
 /* подписка: фон — цепочка блоков с бегущими импульсами */
-.sm-bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.85}
 .sub-tg{position:relative;overflow:hidden;isolation:isolate}
 .sub-mail h2{max-width:none;font-size:clamp(30px,2.9vw,42px);line-height:1.1}
 .sub-mail-t{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:stretch}
@@ -829,14 +828,14 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 .ill--team .sat,.ill--wave .sat,.ill--stack .sat{animation:none}
 @media (prefers-reduced-motion:reduce){.ill--wave .eqs i{animation:none;transform:scaleY(.6)}}
 /* голоса индустрии: крупная цитата эксперта вместо списка */
-.voices{padding:26px 28px 24px;position:relative;overflow:hidden;isolation:isolate;
+.vq-card{padding:26px 28px 24px;position:relative;overflow:hidden;isolation:isolate;
  background:radial-gradient(70% 60% at 100% 0%,rgba(76,116,255,.35),transparent 70%),radial-gradient(60% 50% at 0% 100%,rgba(122,75,247,.25),transparent 70%),var(--ink2)}
 .vq-head{display:flex;align-items:center;gap:14px}
 .vq-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9BDFF;white-space:nowrap}
 .vq-bar{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
 .vq-bar i{display:block;height:100%;width:0;background:#fff;border-radius:inherit}
 .vq-bar i.run{animation:vqBar var(--vq,7s) linear forwards}
-.voices:hover .vq-bar i.run{animation-play-state:paused}
+.vq-card:hover .vq-bar i.run{animation-play-state:paused}
 @keyframes vqBar{to{width:100%}}
 .vq{flex:1;display:flex;flex-direction:column;margin:22px 0 0;transition:opacity .35s,transform .35s}
 .vq.out{opacity:0;transform:translateY(8px)}
@@ -855,7 +854,76 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 .vq-av[aria-selected="true"]{opacity:1;filter:none;box-shadow:0 0 0 2px var(--ink2),0 0 0 4px var(--blue)}
 .vq-av:focus-visible{outline:2px solid #9DB8FF;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.vq{transition:none}.vq-bar{display:none}}
-@media (max-width:767px){.voices{padding:22px 18px}.vq-av{width:40px;height:40px;flex-basis:40px}}
+@media (max-width:767px){.vq-card{padding:22px 18px}.vq-av{width:40px;height:40px;flex-basis:40px}}
+/* голоса индустрии: карточки не сливаются с фоном — тонкая светлая кромка и подсветка нижних углов */
+.video,.vq-card{box-shadow:inset 0 0 0 1px rgba(160,185,255,.16),0 24px 48px -28px rgba(0,0,0,.6)}
+.video-b{background:radial-gradient(60% 120% at 100% 100%,rgba(76,116,255,.28),transparent 70%)}
+.vq-card{background:radial-gradient(70% 60% at 100% 0%,rgba(76,116,255,.35),transparent 70%),radial-gradient(60% 45% at 100% 100%,rgba(76,116,255,.3),transparent 70%),radial-gradient(60% 50% at 0% 100%,rgba(122,75,247,.25),transparent 70%),var(--ink2)}
+/* голоса индустрии: аватары внахлёст + фактоид, блок компактнее */
+.vgrid{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}
+.video-b{padding:16px 22px 18px}
+.vq{margin-top:16px}
+.vq-mark{width:34px;height:26px}
+.vq blockquote{margin-top:12px;font-size:clamp(18px,1.45vw,21px);line-height:1.36}
+.vq figcaption{padding-top:16px}
+.vq-who img{width:48px;height:48px}
+.vq-foot{display:flex;align-items:center;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--lineD)}
+.vq-avs{display:flex;gap:0;margin:0;padding:0 0 0 10px;border:0}
+.vq-av{width:44px;height:44px;flex:0 0 44px;margin-left:-10px;opacity:1;filter:none;position:relative;overflow:visible;background:transparent;box-shadow:0 0 0 3px var(--ink2)}
+.vq-av img{border-radius:50%}
+.vq-av:not([aria-selected="true"]) img{filter:grayscale(.5) brightness(.8)}
+.vq-av:hover{transform:translateY(-3px);z-index:2}
+.vq-av[aria-selected="true"]{z-index:3;box-shadow:0 0 0 3px var(--ink2),0 0 0 5px var(--blue)}
+@keyframes vqOn{from{transform:scale(1);opacity:.6}to{transform:scale(2.4);opacity:0}}
+.vq-fact{min-width:0;line-height:1.25}
+.vq-fact b{display:block;font-size:18px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.vq-fact span{display:block;font-size:13px;color:var(--mutedD);margin-top:2px}
+.vq-card .btn{margin-top:16px}
+@media (prefers-reduced-motion:reduce){.vq-ph::before{animation:none;opacity:0}}
+@media (max-width:420px){.vq-av{width:38px;height:38px;flex-basis:38px}.vq-fact b{font-size:16px}}
+/* онлайн-точка у эксперта, чья цитата на экране; цитата и автор без большого разрыва */
+.vq-ph{position:relative;flex-shrink:0;display:block}
+.vq-ph::after,.vq-ph::before{content:"";position:absolute;right:0;bottom:1px;width:12px;height:12px;border-radius:50%;background:#22C55E}
+.vq-ph::after{box-shadow:0 0 0 2.5px var(--ink2)}
+.vq-ph::before{animation:vqOn 2s ease-out infinite}
+.vq{justify-content:center}
+.vq figcaption{margin-top:0;padding-top:18px}
+/* подписки: фон в стиле иллюстраций «Достижений» — орбиты, белая плитка, стеклянные спутники */
+.sub-tg{container-type:inline-size}
+.tg-art,.mail-art{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.tg-art svg,.mf-tile svg,.mf-at svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ta-rings{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,transparent 45%,#000 66%);mask-image:linear-gradient(90deg,transparent 45%,#000 66%)}
+.ta-r,.ta-c{position:absolute;left:calc(100% - 136px);top:50%;translate:-50% -50%}
+.ta-r{border-radius:50%;border:1.5px solid rgba(255,255,255,.16)}
+.ta-r.r1{width:128px;height:128px;background:radial-gradient(closest-side,rgba(255,255,255,.2),rgba(255,255,255,0))}
+.ta-r.r2{width:168px;height:168px;border-style:dashed;border-color:rgba(255,255,255,.34);animation:orbit 36s linear infinite}
+.ta-r.r3{width:276px;height:276px;border-color:rgba(255,255,255,.1)}
+.ta-s{position:absolute;top:50%;width:32px;height:32px;margin-top:-16px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3),0 10px 20px -10px rgba(8,14,60,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);animation:orbit 36s linear infinite reverse}
+.ta-s.s1{left:-16px}.ta-s.s2{right:-16px}
+.ta-c{width:76px;height:76px}
+.ta-pg{position:absolute;inset:0;border-radius:24px;background:rgba(255,255,255,.16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.ta-pg.p1{transform:translate(-30px,8px) rotate(-16deg);background:rgba(255,255,255,.1)}
+.ta-pg.p2{transform:translate(-15px,4px) rotate(-8deg)}
+.ta-tile{position:absolute;inset:0;border-radius:24px;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--blue);box-shadow:inset 0 -2px 0 rgba(24,69,231,.08),0 18px 30px -12px rgba(8,14,60,.55);rotate:4deg;animation:tileFloat 5s ease-in-out infinite}
+.ta-tile svg{translate:-2px 1px}
+.ta-tile b{position:absolute;top:-8px;right:-8px;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:var(--blue);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff}
+/* узкая карточка: текст на всю ширину — оставляем только кольца в углу */
+@container (max-width:669px){.ta-c,.ta-s{display:none}.ta-r{left:calc(100% - 40px);top:0}.ta-rings{-webkit-mask-image:none;mask-image:none;opacity:.7}}
+.mail-art{-webkit-mask-image:linear-gradient(90deg,transparent 40%,#000 62%);mask-image:linear-gradient(90deg,transparent 40%,#000 62%)}
+.ma-r{position:absolute;left:75%;top:52%;translate:-50% -50%;border-radius:50%;border:1.5px solid rgba(255,255,255,.12)}
+.ma-r.r1{width:440px;height:440px;background:radial-gradient(closest-side,rgba(255,255,255,.12),rgba(255,255,255,0))}
+.ma-r.r2{width:620px;height:620px;border-style:dashed;border-color:rgba(255,255,255,.26);animation:orbit 90s linear infinite}
+.ma-r.r3{width:820px;height:820px;border-color:rgba(255,255,255,.08)}
+.mf-tile{position:absolute;top:50%;left:-104px;margin-top:-32px;width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#4C74FF,#1845E7);box-shadow:0 0 0 4px #fff,inset 0 1px 0 rgba(255,255,255,.25),0 18px 30px -12px rgba(8,14,60,.6);rotate:8deg;animation:tileFloat 5s ease-in-out infinite}
+.mf-tile b{position:absolute;top:-10px;right:-12px;height:24px;padding:0 7px;border-radius:12px;background:#fff;color:var(--blue);font-size:12px;font-weight:800;display:flex;align-items:center;box-shadow:0 1px 2px rgba(16,24,64,.08),0 8px 16px -8px rgba(24,69,231,.6)}
+.mf-at{position:absolute;margin:-10px 0 0 28px;width:44px;height:44px;border-radius:15px;display:inline-flex;vertical-align:top;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.34),0 12px 22px -10px rgba(8,14,60,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);rotate:-10deg;animation:tileFloat 6s ease-in-out infinite -2s}
+@media (max-width:1099px){.ma-r{left:50%;top:70%}.mail-art{-webkit-mask-image:linear-gradient(180deg,transparent 30%,#000 60%);mask-image:linear-gradient(180deg,transparent 30%,#000 60%)}}
+.sub-tg p{max-width:440px}
+/* узкий зазор между текстом и формой: конверт возвращается на угол формы, «@» прячем */
+@media (max-width:1439px){.mf-tile{top:-24px;left:auto;right:-24px;margin-top:0}}
+@media (min-width:1100px) and (max-width:1439px){.mf-at{display:none}}
+@media (max-width:767px){.mf-tile{width:48px;height:48px;border-radius:16px;top:-20px;right:-8px}.mf-tile svg{width:22px;height:22px}.mf-tile b{display:none}.mf-at{display:none}}
+@media (prefers-reduced-motion:reduce){.tg-art *,.mail-art *,.mf-tile,.mf-at{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1080,6 +1148,7 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 <section class="wrap sec" id="subscribe" aria-labelledby="subT">
 <div class="sub">
 <div class="sub-tg">
+<div class="tg-art" aria-hidden="true"><span class="ta-rings"><span class="ta-r r3"></span><span class="ta-r r1"></span><span class="ta-r r2"><span class="ta-s s1"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 21h4"/></svg></span><span class="ta-s s2"><svg width="15" height="15" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span></span></span><span class="ta-c"><span class="ta-pg p1"></span><span class="ta-pg p2"></span><span class="ta-tile"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg><b>5</b></span></span></div>
 <h2 id="subT">5 главных новостей за день — каждый вечер в Telegram</h2>
 <p>Короткая сводка без шума: что произошло на рынке и почему это важно. Срочное приходит сразу.</p>
 <ul aria-label="Что в канале"><li>Вечерний дайджест</li><li>Срочные новости</li><li>Курсы и графики</li></ul>
@@ -1127,15 +1196,15 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 <span class="media r16x9"><span class="ml">video-cover.jpg · 1280×720</span><img src="img/video-cover.jpg" alt="" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/nmSjor5heUI/hqdefault.jpg'"><span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#fff"/></svg></span></span>
 <span class="video-b"><span class="meta"><span>Интервью</span><time datetime="2022-08-01">1 августа 2022</time></span><span class="cl t-wide">Рафаэль Манвелян («Слёзы Сатоши»): манипуляции биткоином, Chia Network и скам-проекты</span></span>
 </a>
-<div class="experts voices" id="expCol">
+<div class="experts vq-card" id="expCol">
 <!-- ЗАГЛУШКИ: цитаты ниже придуманы для макета, перед публикацией заменить на реальные высказывания экспертов -->
 <div class="vq-head"><span class="vq-k">Мнение эксперта</span><span class="vq-bar" aria-hidden="true"><i></i></span></div>
 <figure class="vq" aria-live="polite">
 <svg class="vq-mark" width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path d="M0 34V20.4C0 8.6 6.4 1.6 17.6 0l1.8 5.4C12.6 7 9.6 11 9.4 16H18v18Zm24.6 0V20.4C24.6 8.6 31 1.6 42.2 0L44 5.4C37.2 7 34.2 11 34 16h8.6v18Z"/></svg>
 <blockquote id="vqText"></blockquote>
-<figcaption><a class="vq-who" id="vqWho" href="#"><img id="vqImg" src="" alt="" width="56" height="56"><span><b id="vqName"></b><small id="vqRole"></small></span></a></figcaption>
+<figcaption><a class="vq-who" id="vqWho" href="#"><span class="vq-ph"><img id="vqImg" src="" alt="" width="56" height="56"></span><span><b id="vqName"></b><small id="vqRole"></small></span></a></figcaption>
 </figure>
-<div class="vq-avs" role="tablist" aria-label="Эксперты" id="vqAvs"></div>
+<div class="vq-foot"><div class="vq-avs" role="tablist" aria-label="Эксперты" id="vqAvs"></div><div class="vq-fact"><b>300+ экспертов</b><span>комментируют главные темы дня</span></div></div>
 <a class="btn btn-p" href="https://blockchain24.pro/experts">Все эксперты</a>
 </div>
 </div>
@@ -1240,15 +1309,17 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 <!-- 13. Подписка на новости -->
 <section class="wrap sec" aria-labelledby="mailT">
 <div class="sub-mail">
+<div class="mail-art" aria-hidden="true"><span class="ma-r r1"></span><span class="ma-r r2"></span><span class="ma-r r3"></span></div>
 <div class="sub-mail-t">
 <h2 id="mailT">Подпишитесь на новости и получайте свежие статьи первыми</h2>
-<p>Главные новости, разборы и интервью в одном письме.</p>
+<p>Главные новости, разборы и интервью в одном письме.<span class="mf-at" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.4a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.5 7"/></svg></span></p>
 <ul class="perks" aria-label="Что вы получите">
 <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9 14.5l2 2 4-4"/></svg>Раз в неделю</li>
 <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6Z"/><path d="m9 12 2 2 4-4"/></svg>Без спама и рекламы</li>
 <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 9 11 4-5 2-2 5Z"/><path d="M5 3.5v2.5M3.5 5H6M8.5 4.5l-1.5 1.5M4.5 8.5 6 7"/></svg>Отписка в один клик</li>
 </ul>
 <form class="js-form mail-form" novalidate>
+<span class="mf-tile" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><b>+1</b></span>
 <div class="fields" data-body>
 <div class="mail-row">
 <label class="fld"><span>Имя *</span><input name="name" required autocomplete="given-name" placeholder="Ваше имя"></label>
@@ -1716,63 +1787,6 @@ $$('.js-form').forEach(function(f){f.addEventListener('submit',function(e){
  if(window.IntersectionObserver)new IntersectionObserver(function(e){play(e[0].isIntersecting)}).observe(card);else play(true);
 })();
 
-/* ---------- Подписка и Telegram: фон — сеть узлов, которая обходит текст и кнопки ---------- */
-function digitalNet(box,textSel,blockSel){
- if(!box||!window.HTMLCanvasElement)return;
- var cv=document.createElement('canvas');cv.className='sm-bg';cv.setAttribute('aria-hidden','true');box.insertBefore(cv,box.firstChild);
- var ctx=cv.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var w=0,h=0,pts=[],zones=[],run=false,raf=0,PAD=12,FADE=40;
- var glow=document.createElement('canvas');glow.width=glow.height=64;
- (function(){var g=glow.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.18,'rgba(200,220,255,.9)');r.addColorStop(.45,'rgba(140,175,255,.3)');r.addColorStop(1,'rgba(120,160,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64)})();
- /* зоны текста и формы: внутри них сети нет, к краям она плавно гаснет */
- function measure(){
-  var b=box.getBoundingClientRect();zones=[];
-  $$(textSel+','+blockSel,box).forEach(function(el){
-   if(el.closest('[hidden]'))return;
-   if(el.matches(textSel)){
-    /* у текста берём реальные строки, а не всю ширину блока */
-    var rg=document.createRange();rg.selectNodeContents(el);Array.prototype.forEach.call(rg.getClientRects(),function(r){zones.push([r.left-b.left,r.top-b.top,r.right-b.left,r.bottom-b.top])});
-   }else{var r=el.getBoundingClientRect();zones.push([r.left-b.left,r.top-b.top,r.right-b.left,r.bottom-b.top])}
-  });
- }
- function vis(x,y){
-  var m=1;for(var i=0;i<zones.length;i++){var z=zones[i];
-   var dx=Math.max(z[0]-PAD-x,0,x-z[2]-PAD),dy=Math.max(z[1]-PAD-y,0,y-z[3]-PAD),d=Math.sqrt(dx*dx+dy*dy);
-   var inside=x>z[0]-PAD&&x<z[2]+PAD&&y>z[1]-PAD&&y<z[3]+PAD;
-   m=Math.min(m,inside?0:Math.min(1,d/FADE))}
-  return m}
- function seed(){
-  var n=Math.round(Math.min(170,Math.max(50,w*h/4200)));pts=[];
-  for(var i=0;i<n;i++){var z=Math.random();pts.push({x:Math.random()*w,y:Math.random()*h,z:z,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,hub:Math.random()<.07,ph:Math.random()*6.28})}
- }
- function size(){w=box.clientWidth;h=box.clientHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);measure();seed();draw(0)}
- function draw(t){
-  ctx.clearRect(0,0,w,h);var L=Math.min(150,Math.max(100,w/10)),i,j,a,b,dx,dy,d;
-  for(i=0;i<pts.length;i++){a=pts[i];a.v=vis(a.x,a.y);
-   if(!still){a.x+=a.vx*(.5+a.z);a.y+=a.vy*(.5+a.z);if(a.x<-20)a.x=w+20;else if(a.x>w+20)a.x=-20;if(a.y<-20)a.y=h+20;else if(a.y>h+20)a.y=-20}}
-  ctx.lineWidth=1;
-  for(i=0;i<pts.length;i++){a=pts[i];if(!a.v)continue;
-   for(j=i+1;j<pts.length;j++){b=pts[j];if(!b.v)continue;dx=a.x-b.x;dy=a.y-b.y;if(dx>L||dx<-L||dy>L||dy<-L)continue;d=Math.sqrt(dx*dx+dy*dy);if(d>L)continue;
-    /* середина линии тоже не должна заходить на текст */
-    var mv=Math.min(a.v,b.v,vis((a.x+b.x)/2,(a.y+b.y)/2));if(!mv)continue;
-    ctx.strokeStyle='rgba(190,212,255,'+((1-d/L)*(.3+.45*Math.min(a.z,b.z))*mv).toFixed(3)+')';
-    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
-  for(i=0;i<pts.length;i++){a=pts[i];if(!a.v)continue;
-   var tw=still?1:.8+.2*Math.sin(t/1100+a.ph),s=a.hub?22:6+a.z*a.z*24;
-   ctx.globalAlpha=(a.z>.85&&!a.hub?.3:.45+a.z*.45)*tw*a.v;ctx.drawImage(glow,a.x-s/2,a.y-s/2,s,s);
-   if(a.hub){ctx.globalAlpha=.55*a.v;ctx.strokeStyle='#DCE6FF';ctx.beginPath();ctx.arc(a.x,a.y,8+2*Math.sin(t/700+a.ph),0,6.283);ctx.stroke()}}
-  ctx.globalAlpha=1;
- }
- function loop(t){draw(t);raf=run?requestAnimationFrame(loop):0}
- function play(on){run=on&&!still;if(run&&!raf)raf=requestAnimationFrame(loop)}
- size();
- if(window.ResizeObserver)new ResizeObserver(function(){if(Math.abs(box.clientWidth-w)>1||Math.abs(box.clientHeight-h)>1)size();else{measure();draw(0)}}).observe(box);
- if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure()});
- if(window.IntersectionObserver)new IntersectionObserver(function(e){play(e[0].isIntersecting)}).observe(box);else play(true);
-}
-digitalNet($('.sub-mail'),'h2,.sub-mail-t>p','.perks li,.mail-form');
-digitalNet($('.sub-tg'),'h2,p','li,.acts a');
-
 /* ---------- Кнопка «наверх»: появляется после первого экрана, кольцо показывает прогресс ---------- */
 (function(){
  var b=$('#toTop');if(!b)return;var pr=$('.pr',b),L=163.4,tk=false;
@@ -1796,7 +1810,7 @@ $$('[data-yt]').forEach(function(a){a.addEventListener('click',function(e){
 /* ---------- Голоса индустрии: цитаты экспертов, автосмена с паузой при наведении ---------- */
 /* ЗАГЛУШКИ: тексты цитат придуманы для макета, заменить на реальные */
 (function(){
- var box=$('#expCol.voices');if(!box)return;
+ var box=$('#expCol.vq-card');if(!box)return;
  var Q=[
   {n:'Gleb Jount',r:'CEO Bitget CIS',img:'jount',u:'gleb-jount',t:'Биржи больше не соревнуются комиссиями. Выигрывает тот, кому пользователь доверяет свои деньги в момент паники на рынке.'},
   {n:'Аарон Хомский',r:'ICB Fund',img:'khomsky',u:'aaron-khomsky',t:'Институциональные деньги приходят в крипту медленно, но каждый новый фонд остаётся на рынке надолго.'},
