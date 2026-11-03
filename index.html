@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockchain24 — новости криптовалют и блокчейна</title>
+<meta name="description" content="Журнал о блокчейне: новости криптовалют, курсы онлайн, аналитика, интервью с экспертами и азбука блокчейна простым языком.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.coingecko.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#EEF0F6;--card:#FFFFFF;--ink:#0C1033;--ink2:#161C4A;--ink3:#1F265C;--muted:#5C627F;--mutedD:#A6ACCD;--line:#E7E9F2;--lineD:rgba(255,255,255,.1);--blue:#1845E7;--blue2:#1236C4;--bsoft:#E3E8FF;--capsule:#DCE3FF;--lsoft:#F1EEFE;--violet:#4A33C9;--up:#00A65A;--upbg:#DCF7E8;--down:#EF2B37;--downbg:#FFE6E8;--pad:clamp(16px,2.6vw,32px);--r:22px;--shadow:0 1px 2px rgba(16,24,64,.05),0 10px 28px -14px rgba(16,24,64,.16)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;hyphens:manual;overflow-wrap:break-word}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,p,figure,blockquote{margin:0}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #8FA8FF;outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1376px;margin:0 auto;padding:0 var(--pad)}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow)}
+.num{font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.sq{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-weight:700;aspect-ratio:1}
+
+/* заголовки одинаковой высоты: фиксированное число строк */
+.cl{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.t-hero{font-size:32px;line-height:38px;font-weight:700;letter-spacing:-.025em;-webkit-line-clamp:3;max-height:114px}
+.t-card{font-size:17px;line-height:22px;font-weight:700;letter-spacing:-.01em;-webkit-line-clamp:3;height:66px}
+.t-wide{font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.02em;-webkit-line-clamp:2;height:56px}
+.t-sm{font-size:15px;line-height:20px;font-weight:600;-webkit-line-clamp:3;height:60px}
+.t-row{font-size:14px;line-height:19px;font-weight:600;-webkit-line-clamp:2;height:38px}
+
+.chg{display:inline-flex;align-items:center;height:26px;padding:0 8px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.chg.up{background:var(--upbg);color:var(--up)}.chg.down{background:var(--downbg);color:var(--down)}.chg.flat{background:#F2F3F8;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 9px;border-radius:8px;background:var(--capsule);color:#2A3266;font-size:12px;font-weight:600;white-space:nowrap}
+.meta{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;font-size:13px;line-height:18px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:100px;border:0;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:background .15s,transform .15s;flex-shrink:0}
+.btn:active{transform:scale(.98)}
+.btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:var(--blue2)}
+.btn-w{background:#fff;color:var(--ink)}.btn-w:hover{background:var(--bsoft)}
+.btn-o{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px #D6D9E6}.btn-o:hover{box-shadow:inset 0 0 0 1px var(--blue);color:var(--blue)}
+.btn-d{background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}.btn-d:hover{background:rgba(255,255,255,.14)}
+.ibtn{width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:0;background:#F2F3F8;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink)}
+.ibtn:hover{background:var(--bsoft);color:var(--blue)}
+.lnk{color:var(--blue);font-weight:600;font-size:14px;white-space:nowrap}.lnk:hover{color:var(--blue2)}
+.hl:hover,.hov:hover .hl{color:var(--blue)}
+.sec{margin-top:48px}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-bottom:20px}
+.sec-h h2{font-size:28px;line-height:34px;font-weight:700;letter-spacing:-.025em}
+.sec-h p{margin-top:6px;font-size:15px;color:var(--muted)}
+.media{position:relative;overflow:hidden;background:#E2E6F4;border-radius:16px;display:block}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media .ml{position:absolute;left:12px;bottom:10px;right:12px;font-size:11px;font-weight:500;color:#4F5577;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r16x9{aspect-ratio:16/9}.r16x10{aspect-ratio:16/10}.r4x3{aspect-ratio:4/3}.r1{aspect-ratio:1}
+
+/* срочно */
+.urgent{background:var(--blue);color:#fff}
+.urgent .wrap{display:flex;align-items:center;gap:12px;min-height:44px;padding-top:6px;padding-bottom:6px}
+.urgent b{flex-shrink:0;height:24px;padding:0 8px;border-radius:7px;background:#fff;color:var(--blue);font-size:12px;display:inline-flex;align-items:center}
+.urgent a{flex:1;min-width:0;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.urgent a:hover{text-decoration:underline}
+.urgent time{font-size:13px;opacity:.85;flex-shrink:0}
+.urgent button{width:32px;height:32px;flex:0 0 32px;border:0;border-radius:9px;background:rgba(255,255,255,.16);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+
+/* шапка */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;background:linear-gradient(var(--bg) calc(100% - 8px),rgba(238,240,246,0));padding-bottom:8px}
+.hdr-in{padding-top:12px}
+#hdrSpace{height:var(--hh,150px)}
+.hdr-card{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;padding:0 14px 0 18px;transition:height .2s}
+.hdr.compact .hdr-card{height:62px}
+.hdr-l{display:flex;align-items:center;gap:8px;flex-shrink:0;min-width:0}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+.logo-mark{width:36px;height:36px;flex:0 0 36px;object-fit:contain}
+.logo-t{min-width:0}
+.logo-t b{display:block;font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.logo-t small{display:block;margin-top:4px;font-size:12px;color:var(--muted);white-space:nowrap}
+.capsule{display:flex;gap:2px;padding:5px;border-radius:100px;background:var(--capsule);flex-shrink:0}
+.capsule a{padding:9px 14px;border-radius:100px;color:#2A3266;font-size:14px;font-weight:600;white-space:nowrap;transition:background .15s,color .15s}
+.capsule a:hover{background:rgba(255,255,255,.55);color:var(--blue)}
+.capsule a[aria-current]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(16,24,64,.08),0 4px 10px -4px rgba(24,69,231,.35)}
+.hdr-act{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.search{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;width:44px;padding:0;border-radius:14px;background:#F2F3F8;border:0;cursor:pointer;color:var(--ink);font-size:14px}
+.search span{display:none}
+.search:hover{background:var(--bsoft);color:var(--blue)}
+.burger,.cta-s{display:none!important}
+.hdr.collapsed .capsule,.hdr.collapsed .search,.hdr.collapsed .usr,.hdr.collapsed .cta-l{display:none!important}
+.hdr.collapsed .burger,.hdr.collapsed .cta-s{display:inline-flex!important}
+.hdr.collapsed .hdr-card{height:62px;padding:0 10px;gap:8px}
+.hdr.collapsed .logo-t small{display:none}
+.hdr.tiny .logo-t{display:none}
+.hdr.tiny .cta-s{padding:0 10px}
+.hdr.wide-search .search{width:200px;padding:0 14px;justify-content:flex-start;border-radius:100px}
+.hdr.wide-search .search span{display:inline}
+.hdr-row{display:flex;align-items:center;gap:10px;margin-top:10px;max-height:40px;overflow:hidden;transition:max-height .2s,margin .2s,opacity .2s}
+.hdr.compact .hdr-row{max-height:0;margin-top:0;opacity:0}
+.rates{display:flex;min-width:0;flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 40px),transparent)}
+.rates-track{display:flex;width:max-content;animation:tick var(--dur,60s) linear infinite}
+.rates:hover .rates-track,.rates:focus-within .rates-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.rates{overflow-x:auto;scrollbar-width:none}.rates-track{animation:none}}
+.rate{display:flex;align-items:center;gap:8px;height:36px;padding:0 12px 0 6px;margin-right:8px;border-radius:12px;background:#fff;font-size:13px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;flex-shrink:0;transition:box-shadow .2s}
+.rate:hover{box-shadow:0 0 0 1px #D4DCFF}
+.rate .sq{width:28px;border-radius:9px;font-size:12px}
+.sq{position:relative;overflow:hidden}
+.sq img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.sq.coin{background:transparent!important;font-size:0!important;border-radius:0;overflow:visible}
+.rate .up{color:var(--up)}.rate .down{color:var(--down)}
+.topics{display:flex;align-items:center;gap:6px;flex-shrink:0;font-size:13px;font-weight:600}
+.topics span{color:var(--muted);font-weight:500;margin-right:2px;white-space:nowrap}
+.topics a{height:32px;padding:0 12px;border-radius:10px;background:var(--bsoft);color:var(--blue2);display:flex;align-items:center;white-space:nowrap}
+.topics a:hover{background:#D4DCFF}
+.hdr.no-topics .topics{display:none}
+
+/* 1. первая полоса */
+.fold{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,3fr) minmax(0,3fr);gap:20px;margin-top:6px;align-items:stretch}
+.top{padding:10px;display:flex;flex-direction:column}
+.top .media{aspect-ratio:16/9}
+.chips{position:absolute;left:14px;top:14px;display:flex;gap:6px;z-index:1}
+.chip-b{height:30px;padding:0 12px;border-radius:10px;background:var(--blue);color:#fff;display:inline-flex;align-items:center;font-size:13px;font-weight:600}
+.chip-w{height:30px;padding:0 12px;border-radius:10px;background:rgba(255,255,255,.92);display:inline-flex;align-items:center;font-size:13px;font-weight:600}
+.top-b{padding:16px 12px 8px;display:flex;flex-direction:column;gap:12px;flex:1}
+.means{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:#F1F3FE}
+.means .sq{width:32px;border-radius:10px;background:var(--blue)}
+.means b{display:block;font-size:13px;line-height:18px;color:var(--blue)}
+.means span span{display:block;margin-top:2px;font-size:15px;line-height:21px}
+.fit{min-height:0;overflow:hidden}
+.side{padding:18px;display:flex;flex-direction:column;min-width:0}
+.blk-h{display:flex;justify-content:space-between;align-items:center;gap:4px 12px;min-height:26px;flex-wrap:wrap}
+.blk-h h2{font-size:18px;line-height:24px;font-weight:700}
+.imp-first{display:block;margin-top:14px}
+.imp-first .media{border-radius:14px}
+.imp-first .meta{margin:12px 0 8px}
+.imp-list{display:flex;flex-direction:column}
+.imp-row{display:flex;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.imp-row .media{width:64px;flex:0 0 64px;border-radius:14px}
+.imp-row .meta{font-size:12px;margin-bottom:2px}
+.feed{background:var(--ink);color:#fff;border-radius:var(--r);padding:18px;display:flex;flex-direction:column;min-width:0;box-shadow:0 18px 40px -20px rgba(12,16,51,.6)}
+.feed .blk-h span{font-size:12px;color:var(--mutedD);white-space:nowrap}
+.seg{display:flex;margin-top:14px;padding:4px;border-radius:100px;background:#1A2056;gap:4px}
+.seg button{flex:1;height:34px;border:0;border-radius:100px;background:transparent;color:#C9CDE6;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;min-width:0}
+.seg button[aria-selected="true"]{background:#fff;color:var(--ink)}
+.acc-h{display:none}
+.panel{flex:1;min-height:0;display:flex;flex-direction:column}
+.feed-list{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.fi{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--lineD)}
+.fi time{flex:0 0 auto;height:24px;padding:0 7px;border-radius:7px;background:rgba(255,255,255,.08);font-size:12px;font-weight:600;display:flex;align-items:center;font-variant-numeric:tabular-nums}
+.fi.hot time{background:var(--blue)}
+.fi:hover .t-row{color:#C9D4FF}
+.feed .btn{margin-top:14px;width:100%;height:44px}
+
+/* 2. рынок */
+.mkt-act{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill-sw{display:flex;padding:4px;border-radius:100px;background:#fff;gap:2px}
+.pill-sw button{height:36px;min-width:44px;padding:0 14px;border:0;border-radius:100px;background:transparent;color:var(--muted);font-weight:600;font-size:13px;cursor:pointer}
+.pill-sw button[aria-pressed="true"]{background:var(--blue);color:#fff;box-shadow:0 6px 14px -8px rgba(24,69,231,.8)}
+.mkt{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:20px;align-items:stretch}
+.btc{padding:20px;display:flex;flex-direction:column;min-width:0}
+.coin-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.coin-h .sq{width:48px;border-radius:14px;font-size:20px}
+.coin-h b{display:block;font-size:16px}
+.coin-h small{display:block;font-size:13px;color:var(--muted)}
+.per{margin-left:auto;display:flex;padding:3px;border-radius:100px;background:#F2F3F8;gap:2px}
+.per button{height:30px;padding:0 10px;border:0;border-radius:100px;background:transparent;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.per button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(16,24,64,.12)}
+.btc-p{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btc-p strong{font-size:36px;line-height:42px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.chart{flex:1;min-height:180px;margin-top:14px;position:relative;cursor:crosshair}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.chart .ax{font-size:11px;font-weight:500;fill:#9AA1B5;font-variant-numeric:tabular-nums}
+.chart .mk{font-size:11px;font-weight:600;fill:#1845E7;font-variant-numeric:tabular-nums}
+.chart .pulse{transform-box:fill-box;transform-origin:center;animation:chPulse 2s ease-out infinite}
+@keyframes chPulse{from{transform:scale(1);opacity:.45}to{transform:scale(3.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){.chart .pulse{animation:none;opacity:0}}
+.chart .hv{transition:opacity .15s;pointer-events:none}
+.ch-tip{position:absolute;z-index:2;pointer-events:none;opacity:0;transition:opacity .15s;padding:7px 10px;border-radius:10px;background:#0E1430;color:#fff;font-size:12px;line-height:1.3;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(14,20,48,.6)}
+.ch-tip b{display:block;font-size:14px;font-variant-numeric:tabular-nums}
+.ch-tip span{color:#A9B3D6}
+.btc-f{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}
+.btc-f b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tbl{padding:6px 0;min-width:0}
+.tr{display:grid;grid-template-columns:minmax(0,1fr) auto 72px 36px;align-items:center;gap:10px;padding:9px 16px;border-top:1px solid var(--line)}
+.tr.th{border-top:0;font-size:12px;color:var(--muted);padding-top:8px;padding-bottom:8px}
+.tr .c{display:flex;align-items:center;gap:10px;min-width:0}
+.tr .c .sq{width:40px;border-radius:10px;font-size:13px}
+.tr .c span{min-width:0}
+.tr .c b{display:block;font-size:14px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tr .c small{display:block;font-size:12px;line-height:16px;color:var(--muted)}
+.tr .p{text-align:right;font-weight:600;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tr .chg{justify-self:end}
+.bell{width:36px;height:36px;border:0;border-radius:11px;background:var(--capsule);color:#2A3266;display:flex;align-items:center;justify-content:center;cursor:pointer;justify-self:end}
+.bell:hover{background:var(--blue);color:#fff}
+.lead-c{padding:18px;display:flex;flex-direction:column;min-width:0}
+.lead-c h3{font-size:16px;line-height:22px;font-weight:700}
+.lead-sub{display:flex;align-items:center;gap:8px;margin:10px 0 2px;font-size:15px;font-weight:700;letter-spacing:-.01em}
+.lead-sub.up{color:var(--up)}.lead-sub.down{color:var(--down)}
+.lead-sub .ar{width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lead-sub.up .ar{background:var(--upbg)}.lead-sub.down .ar{background:var(--downbg)}
+.lead-sub .ar svg{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#leadDown{margin-bottom:2px}
+#leadUp .lr:last-child,#leadDown .lr:last-child{border-bottom:0}
+div:has(>#leadUp)+div .lead-sub{margin-top:14px}
+.lr{display:flex;align-items:center;gap:10px;padding:4px 0;border-bottom:1px solid var(--line)}
+.lr .sq{width:34px;border-radius:9px;font-size:11px}
+.lr .nm{flex:1;min-width:0;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.digest{margin-top:12px;padding:12px 14px;border-radius:14px;background:#F1F3FE;font-size:13px;line-height:19px;flex:1}
+.digest b{display:block;font-size:12px;color:var(--blue);margin-bottom:4px}
+.mkt-note{margin-top:12px;font-size:12px;color:var(--muted)}
+
+/* реклама */
+.ad{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:18px;border:1.5px dashed #C7CCE0;color:var(--muted);font-size:13px;text-align:center;padding:12px}
+.ad b{font-size:12px;font-weight:600;color:var(--ink)}
+.ad-wide{height:250px;width:100%;border-radius:var(--r)}
+
+/* 3. выбор редакции */
+.picks{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:20px}
+.pick{padding:10px 10px 16px;display:flex;flex-direction:column}
+.pick .media{height:210px}
+.pick-b{padding:14px 8px 0;display:flex;flex-direction:column;gap:8px}
+.pick .lead{font-size:14px;line-height:20px;color:var(--muted);-webkit-line-clamp:1;height:20px}
+.sl-ctrl{display:none}
+
+/* 4. рубрики */
+.rubs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.rub{padding:18px;display:flex;flex-direction:column}
+.rub-h{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;border:0;background:none;padding:0;text-align:left;cursor:default}
+.rub-h h3{font-size:18px;line-height:24px;font-weight:700}
+.rub-h .ic{display:none}
+.rub-lead{display:flex;gap:14px;align-items:center;margin-top:14px;padding-bottom:14px}
+.rub-lead .media{width:112px;flex:0 0 112px;border-radius:14px}
+.rub-i{display:block;padding:16px 0;border-top:1px solid var(--line)}
+.rub-i .t-row{height:auto}
+.rub-i time{display:block;margin-top:5px;font-size:12px;line-height:16px;color:var(--muted)}
+.rub .lnk{margin-top:6px}
+
+/* 5. подписка */
+.sub{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px}
+.sub-tg{background:var(--blue);color:#fff;border-radius:26px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.sub-tg h2{font-size:28px;line-height:34px;font-weight:700;letter-spacing:-.025em;max-width:560px}
+.sub-tg p{font-size:15px;line-height:22px;color:#DDE4FF;max-width:560px}
+.sub-tg ul{display:flex;gap:8px;flex-wrap:wrap;list-style:none;margin:2px 0 0;padding:0}
+.sub-tg li{height:30px;padding:0 12px;border-radius:10px;background:rgba(255,255,255,.14);display:flex;align-items:center;font-size:13px;font-weight:600;white-space:nowrap}
+.sub-tg .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.sub-tg .btn-w{color:var(--blue)}
+.sub-app{padding:28px;display:flex;flex-direction:column;gap:10px}
+.sub-app h3{font-size:20px;line-height:26px;font-weight:700}
+.sub-app p{font-size:15px;line-height:22px;color:var(--muted)}
+.stores{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.store{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 18px;border-radius:14px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;line-height:16px;white-space:nowrap}
+.store:hover{background:var(--ink3)}
+.store small{display:block;font-size:11px;font-weight:500;color:var(--mutedD)}
+
+/* 6. голоса индустрии */
+.voices{background:var(--ink);color:#fff;border-radius:30px;padding:32px}
+.voices .sec-h p{color:var(--mutedD)}
+.vgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.video{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--ink2)}
+.video .media{border-radius:0;background:#232A63}
+.video .media .ml{color:#A6ACCD}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:22px;background:var(--blue);display:flex;align-items:center;justify-content:center;z-index:1;transition:transform .15s}
+.video:hover .play{transform:translate(-50%,-50%) scale(1.05)}
+.video-b{padding:18px 22px 22px}
+.video-b .meta{color:var(--mutedD);margin-bottom:6px}
+.video .t-wide{color:#fff}
+.experts{background:var(--ink2);border-radius:22px;padding:8px 20px 20px;display:flex;flex-direction:column;min-width:0}
+.ex-list{flex:1;min-height:0;overflow:hidden}
+.ex{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--lineD)}
+.av{width:60px;border-radius:50%;background:#2A3270;color:#C9D4FF;font-size:14px;font-weight:600;box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+.av img{object-fit:cover;border-radius:inherit;transform:scale(1.12)}
+.ex b{display:block;font-size:15px;line-height:20px}
+.ex small{display:block;font-size:13px;line-height:18px;color:var(--mutedD)}
+.ex:hover b{color:#C9D4FF}
+.experts .btn{margin-top:16px;width:100%}
+
+/* 7. достижения */
+.ach{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ach a{padding:22px;display:flex;flex-direction:column;gap:14px;min-height:168px}
+.ach .sq{width:48px;border-radius:14px;background:var(--bsoft);color:var(--blue)}
+.ach b{font-size:17px;line-height:23px;font-weight:700;-webkit-line-clamp:2;height:46px}
+.ach span{font-size:14px;line-height:20px;color:var(--muted);margin-top:auto}
+.ach a:hover b{color:var(--blue)}
+.ach .big{background:var(--blue);color:#fff}
+.ach .big .sq{background:rgba(255,255,255,.18);color:#fff}
+.ach .big span{color:#DDE4FF}
+.ach .big:hover b{color:#fff}
+
+/* 8. азбука */
+.abc{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.path{padding:22px;display:flex;flex-direction:column}
+.path-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.path-h h3{font-size:18px;line-height:24px;font-weight:700}
+.path-h p{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px;counter-reset:st;position:relative}
+.step{display:flex;flex-direction:column;gap:10px;position:relative}
+.step .media{border-radius:16px;aspect-ratio:1}
+.step .n{position:absolute;left:10px;top:10px;z-index:1;width:30px;height:30px;border-radius:10px;background:#fff;color:var(--blue);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(16,24,64,.12)}
+.step>span:last-child{min-width:0}
+.step em{font-style:normal;font-size:12px;font-weight:600;color:var(--blue)}
+.dict{padding:22px;display:flex;flex-direction:column;gap:14px;background:var(--capsule);box-shadow:none}
+.dict h3{font-size:18px;line-height:24px;font-weight:700}
+.term{display:flex;gap:8px}
+.term input{flex:1;min-width:0;height:46px;border:1px solid #D6D9E6;border-radius:14px;padding:0 14px;background:#fff;outline:none}
+.term input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(24,69,231,.14)}
+.term .btn{height:46px;padding:0 18px}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.words a{height:34px;padding:0 12px;border-radius:10px;background:#fff;display:flex;align-items:center;font-size:14px;font-weight:600;white-space:nowrap}
+.words a:hover{color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.tod{padding:14px;border-radius:16px;background:#fff;font-size:14px;line-height:20px}
+.tod b{display:block;font-size:12px;color:var(--violet);margin-bottom:4px}
+.tod strong{font-weight:700}
+.dict .ask{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+
+/* 9. FAQ */
+.faq-main{padding:24px 28px}
+.ftabs{display:flex;gap:6px;flex-wrap:wrap}
+.ftabs button{height:38px;padding:0 14px;border:0;border-radius:100px;background:#F2F3F8;font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap}
+.ftabs button:hover{color:var(--blue)}
+.ftabs button[aria-selected="true"]{background:var(--blue);color:#fff}
+.fsel{display:none;position:relative}
+.fsel-b{width:100%;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-radius:14px;border:1px solid #D6D9E6;background:#fff;font-weight:600;cursor:pointer}
+.fsel-b b{color:var(--blue)}
+.fsel-l{display:flex;flex-direction:column;margin-top:8px;border:1px solid #D6D9E6;border-radius:14px;overflow:hidden;background:#fff}
+.fsel-l button{height:46px;text-align:left;padding:0 16px;border:0;border-top:1px solid var(--line);background:#fff;font-weight:600;cursor:pointer}
+.fsel-l button:first-child{border-top:0}
+.fsel-l button[aria-selected="true"]{color:var(--blue);background:var(--bsoft)}
+.fsel .ic{transition:transform .2s}.fsel.open .fsel-b .ic{transform:rotate(180deg)}
+.qa-list{margin-top:14px}
+.qa{border-bottom:1px solid var(--line)}
+.qa:last-child{border-bottom:0}
+.qa-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;background:none;border:0;text-align:left;cursor:pointer;font-weight:700;font-size:16px;line-height:22px}
+.qa-q:hover{color:var(--blue)}
+.qa-ic{width:36px;height:36px;flex:0 0 36px;border-radius:11px;background:var(--blue);color:#fff;box-shadow:0 6px 14px -8px rgba(24,69,231,.8);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.qa.open .qa-ic{transform:rotate(45deg);background:var(--blue2);color:#fff}
+.qa-q:hover .qa-ic{background:var(--blue2)}
+.qa-a{display:none;padding:0 52px 18px 0;font-size:15px;line-height:23px;color:var(--muted);max-width:860px}
+.qa.open .qa-a{display:block}
+.qa-a .lnk{display:inline-block;margin-top:8px}
+
+/* 13. подписка по email */
+.sub-mail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px 48px;align-items:center;padding:40px;border-radius:30px;background:var(--capsule);position:relative;overflow:hidden}
+.sub-mail::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:48px;background:rgba(255,255,255,.35);transform:rotate(18deg);pointer-events:none}
+.sub-mail-t{position:relative;z-index:1}
+.mail-ic{width:52px;border-radius:16px;background:var(--blue);margin-bottom:18px}
+.sub-mail h2{font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.025em;max-width:500px}
+.sub-mail-t>p{margin-top:10px;font-size:16px;line-height:24px;color:#3D4470;max-width:460px}
+.perks{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:18px 0 0;padding:0}
+.perks li{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:10px;background:rgba(255,255,255,.7);font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
+.perks .ic{color:var(--blue)}
+.mail-form{position:relative;z-index:1;background:#fff;border-radius:22px;padding:24px;box-shadow:0 1px 2px rgba(16,24,64,.05),0 16px 36px -18px rgba(24,69,231,.35)}
+.mail-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end}
+.mail-row .btn{height:48px;padding:0 26px}
+.mail-form .fields{gap:12px}
+.mail-form .ok{padding:4px 0}
+
+/* 10. события */
+.events{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ev{padding:20px;display:flex;flex-direction:column;gap:10px}
+.ev .date{display:flex;align-items:baseline;gap:8px}
+.ev .date b{font-size:28px;line-height:32px;font-weight:700;letter-spacing:-.03em;white-space:nowrap}
+.ev .date span{font-size:13px;color:var(--muted)}
+.ev .meta{margin-top:auto}
+.ev.soon{box-shadow:var(--shadow),inset 0 0 0 2px var(--blue)}
+
+/* 11. партнёрские */
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pc{padding:10px 10px 16px;display:flex;flex-direction:column}
+.pc .media{height:170px}
+.pc .b{padding:14px 8px 0;display:flex;flex-direction:column;gap:8px}
+.ad-mark{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;color:var(--muted);white-space:nowrap;overflow:hidden}
+.ad-mark span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.ad-mark b{height:22px;padding:0 7px;border-radius:6px;background:#F2F3F8;color:var(--ink);display:inline-flex;align-items:center;font-size:11px;flex-shrink:0}
+
+/* 12. ещё */
+.more{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.mc{padding:10px 10px 16px;display:flex;flex-direction:column}
+.mc .media{height:150px}
+.mc .b{padding:12px 6px 0;display:flex;flex-direction:column;gap:6px}
+.more-act{display:flex;justify-content:center;margin-top:24px}
+
+/* подвал */
+.ft{margin-top:48px;background:var(--ink);color:#fff;padding:52px 0 30px}
+.ft-top{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(4,minmax(0,1fr));gap:28px}
+.ft .logo-t small{color:var(--mutedD)}
+.ft p{margin-top:14px;font-size:14px;line-height:21px;color:var(--mutedD);max-width:360px}
+.ft-mail{display:inline-block;margin-top:12px;font-weight:600}
+.ft-mail:hover{color:#C9D4FF}
+.soc{display:flex;gap:10px;margin-top:18px}
+.soc a{width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.soc a:hover{background:var(--blue)}
+.ft h4{font-size:14px;font-weight:700;margin-bottom:12px}
+.ft-l{display:flex;flex-direction:column;gap:9px;font-size:14px;color:#D2D6EE}
+.ft-l a:hover{color:#fff}
+.ft-b{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--lineD);font-size:13px;color:var(--mutedD)}
+.ft-b nav{display:flex;gap:8px 20px;flex-wrap:wrap}
+.ft-b a:hover{color:#fff}
+.ft .store{background:rgba(255,255,255,.08)}
+.ft .store:hover{background:rgba(255,255,255,.14)}
+
+/* формы */
+.fields{display:flex;flex-direction:column;gap:12px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--muted);min-width:0}
+.fld input,.fld select,.fld textarea{height:48px;border:1px solid #D6D9E6;border-radius:14px;background:#fff;padding:0 14px;font-weight:500;font-size:15px;color:var(--ink);width:100%;min-width:0;outline:none}
+.fld textarea{height:96px;padding:12px 14px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(24,69,231,.14)}
+.fld.bad input{border-color:var(--down)}
+.fields .btn{width:100%}
+.consent{font-size:12px;line-height:18px;color:var(--muted)}
+.consent a{color:var(--blue);text-decoration:underline}
+.err{font-size:13px;font-weight:600;color:var(--down)}
+.ok{display:flex;flex-direction:column;gap:10px}
+.ok .sq{width:52px;border-radius:16px;background:var(--bsoft);color:var(--blue)}
+.ok b{font-size:20px}
+.ok p{color:var(--muted)}
+
+/* окна */
+.ovl{position:fixed;inset:0;z-index:100;background:rgba(12,16,51,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);overflow-y:auto;display:flex;padding:24px 16px}
+.dlg{margin:auto;width:100%;max-width:520px;background:#fff;border-radius:26px;padding:30px;position:relative}
+.dlg h2{font-size:24px;line-height:30px;font-weight:700;padding-right:48px;letter-spacing:-.015em}
+.dlg-sub{margin:8px 0 20px;color:var(--muted)}
+.x{position:absolute;top:18px;right:18px}
+.ovl-m{padding:0;display:block}
+.drawer{width:min(380px,100%);min-height:100%;background:#fff;padding:10px var(--pad) 32px;display:flex;flex-direction:column}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;height:64px;margin-bottom:6px}
+.drawer nav a{display:flex;align-items:center;height:52px;border-bottom:1px solid var(--line);font-weight:600;font-size:17px}
+.drawer nav a[aria-current]{color:var(--blue)}
+.drawer .btn{width:100%;margin-top:14px}
+.drawer .soc a{background:#F2F3F8;color:var(--ink)}
+.drawer .soc a:hover{background:var(--blue);color:#fff}
+.srch-res{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.srch-res a{height:36px;padding:0 12px;border-radius:10px;background:#F2F3F8;display:flex;align-items:center;font-size:14px;font-weight:600}
+.srch-res a:hover{background:var(--bsoft);color:var(--blue)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* десктоп: боковые колонки не растягивают ряд, их высоту задаёт главная карточка */
+@media (min-width:1100px){
+ .fold>.side,.fold>.feed{height:0;min-height:100%}
+ .mkt>.btc{height:0;min-height:100%}
+ .vgrid>.experts{height:0;min-height:100%}
+ .abc>.dict{height:0;min-height:100%}
+}
+@media (max-width:1279px){
+ .mkt{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .lead-c{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+ .lead-c h3{grid-column:1/-1}.digest{grid-column:1/-1;flex:none}
+ .mkt>.lead-c{height:auto;min-height:0}
+ .ach{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ft-top{grid-template-columns:repeat(3,minmax(0,1fr))}.ft-brand{grid-column:1/-1}
+}
+@media (max-width:1099px){
+ .fold{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .top{grid-column:1/-1}
+ .mkt{grid-template-columns:minmax(0,1fr)}.lead-c{grid-column:auto}
+ .picks{grid-template-columns:repeat(2,minmax(0,1fr))}.pick.wide{grid-column:1/-1}
+ .rubs{grid-template-columns:minmax(0,1fr)}
+ .rub-h{cursor:pointer}.rub-h .ic{display:block;transition:transform .2s}
+ .rub.open .rub-h .ic{transform:rotate(180deg)}
+ .rub:not(.open) .rub-body{display:none}
+ .sub,.vgrid,.abc,.sub-mail{grid-template-columns:minmax(0,1fr)}
+ .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .events{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .partners{grid-template-columns:repeat(2,minmax(0,1fr))}.partners>:last-child{grid-column:1/-1}
+ .more{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ft-top{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .fit .imp-list .imp-row:nth-child(n+3),.feed .fi:nth-child(n+7){display:none}
+ .panel,.feed-list,.ex-list{flex:none;overflow:visible}
+}
+@media (max-width:767px){
+ .sec{margin-top:36px}
+ .sec-h h2{font-size:24px;line-height:30px}.sec-h .btn,.sec-h .mkt-act{width:100%}.sec-h .mkt-act .btn{flex:1}
+ .fold{grid-template-columns:minmax(0,1fr)}
+ .t-hero{font-size:24px;line-height:30px;-webkit-line-clamp:4;max-height:120px}
+ .top-b{padding:14px 6px 6px}
+ .feed .seg{display:none}
+ .feed .acc-h{display:flex;align-items:center;justify-content:space-between;width:100%;height:48px;border:0;background:none;color:#fff;font-weight:700;font-size:15px;padding:0;cursor:pointer;border-bottom:1px solid var(--lineD)}
+ .feed .acc-h .ic{transition:transform .2s}
+ .feed .panel.open .acc-h .ic{transform:rotate(180deg)}
+ .feed .panel:not(.open) .feed-list{display:none}
+ .feed .panel[hidden]{display:flex!important}
+ .btc-p strong{font-size:30px;line-height:36px}
+ .tr{grid-template-columns:minmax(0,1fr) auto 64px 36px;padding:9px 12px;gap:8px}
+ .lead-c{grid-template-columns:minmax(0,1fr)}
+ .picks{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;margin:0 calc(-1*var(--pad));padding:0 var(--pad) 4px;cursor:grab}
+ .picks::-webkit-scrollbar{display:none}
+ .picks.drag{cursor:grabbing;user-select:none;scroll-snap-type:none}
+ .picks.drag .pick{pointer-events:none}
+ .pick{flex:0 0 84%;scroll-snap-align:start;scroll-margin-left:var(--pad)}
+ .pick .media{height:180px}
+ .sl-ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+ .dots{display:flex;gap:6px}
+ .dot{width:18px;height:6px;border-radius:3px;border:0;padding:0;background:#C9CDE0;cursor:pointer;transition:width .2s}
+ .dot.on{width:34px;background:var(--blue)}
+ .arrows{display:flex;gap:8px}.arrows .ibtn{background:#fff}
+ .sub-tg{padding:26px 20px}.sub-tg h2{font-size:24px;line-height:30px}.sub-tg .acts .btn{flex:1}
+ .sub-app{padding:24px 20px}
+ .voices{padding:24px 16px;border-radius:24px}
+ .ach{grid-template-columns:minmax(0,1fr)}.ach a{min-height:0}
+ .path,.dict,.faq-main{padding:20px}
+ .sub-mail h2{font-size:24px;line-height:30px}
+ .sub-mail{padding:24px 18px;border-radius:24px}
+ .mail-form{padding:18px}
+ .mail-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mail-row .btn{grid-column:1/-1;width:100%}
+ .steps{gap:12px}
+ .ftabs{display:none}.fsel{display:block}
+ .qa-a{padding-right:0}
+ .events,.partners,.more{grid-template-columns:minmax(0,1fr)}.partners>:last-child{grid-column:auto}
+ .ft-top{grid-template-columns:minmax(0,1fr)}
+ .dlg{padding:26px 20px}
+ .urgent time{display:none}
+}
+@media (max-width:420px){
+ .hdr .logo{gap:7px}.hdr .logo-mark{width:30px;height:30px;flex-basis:30px}
+ .hdr .logo-t b{font-size:16px}
+ .hdr-l{gap:6px}
+ .hdr.collapsed .hdr-card{padding:0 8px;gap:6px}
+ .hdr-card .ibtn{width:40px;height:40px;flex-basis:40px;border-radius:12px}
+ .hdr-act{gap:4px}
+ .cta-s{padding:0 12px;font-size:14px;height:40px}
+ .tr{grid-template-columns:minmax(0,1fr) auto 60px 34px;gap:6px}
+ .tr .c b{display:none}.tr .c small{font-size:14px;font-weight:700;color:var(--ink)}
+ .tr .c .sq{width:34px;border-radius:9px}.tr .c{gap:8px}
+ .tr .p{font-size:13px}.tr .chg{padding:0 5px}.tr .bell{width:34px;height:34px}
+ .per{margin-left:0;width:100%}.per button{flex:1}
+ .steps{grid-template-columns:minmax(0,1fr)}
+ .step{flex-direction:row;align-items:center}.step .media{width:96px;flex:0 0 96px}
+ .step .n{left:6px;top:6px;width:26px;height:26px;font-size:13px}
+}
+
+/* ---------- Достижения: иллюстрации с анимацией ---------- */
+.ach a{gap:10px;min-height:0;padding:18px 22px 22px;overflow:hidden;position:relative;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.ach a:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(16,24,64,.05),0 24px 40px -20px rgba(24,69,231,.35)}
+.ach .ill{position:relative;display:grid;place-items:center;height:132px;margin:0 0 6px;border-radius:16px;background:radial-gradient(60% 75% at 50% 50%,#EEF2FF,rgba(238,242,255,0) 72%)}
+.ach .big .ill{background:radial-gradient(60% 75% at 50% 50%,rgba(255,255,255,.14),rgba(255,255,255,0) 72%)}
+.ach .ill .orb{position:absolute;inset:0;margin:auto;border-radius:50%;border:1.5px dashed rgba(24,69,231,.28)}
+.ach .ill .o1{width:88px;height:88px;border-style:solid;border-color:rgba(24,69,231,.12)}
+.ill .o2{width:124px;height:124px;animation:orbit 26s linear infinite}
+.ill .sat{position:absolute;display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 7px;border-radius:10px;background:#fff;color:var(--blue);font-size:11px;font-weight:700;letter-spacing:-.01em;box-shadow:0 1px 2px rgba(16,24,64,.08),0 8px 16px -8px rgba(24,69,231,.45);animation:orbit 26s linear infinite reverse}
+.ill .s1{top:6px;right:-2px;translate:30% 0}
+.ill .s2{bottom:6px;left:-2px;translate:-30% 0}
+.ill .sat svg{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .tile{position:relative;width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#4C74FF,#1845E7);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 16px 28px -12px rgba(24,69,231,.7);animation:tileFloat 5s ease-in-out infinite;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.ill .tile svg{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ach a:hover .tile{transform:scale(1.07) rotate(-5deg)}
+.ach a:hover .o2,.ach a:hover .sat{animation-duration:9s}
+.ach .big .orb{border-color:rgba(255,255,255,.35)}.ach .big .o1{border-color:rgba(255,255,255,.16)}
+.ach .big .sat{background:rgba(255,255,255,.18);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ach .big .tile{background:#fff;color:var(--blue);box-shadow:0 16px 28px -12px rgba(8,14,60,.55)}
+@keyframes orbit{to{rotate:360deg}}
+.ach .ill span{margin:0;line-height:1}
+@keyframes tileFloat{50%{translate:0 -4px}}
+@media (prefers-reduced-motion:reduce){.ill *{animation:none!important}}
+.ach .big{background:radial-gradient(80% 70% at 100% 0%,#4C74FF,transparent 60%),linear-gradient(150deg,#1845E7,#2B2FC9)}
+
+/* ---------- События: главный форум с отсчётом + билеты ---------- */
+.evx{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px}
+.evf{position:relative;overflow:hidden;isolation:isolate;border-radius:var(--r);padding:28px;color:#fff;display:flex;flex-direction:column;gap:16px;
+ background:radial-gradient(60% 70% at 100% 0%,rgba(76,116,255,.75),transparent 70%),radial-gradient(50% 60% at 0% 100%,rgba(122,75,247,.6),transparent 70%),linear-gradient(160deg,#0C1033,#141A52);box-shadow:0 30px 60px -30px rgba(24,40,140,.8)}
+.evf::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.5px) 0 0/22px 22px;-webkit-mask-image:radial-gradient(70% 80% at 85% 20%,#000,transparent 75%);mask-image:radial-gradient(70% 80% at 85% 20%,#000,transparent 75%)}
+.evf::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(160,185,255,.25);box-shadow:0 0 0 40px rgba(160,185,255,.05),0 0 0 80px rgba(160,185,255,.03);z-index:-1;animation:ring2 6s ease-in-out infinite}
+@keyframes ring2{50%{transform:scale(1.06)}}
+.evf-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.evf-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9BDFF}
+.evf-in{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:100px;background:rgba(255,255,255,.12);font-size:12px;font-weight:600}
+.evf-in::before{content:"";width:7px;height:7px;border-radius:50%;background:#3DF59B;box-shadow:0 0 0 3px rgba(61,245,155,.25);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.evf-date{display:flex;align-items:flex-end;gap:14px}
+.evf-date b{font-size:clamp(56px,6vw,84px);line-height:.85;font-weight:800;letter-spacing:-.05em;background:linear-gradient(180deg,#fff 30%,#A9BDFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.evf-date span{font-size:15px;line-height:19px;font-weight:600;color:#C7D2FF;padding-bottom:4px}
+.evf-t{font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.01em;max-width:30ch}
+.evf-t a:hover{color:#C7D2FF}
+.evf-place{display:flex;align-items:center;gap:8px;font-size:14px;color:#C7D2FF}
+.evf-place svg,.tk-p svg{fill:none;stroke:currentColor;stroke-width:2;flex-shrink:0}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:auto}
+.cd div{padding:12px 6px 10px;border-radius:14px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);text-align:center;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cd b{display:block;font-size:28px;line-height:32px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cd span{font-size:12px;color:#A9B3D6}
+.evf-act{display:flex;gap:10px;flex-wrap:wrap}
+.evf-act .btn{height:46px;padding:0 20px;border-radius:100px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.evf-b1{background:#fff;color:var(--ink)}.evf-b1:hover{background:#E3E8FF}
+.evf-b2{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}.evf-b2:hover{background:rgba(255,255,255,.2)}
+.evf-b2 svg{fill:none;stroke:currentColor;stroke-width:2}
+.tks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.tks li{flex:1;display:flex;filter:drop-shadow(0 1px 1px rgba(16,24,64,.05)) drop-shadow(0 10px 18px rgba(16,24,64,.08));transition:transform .3s cubic-bezier(.2,.7,.2,1),filter .3s}
+.tks li:hover{transform:translateY(-3px);filter:drop-shadow(0 1px 1px rgba(16,24,64,.05)) drop-shadow(0 18px 24px rgba(24,69,231,.18))}
+.tk{--cut:104px;flex:1;display:flex;min-height:118px;border-radius:18px;background:#fff;
+ -webkit-mask:radial-gradient(circle 10px at var(--cut) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 10px at var(--cut) 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+ mask:radial-gradient(circle 10px at var(--cut) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 10px at var(--cut) 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.tk-s{width:var(--cut);flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:linear-gradient(160deg,#EEF2FF,#E3E8FF);color:var(--blue2);border-right:2px dashed #D4DCFF;transition:background .3s,color .3s}
+.tk-s b{font-size:26px;line-height:28px;font-weight:800;letter-spacing:-.03em}
+.tk-s span{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.tk-s small{font-size:11px;color:#6E7BB8;transition:color .3s}
+.tk:hover .tk-s{background:linear-gradient(160deg,#2E5BFF,#1845E7);color:#fff}
+.tk:hover .tk-s small{color:#C7D2FF}
+.tk-b{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:14px 18px 14px 20px}
+.tk-tag{align-self:flex-start;height:22px;padding:0 8px;border-radius:7px;background:var(--capsule);color:#2A3266;font-size:11px;font-weight:700;display:inline-flex;align-items:center}
+.tk-tag.hot{background:var(--blue);color:#fff}
+.tk-t{font-size:15px;line-height:20px;font-weight:700;-webkit-line-clamp:2}
+.tk-p{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.evf::after,.evf-in::before{animation:none}}
+@media (max-width:1099px){.evx{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:767px){.evf{padding:22px}.evf-t{font-size:19px;line-height:25px}.cd{gap:6px}.cd b{font-size:22px;line-height:26px}.tk{--cut:84px}.tk-s b{font-size:21px}.tk-b{padding:12px 14px}.tk-t{-webkit-line-clamp:3}}
+
+/* ---------- События: больше воздуха, тематический фон вместо точек ---------- */
+.evf{padding:44px;gap:22px}
+.evf::before{content:none}
+.evf::after{content:"";right:auto;left:-120px;top:auto;bottom:-160px;width:420px;height:420px;border:0;box-shadow:none;background:radial-gradient(closest-side,rgba(122,75,247,.45),transparent);animation:none}
+.evf-date{margin-top:4px}
+.evf-t{font-size:24px;line-height:31px;max-width:24ch}
+.cd{gap:12px;margin-top:auto;padding-top:6px}
+.cd div{padding:16px 8px 12px}
+.cd b{font-size:32px;line-height:36px}
+.evf-act{gap:12px}
+.evf-act .btn{height:50px;padding:0 24px}
+@media (max-width:767px){.evf{padding:26px 22px;gap:18px}.evf-art{width:90%;opacity:.45}.evf-t{font-size:20px;line-height:26px}.cd{gap:8px}.cd b{font-size:24px;line-height:28px}.cd div{padding:12px 4px 10px}}
+
+/* ---------- Подписка перед подвалом ---------- */
+.sub-mail{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px 40px;padding:52px 0 52px 52px;border-radius:32px;color:#fff;isolation:isolate;align-items:center;
+ background:radial-gradient(60% 80% at 100% 0%,rgba(122,75,247,.75),transparent 65%),radial-gradient(50% 70% at 0% 100%,rgba(76,116,255,.8),transparent 70%),linear-gradient(140deg,#1845E7 0%,#2438D9 50%,#3A2BC4 100%);box-shadow:0 30px 60px -30px rgba(24,69,231,.7)}
+.sub-mail::after{content:"";right:auto;left:38%;top:-40%;width:520px;height:520px;border-radius:50%;transform:none;background:radial-gradient(closest-side,rgba(255,255,255,.14),transparent);z-index:-1}
+.sm-k{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;border-radius:100px;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);font-size:13px;font-weight:700;margin-bottom:18px}
+.sm-k svg{fill:none;stroke:currentColor;stroke-width:2}
+.sub-mail h2{font-size:clamp(28px,2.6vw,38px);line-height:1.12;max-width:16ch;letter-spacing:-.03em}
+.sub-mail-t>p{color:#DCE3FF;font-size:17px;margin-top:14px}
+.perks{margin-top:20px}
+.perks li{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.perks .ic{color:#7DFFB6}
+.sub-mail .mail-form{margin-top:28px;padding:22px;border-radius:24px;box-shadow:0 30px 50px -24px rgba(8,14,60,.6)}
+.sub-mail .mail-row .btn{display:inline-flex;align-items:center;gap:8px}
+.sub-mail .mail-row .btn svg{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.sub-mail .mail-row .btn:hover svg{transform:translateX(3px)}
+.evf-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;
+ -webkit-mask-image:linear-gradient(90deg,transparent 30%,rgba(0,0,0,.4) 62%,#000 92%);mask-image:linear-gradient(90deg,transparent 30%,rgba(0,0,0,.4) 62%,#000 92%)}
+@media (max-width:767px){.evf-art{opacity:.6}}
+/* подписка без иллюстрации: текст слева, форма справа */
+.sub-mail{grid-template-columns:minmax(0,1fr);padding:56px}
+.sub-mail-t{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:56px;align-items:center}
+.sub-mail-t>*{grid-column:1}
+.sub-mail-t .sm-k{justify-self:start}
+.sub-mail .mail-form{grid-column:2;grid-row:1/span 4;margin-top:0;align-self:center}
+@media (max-width:1099px){.sub-mail{padding:40px}.sub-mail-t{grid-template-columns:minmax(0,1fr)}.sub-mail .mail-form{grid-column:1;grid-row:auto;margin-top:28px}}
+@media (max-width:767px){.sub-mail{padding:28px 20px}}
+@media (max-width:767px){.sub-mail{padding:28px 20px;border-radius:26px}.sub-mail .mail-form{padding:18px}.sub-mail h2{font-size:27px}}
+
+/* ---------- Приложение: 3D-айфон с интерфейсом сайта ---------- */
+.sub-app{position:relative;overflow:hidden;isolation:isolate;display:block;min-height:300px;padding:28px 220px 28px 28px;background:radial-gradient(70% 80% at 100% 100%,#E3E8FF,rgba(227,232,255,0) 70%),#fff}
+.app-t{display:flex;flex-direction:column;gap:10px;height:100%;position:relative;z-index:2}
+.sub-app .stores{flex-direction:column;align-items:flex-start;margin-top:14px}
+.store svg{flex-shrink:0}
+.iph-wrap{position:absolute;right:40px;top:30px;width:172px;perspective:900px;z-index:1}
+.iph{position:relative;width:172px;height:352px;border-radius:34px;padding:7px;transform-style:preserve-3d;
+ background:linear-gradient(135deg,#E9ECF4 0%,#9AA1B5 22%,#F4F6FB 48%,#7C8399 75%,#C9CEDB 100%);
+ box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7),inset 0 0 0 3px #4A5068,-30px 40px 50px -20px rgba(16,24,64,.45),-6px 10px 20px -8px rgba(16,24,64,.35);
+ transform:rotateY(-24deg) rotateX(10deg) rotateZ(6deg);animation:iphFloat 7s ease-in-out infinite;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.sub-app:hover .iph{animation-play-state:paused;transform:rotateY(-8deg) rotateX(4deg) rotateZ(2deg) translateY(-8px)}
+@keyframes iphFloat{0%,100%{transform:rotateY(-24deg) rotateX(10deg) rotateZ(6deg) translateY(0)}50%{transform:rotateY(-18deg) rotateX(8deg) rotateZ(5deg) translateY(-8px)}}
+.iph-btn{position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#6E7590,#C9CEDB)}
+.iph-btn.b1{left:-2px;top:64px;height:18px}.iph-btn.b2{left:-2px;top:96px;height:34px}.iph-btn.b3{left:-2px;top:138px;height:34px}.iph-btn.b4{right:-2px;top:110px;height:54px}
+.iph-scr{position:relative;height:100%;border-radius:28px;overflow:hidden;background:#EEF0F6;padding:8px 8px 0;display:flex;flex-direction:column;gap:6px;color:var(--ink);line-height:1.25;box-shadow:0 0 0 2px #0B0D16}
+.iph-sb{display:flex;align-items:center;justify-content:space-between;height:18px;padding:0 8px;font-size:8px}
+.iph-sb .isl{width:50px;height:15px;border-radius:10px;background:#0B0D16}
+.iph-sb .sig{display:flex;align-items:flex-end;gap:1.5px;height:8px}.iph-sb .sig i{display:block;width:2px;background:var(--ink);border-radius:1px}
+.iph-sb .sig i:nth-child(1){height:3px}.iph-sb .sig i:nth-child(2){height:5px}.iph-sb .sig i:nth-child(3){height:7px}.iph-sb .sig i:nth-child(4){height:8px}
+.iph-hd{display:flex;align-items:center;gap:5px;padding:6px 7px;border-radius:12px;background:#fff;font-size:9px}
+.iph-hd img{width:16px;height:16px}.iph-hd b{flex:1}
+.iph-hd .bell{width:14px;height:14px;border-radius:5px;background:var(--capsule)}
+.iph-btc{padding:8px;border-radius:12px;background:#fff}
+.iph-btc .ir{display:flex;align-items:center;gap:4px;font-size:8px;font-weight:600;color:var(--muted)}
+.iph-btc img,.iph-list img{width:14px;height:14px}
+.iph-btc .ir span{flex:1}
+.iph-btc em,.iph-list em{font-style:normal;font-size:7.5px;font-weight:700;padding:2px 4px;border-radius:4px}
+.iph-chg,.iph-list .up{background:var(--upbg);color:var(--up)}.iph-list .down{background:var(--downbg);color:var(--down)}
+.iph-btc>b{display:block;margin:4px 0 2px;font-size:16px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.iph-btc svg{display:block;width:100%;height:34px}
+.iph-list{padding:2px 8px;border-radius:12px;background:#fff}
+.iph-list div{display:flex;align-items:center;gap:5px;padding:5px 0;font-size:8.5px;font-weight:700;border-bottom:1px solid var(--line)}
+.iph-list div:last-child{border:0}.iph-list span{flex:1}
+.iph-news{padding:8px;border-radius:12px;background:linear-gradient(135deg,#1845E7,#4A33C9);color:#fff}
+.iph-news .tg{display:inline-block;font-size:6.5px;font-weight:700;padding:2px 5px;border-radius:4px;background:rgba(255,255,255,.2);margin-bottom:4px}
+.iph-news b{display:block;font-size:9px;line-height:11.5px}
+.iph-tab{margin-top:auto;display:flex;justify-content:space-around;padding:9px 10px 14px;background:#fff;margin-inline:-8px}
+.iph-tab i{display:block;width:14px;height:14px;border-radius:5px;background:#DCE1EE}.iph-tab i.on{background:var(--blue)}
+.iph-glare{position:absolute;inset:7px;border-radius:28px;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 70%,rgba(255,255,255,.15) 100%);mix-blend-mode:screen}
+@media (prefers-reduced-motion:reduce){.iph{animation:none}}
+@media (max-width:1279px){.sub-app{padding-right:230px}}
+@media (max-width:560px){.sub-app{padding:24px 20px 300px;min-height:0}.iph-wrap{right:50%;margin-right:-86px;top:auto;bottom:-120px}}
+.iph-chg.neg{background:var(--downbg);color:var(--down)}
+/* подписка: фон — цепочка блоков с бегущими импульсами */
+.sm-bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.85}
+.sub-tg{position:relative;overflow:hidden;isolation:isolate}
+.sub-mail h2{max-width:none;font-size:clamp(30px,2.9vw,42px);line-height:1.1}
+.sub-mail-t{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:stretch}
+.sub-mail .mail-form{grid-row:1/span 3;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.perks .ic{color:#fff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.perks li{height:34px;padding:0 13px 0 10px;gap:7px}
+@media (max-width:1099px){.sub-mail-t{grid-template-columns:minmax(0,1fr)}.sub-mail .mail-form{grid-row:auto}}
+@media (min-width:1100px){.sub-mail{padding:60px}}
+/* кнопки сторов одной ширины; в подвале — те же кнопки на тёмном */
+.sub-app .stores .store{width:204px;height:56px;padding:0 20px;gap:12px;justify-content:center}
+.ft-stores{flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px}
+.ft-stores .store{width:204px;height:56px;padding:0 20px;gap:12px;justify-content:center;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);transition:background .2s,box-shadow .2s,transform .2s}
+.ft-stores .store:hover{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transform:translateY(-2px)}
+/* кнопка «наверх» с кольцом прогресса прокрутки */
+.totop{position:fixed;right:24px;bottom:24px;z-index:60;width:56px;height:56px;border:0;border-radius:50%;padding:0;cursor:pointer;display:grid;place-items:center;color:#fff;background:var(--blue);
+ box-shadow:0 14px 30px -12px rgba(24,69,231,.8);opacity:0;transform:translateY(16px) scale(.9);transition:opacity .25s,transform .25s cubic-bezier(.2,.7,.2,1),background .2s}
+.totop[hidden]{display:grid}
+.totop.on{opacity:1;transform:none}
+.totop:not(.on){pointer-events:none}
+.totop:hover{background:var(--blue2)}
+.totop:hover .totop-ar{transform:translateY(-3px)}
+.totop:focus-visible{outline:3px solid #9DB8FF;outline-offset:3px}
+.totop-ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.totop-ring circle{fill:none;stroke:rgba(255,255,255,.22);stroke-width:2.5}
+.totop-ring .pr{stroke:#fff;stroke-linecap:round;stroke-dasharray:163.4;stroke-dashoffset:163.4}
+.totop-ar{position:relative;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+@media (max-width:767px){.totop{right:16px;bottom:16px;width:50px;height:50px}}
+/* ссылки в шапках блоков: синий текст и стрелка вместо кнопки */
+.sec-h>.btn-o,.sec-h>.btn-d{height:auto;padding:6px 0;border-radius:0;background:none;box-shadow:none;border:0;color:var(--blue);font-size:15px;font-weight:600;gap:8px;width:auto;transition:color .2s}
+.sec-h>.btn-o::after,.sec-h>.btn-d::after{content:"";width:18px;height:18px;flex-shrink:0;background:currentColor;transition:transform .2s;
+ -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
+.sec-h>.btn-o:hover,.sec-h>.btn-d:hover{background:none;color:var(--blue2)}
+.sec-h>.btn-o:hover::after,.sec-h>.btn-d:hover::after{transform:translateX(4px)}
+.sec-h>.btn-d{color:#9DB8FF}.sec-h>.btn-d:hover{color:#fff}
+/* поиск в шапке — всегда компактная кнопка */
+.hdr.wide-search .search{width:44px;padding:0;justify-content:center;border-radius:14px}
+.hdr.wide-search .search span{display:none}
+/* соцсети в фирменных цветах: шапка, подвал, мобильное меню */
+.hsoc{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.bs{width:40px;height:40px;flex:0 0 40px;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform .2s cubic-bezier(.2,.7,.2,1),box-shadow .2s,filter .2s}
+.bs:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.bs-tg{background:#229ED9;box-shadow:0 6px 14px -8px rgba(34,158,217,.9)}
+.bs-vk{background:#0077FF;box-shadow:0 6px 14px -8px rgba(0,119,255,.9)}
+.bs-yt{background:#FF0033;box-shadow:0 6px 14px -8px rgba(255,0,51,.9)}
+.bs-dz{background:#000;box-shadow:0 6px 14px -8px rgba(0,0,0,.6)}
+.hdr.tiny .hsoc .bs:not(.bs-tg){display:none}
+@media (max-width:560px){.hsoc .bs:not(.bs-tg){display:none}}
+.soc .bs{width:44px;height:44px;flex-basis:44px;border-radius:14px}
+.soc a.bs-tg,.soc a.bs-tg:hover{background:#229ED9}.soc a.bs-vk{background:#0077FF}.soc a.bs-dz{background:#000}.soc a.bs-yt{background:#fff}
+.soc a.bs-tg:hover{background:#229ED9}.soc a.bs-vk:hover{background:#0077FF}.soc a.bs-yt:hover{background:#fff}.soc a.bs-dz:hover{background:#000}
+.soc .bs-dz{box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.video .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video.is-playing{cursor:default}
+.lnk-ar{display:inline-flex;align-items:center;gap:6px}
+.lnk-ar::after{content:"";width:16px;height:16px;flex-shrink:0;background:currentColor;transition:transform .2s;
+ -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
+.lnk-ar:hover::after{transform:translateX(4px)}
+/* поля формы подписки: мягкая заливка, иконка внутри, выразительный фокус */
+.mail-form .fld{gap:8px;font-size:13px;color:#3D4470}
+.mail-form .fld input{height:54px;padding:0 16px 0 46px;border:1.5px solid transparent;border-radius:16px;background-color:#F3F5FB;background-repeat:no-repeat;background-position:16px 50%;background-size:19px;font-size:15px;transition:background-color .2s,border-color .2s,box-shadow .2s}
+.mail-form .fld input::placeholder{color:#9AA1B5}
+.mail-form .fld input:hover{background-color:#ECEFF8}
+.mail-form .fld input:focus{background-color:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(24,69,231,.12),0 8px 20px -12px rgba(24,69,231,.45)}
+.mail-form .fld input[name=name]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A92B2' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='3.6'/%3E%3Cpath d='M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6'/%3E%3C/svg%3E")}
+.mail-form .fld input[name=name]:focus{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231845E7' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='3.6'/%3E%3Cpath d='M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6'/%3E%3C/svg%3E")}
+.mail-form .fld input[name=email]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A92B2' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='m4 7 8 6 8-6'/%3E%3C/svg%3E")}
+.mail-form .fld input[name=email]:focus{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231845E7' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='m4 7 8 6 8-6'/%3E%3C/svg%3E")}
+.mail-form .fld.bad input{border-color:var(--down);background-color:#FFF5F6}
+.mail-form .mail-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.mail-form .mail-row .btn{grid-column:1/-1;margin-top:10px;height:54px;border-radius:16px;justify-content:center;box-shadow:0 10px 22px -10px rgba(24,69,231,.7)}
+@media (max-width:560px){.mail-form .mail-row{grid-template-columns:minmax(0,1fr)}}
+/* шапка: соцсети вдвое меньше; поиск — контурный круг, ЛК — плашка «Войти» */
+.hsoc{gap:6px;margin-right:6px}
+.hsoc .bs{width:32px;height:32px;flex:0 0 32px;border-radius:10px;box-shadow:none}
+.hsoc .bs svg{width:17px;height:17px}
+.hsoc .bs-yt svg{width:17px;height:17px}.hsoc .bs-dz svg{width:15px;height:15px}
+.hdr .search,.hdr.wide-search .search{width:44px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 1.5px #E1E4EE;color:var(--ink);transition:box-shadow .2s,color .2s,background .2s}
+.hdr .search:hover{background:#F5F7FF;box-shadow:inset 0 0 0 1.5px var(--blue);color:var(--blue)}
+.hdr .usr{width:auto;flex:0 0 auto;gap:8px;padding:0 16px 0 13px;border-radius:100px;font-size:14px;font-weight:600;color:var(--ink);transition:background .2s,color .2s}
+.hdr .usr:hover{background:var(--bsoft);color:var(--blue)}
+/* корешок билета всегда синий и шире */
+.tk{--cut:124px}
+.tk-s{background:linear-gradient(160deg,#2E5BFF,#1845E7);color:#fff;border-right:2px dashed rgba(24,69,231,.35)}
+.tk-s small{color:#C7D2FF}
+.tk:hover .tk-s{background:linear-gradient(160deg,#1845E7,#1236C4)}
+@media (max-width:767px){.tk{--cut:100px}}
+/* двоеточия между ячейками отсчёта */
+.cd{gap:20px}
+.cd div{position:relative}
+.cd div:not(:last-child)::after{content:":";position:absolute;right:-15px;top:50%;transform:translateY(-55%);width:10px;text-align:center;font-size:30px;line-height:1;font-weight:700;color:#fff;animation:none}
+@media (max-width:767px){.cd{gap:14px}.cd div:not(:last-child)::after{right:-12px;font-size:22px}}
+/* путь новичка: номер шага в заголовке вместо плашки на фото */
+.step .sn{font-weight:800;color:var(--blue);margin-right:6px;font-variant-numeric:tabular-nums}
+/* словарь: поле без обводки, «Спросить редакцию» синяя */
+.term input{border:0;box-shadow:0 1px 2px rgba(16,24,64,.06)}
+.term input:focus{box-shadow:0 0 0 2px var(--blue),0 0 0 6px rgba(24,69,231,.14)}
+.dict .ask .btn{background:var(--blue);color:#fff;box-shadow:none}
+.dict .ask .btn:hover{background:var(--blue2)}
+/* достижения: у каждой иллюстрации своя композиция при общем стиле */
+/* эксперты — ряд аватаров вокруг центральной плитки */
+.ill--team .team{display:flex;align-items:center}
+.ill--team .fc{width:40px;height:40px;border-radius:14px;background:#fff;color:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(16,24,64,.08),0 10px 18px -10px rgba(24,69,231,.5);animation:tileFloat 4s ease-in-out infinite}
+.ill--team .fc svg,.ill--wave svg,.ill--stack .sat svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ill--team .f1{margin-right:-8px;scale:.8;opacity:.75;animation-delay:-1s}
+.ill--team .f2{margin-right:-10px;z-index:1;animation-delay:-2s}
+.ill--team .f3{margin-left:-10px;z-index:1;animation-delay:-3s}
+.ill--team .f4{margin-left:-8px;scale:.8;opacity:.75}
+.ill--team .tile{z-index:2}
+.ill--team .cnt{top:12px;right:50%;translate:96px 0}
+.ach a:hover .ill--team .f2{translate:-6px 0}.ach a:hover .ill--team .f3{translate:6px 0}
+.ill--team .fc{transition:translate .35s cubic-bezier(.2,.7,.2,1)}
+/* интервью — эквалайзер по бокам */
+.ill--wave{grid-auto-flow:column;gap:12px;justify-content:center}
+.ill--wave .eqs{display:flex;align-items:center;gap:4px;height:56px}
+.ill--wave .eqs i{display:block;width:5px;height:100%;border-radius:3px;background:linear-gradient(180deg,#7AA0FF,#1845E7);transform-origin:center;animation:eqB 1.1s ease-in-out infinite}
+.ill--wave .eqs i:nth-child(1){animation-delay:-.2s;opacity:.4}.ill--wave .eqs i:nth-child(2){animation-delay:-.6s;opacity:.6}.ill--wave .eqs i:nth-child(3){animation-delay:-.1s;opacity:.8}.ill--wave .eqs i:nth-child(4){animation-delay:-.8s}.ill--wave .eqs i:nth-child(5){animation-delay:-.4s}
+.ill--wave .eqs.r{flex-direction:row-reverse}
+.ill--wave .live{top:auto;bottom:10px;left:50%;translate:-50% 0;gap:6px;padding:0 10px;color:var(--ink)}
+.ill--wave .live b{width:7px;height:7px;border-radius:50%;background:#FF0033;box-shadow:0 0 0 3px rgba(255,0,51,.18);animation:blink 1.4s ease-in-out infinite}
+@keyframes eqB{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.ach a:hover .ill--wave .eqs i{animation-duration:.5s}
+/* форумы — стопка карточек-бейджей за календарём */
+.ill--stack .pg{position:absolute;left:50%;top:50%;width:64px;height:64px;border-radius:20px;background:#DCE3FF;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.ill--stack .p1{transform:translate(-50%,-50%) translate(-38px,8px) rotate(-16deg);background:#E7ECFF}
+.ill--stack .p2{transform:translate(-50%,-50%) translate(-19px,4px) rotate(-8deg);background:#C9D4FF}
+.ill--stack .tile{rotate:4deg}
+.ill--stack .tile .dt{position:absolute;bottom:13px;left:0;right:0;text-align:center;font-size:10px;font-weight:800;color:#fff}
+.ill--stack .tile svg{translate:0 -4px}
+.ill--stack .pin{bottom:14px;left:50%;translate:12px 0;gap:5px;padding:0 9px;color:var(--ink)}
+.ill--stack .pin svg{color:var(--blue)}
+.ach a:hover .ill--stack .p1{transform:translate(-50%,-50%) translate(-50px,10px) rotate(-22deg)}
+.ach a:hover .ill--stack .p2{transform:translate(-50%,-50%) translate(-27px,5px) rotate(-11deg)}
+.ill--team .sat,.ill--wave .sat,.ill--stack .sat{animation:none}
+@media (prefers-reduced-motion:reduce){.ill--wave .eqs i{animation:none;transform:scaleY(.6)}}
+/* голоса индустрии: крупная цитата эксперта вместо списка */
+.voices{padding:26px 28px 24px;position:relative;overflow:hidden;isolation:isolate;
+ background:radial-gradient(70% 60% at 100% 0%,rgba(76,116,255,.35),transparent 70%),radial-gradient(60% 50% at 0% 100%,rgba(122,75,247,.25),transparent 70%),var(--ink2)}
+.vq-head{display:flex;align-items:center;gap:14px}
+.vq-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9BDFF;white-space:nowrap}
+.vq-bar{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.vq-bar i{display:block;height:100%;width:0;background:#fff;border-radius:inherit}
+.vq-bar i.run{animation:vqBar var(--vq,7s) linear forwards}
+.voices:hover .vq-bar i.run{animation-play-state:paused}
+@keyframes vqBar{to{width:100%}}
+.vq{flex:1;display:flex;flex-direction:column;margin:22px 0 0;transition:opacity .35s,transform .35s}
+.vq.out{opacity:0;transform:translateY(8px)}
+.vq-mark{fill:var(--blue);opacity:.9;flex-shrink:0}
+.vq blockquote{margin:16px 0 0;font-size:clamp(19px,1.6vw,23px);line-height:1.38;font-weight:600;letter-spacing:-.01em;color:#fff}
+.vq figcaption{margin-top:auto;padding-top:20px}
+.vq-who{display:flex;align-items:center;gap:14px}
+.vq-who img{width:56px;height:56px;border-radius:50%;object-fit:cover;transform:scale(1.001);box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+.vq-who b{display:block;font-size:16px;line-height:21px;color:#fff}
+.vq-who small{display:block;font-size:13px;line-height:18px;color:var(--mutedD)}
+.vq-who:hover b{color:#A9BDFF}
+.vq-avs{display:flex;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--lineD)}
+.vq-av{width:44px;height:44px;flex:0 0 44px;border:0;padding:0;border-radius:50%;overflow:hidden;cursor:pointer;background:#2A3270;opacity:.5;filter:grayscale(.6);box-shadow:0 0 0 2px transparent;transition:opacity .2s,filter .2s,box-shadow .2s,transform .2s}
+.vq-av img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);display:block}
+.vq-av:hover{opacity:.85;filter:none;transform:translateY(-2px)}
+.vq-av[aria-selected="true"]{opacity:1;filter:none;box-shadow:0 0 0 2px var(--ink2),0 0 0 4px var(--blue)}
+.vq-av:focus-visible{outline:2px solid #9DB8FF;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.vq{transition:none}.vq-bar{display:none}}
+@media (max-width:767px){.voices{padding:22px 18px}.vq-av{width:40px;height:40px;flex-basis:40px}}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+<!-- Блок 0. Срочно: появляется, только когда редактор ставит срочную новость -->
+<div class="urgent" id="urgent">
+<div class="wrap">
+<b>Срочно</b>
+<a href="https://blockchain24.pro/events">The Trends пройдёт в Москве 17–19 ноября: главное о форуме и программе</a>
+<time datetime="2026-11-02">Сегодня</time>
+<button type="button" aria-label="Скрыть срочную новость" id="urgentClose"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</div>
+<div class="wrap hdr-in">
+<div class="card hdr-card" id="hdrCard">
+<div class="hdr-l">
+<button class="ibtn burger" type="button" aria-label="Открыть меню" data-open="menu"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11"/></svg></button>
+<a class="logo" href="https://blockchain24.pro/" aria-label="Blockchain24 — на главную">
+<img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'">
+<span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span>
+</a>
+</div>
+<nav class="capsule" aria-label="Разделы">
+<a href="https://blockchain24.pro/" aria-current="page">Главная</a>
+<a href="https://blockchain24.pro/news">Новости</a>
+<a href="https://blockchain24.pro/articles">Аналитика</a>
+<a href="https://blockchain24.pro/interview">Интервью</a>
+<a href="https://blockchain24.pro/abc">Азбука</a>
+<a href="https://blockchain24.pro/coins">Курсы</a>
+<a href="https://blockchain24.pro/events">События</a>
+</nav>
+<div class="hdr-act">
+<div class="hsoc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+<button class="search" type="button" data-open="search" aria-label="Поиск по журналу"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Поиск по журналу</span></button>
+<a class="ibtn usr" href="https://blockchain24.pro/login" aria-label="Личный кабинет"><svg class="ic" width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Войти</span></a>
+<a class="btn btn-p cta-l" href="#subscribe" style="height:44px">Подписаться</a>
+<a class="btn btn-p cta-s" href="#subscribe">Подписка</a>
+</div>
+</div>
+<div class="hdr-row" id="row2">
+<div class="rates" aria-label="Курсы криптовалют" id="hdrRates"></div>
+<div class="topics"><span>Темы дня</span><a href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov">ETF</a><a href="https://blockchain24.pro/sber-prisoyedinyayetsya-k-testirovaniyu-tsifrovogo-rublya-s-realnymi-kliyentami">Цифровой рубль</a><a href="https://blockchain24.pro/regulirovaniye-kriptovalyut-v-rossii-v-2023-godu">Регулирование</a></div>
+</div>
+</div>
+</header>
+<div id="hdrSpace" aria-hidden="true"></div>
+
+<main>
+<h1 class="sr">Blockchain24 — новости криптовалют и блокчейна</h1>
+
+<!-- 1. Первая полоса -->
+<section class="wrap fold" aria-label="Главное сейчас" id="fold">
+<article class="card top hov">
+<a href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov" class="media">
+<span class="ml">top-story.jpg · 1600×900</span>
+<img src="./img/top-story.jpg" alt="" onerror="this.remove()">
+<span class="chips"><span class="chip-b">Тема дня</span><span class="chip-w">Рынок</span></span>
+</a>
+<div class="top-b">
+<h2><a class="hl cl t-hero" href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov">Фейковая новость об одобрении ETF подняла курс биткоина почти до 30 000 долларов</a></h2>
+<div class="meta"><span>Новости</span><time datetime="2023-10-16">16 октября 2023</time></div>
+<div class="means">
+<span class="sq" aria-hidden="true"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" style="color:#fff"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3Z"/></svg></span>
+<span><b>Что это значит</b><span>Рынок реагирует на слухи быстрее, чем на факты. Прежде чем покупать на новости, проверьте первоисточник: сайт регулятора или самой компании.</span></span>
+</div>
+</div>
+</article>
+
+<section class="card side fit" aria-labelledby="impT" id="impCol">
+<div class="blk-h"><h2 id="impT">Важное</h2><a class="lnk" href="https://blockchain24.pro/top-news">Все</a></div>
+<a class="imp-first hov" href="https://blockchain24.pro/sber-prisoyedinyayetsya-k-testirovaniyu-tsifrovogo-rublya-s-realnymi-kliyentami">
+<span class="media r16x9"><span class="ml">important-1.jpg · 800×450</span><img src="./img/important-1.jpg" alt="" onerror="this.remove()"></span>
+<span class="meta"><span class="tag">Цифровой рубль</span><time datetime="2023-10-12">12 октября 2023</time></span>
+<h3 class="hl cl t-card">Сбер начал тестировать цифровой рубль с реальными клиентами</h3>
+</a>
+<div class="imp-list" data-fit>
+<a class="imp-row hov" href="https://blockchain24.pro/nyneshny-cto-kompanii-tether-paolo-ardoino-naznachen-novym-ceo"><span class="media r1"><span class="ml">2</span><img src="./img/important-2.jpg" alt="" onerror="this.remove()"></span><span><time class="meta" datetime="2023-10-13">13 октября 2023</time><h3 class="hl cl t-sm">Паоло Ардоино стал новым CEO Tether</h3></span></a>
+<a class="imp-row hov" href="https://blockchain24.pro/protiv-benkmana-frida-dayut-pokazaniya-kollegi-podtverzhdaya-rastratu-sredstv-kliyentov-ftx"><span class="media r1"><span class="ml">3</span><img src="./img/important-3.jpg" alt="" onerror="this.remove()"></span><span><time class="meta" datetime="2023-10-10">10 октября 2023</time><h3 class="hl cl t-sm">Коллеги Бэнкмана-Фрида подтвердили растрату в FTX</h3></span></a>
+<a class="imp-row hov" href="https://blockchain24.pro/web3-igry-v-tretyem-kvartale-privlekli-boleye-600-mln-dollarov-investitsy"><span class="media r1"><span class="ml">4</span><img src="./img/important-4.jpg" alt="" onerror="this.remove()"></span><span><time class="meta" datetime="2023-10-13">13 октября 2023</time><h3 class="hl cl t-sm">Web3-игры привлекли 600 млн долларов за квартал</h3></span></a>
+</div>
+</section>
+
+<section class="feed" aria-labelledby="feedT" id="feedCol">
+<div class="blk-h"><h2 id="feedT">Лента</h2><span>обновлено 2 минуты назад</span></div>
+<div class="seg" role="tablist" aria-label="Режим ленты">
+<button type="button" role="tab" aria-selected="true" aria-controls="pNew" id="tNew">Только что</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pTop" id="tTop">Популярное</button>
+</div>
+<div class="panel open" id="pNew" role="tabpanel" aria-labelledby="tNew">
+<button type="button" class="acc-h" aria-expanded="true">Только что<svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="feed-list" data-fit>
+<a class="fi" href="https://blockchain24.pro/unikalny-kross-industrialny-tekhnologichesky-forum-the-trends-uspeshno-startoval"><time datetime="2023-12-26">26.12</time><span class="cl t-row">Стартовал форум The Trends</span></a>
+<a class="fi" href="https://blockchain24.pro/forum-blockchain-life-2024-v-dubaye-gotovy-li-vy-k-to-the-moon"><time datetime="2023-10-26">26.10</time><span class="cl t-row">Blockchain Life 2024: чего ждать от форума</span></a>
+<a class="fi hot" href="https://blockchain24.pro/everscale-ever-za-sutki-poteryal-20-protsentov-stoimosti-na-novosti-o-krazhe-tokenov"><time datetime="2023-10-20">20.10</time><span class="cl t-row">Everscale потерял 20% после кражи токенов</span></a>
+<a class="fi" href="https://blockchain24.pro/sazmining-zapustila-ekologichnuyu-mayning-ploshchadku-v-paragvaye"><time datetime="2023-10-18">18.10</time><span class="cl t-row">Sazmining открыла ферму в Парагвае</span></a>
+<a class="fi" href="https://blockchain24.pro/rukovoditel-blackrock-dal-intervyu-posle-feykovoy-novosti-ob-odobrenii-etf"><time datetime="2023-10-17">17.10</time><span class="cl t-row">Глава BlackRock ответил на фейк об ETF</span></a>
+<a class="fi" href="https://blockchain24.pro/avstralii-vvodit-litsenzirovaniye-dlya-kriptobirzh"><time datetime="2023-10-16">16.10</time><span class="cl t-row">Австралия вводит лицензии для криптобирж</span></a>
+<a class="fi" href="https://blockchain24.pro/kitayskaya-it-korporatsiya-tencent-vvodit-uslugi-smart-kontraktov-v-tsifrovykh-yuanyakh"><time datetime="2023-10-15">15.10</time><span class="cl t-row">Tencent запустила смарт-контракты в юанях</span></a>
+<a class="fi" href="https://blockchain24.pro/koshelek-metamask-udalen-iz-marketpleysa-apple-app-store"><time datetime="2023-10-14">14.10</time><span class="cl t-row">MetaMask удалили из Apple App Store</span></a>
+<a class="fi" href="https://blockchain24.pro/usdc-ot-circle-teper-dostupen-v-osnovnoy-seti-polygon"><time datetime="2023-10-11">11.10</time><span class="cl t-row">USDC от Circle вышел в сети Polygon</span></a>
+<a class="fi" href="https://blockchain24.pro/khakery-vernuli-birzhe-htx-8-mln-dollarov-i-poluchili-obeshchanoye-voznagrazhdeniye-v-razmere-250-eth"><time datetime="2023-10-09">09.10</time><span class="cl t-row">Хакеры вернули HTX 8 млн долларов</span></a>
+</div>
+</div>
+<div class="panel" id="pTop" role="tabpanel" aria-labelledby="tTop" hidden>
+<button type="button" class="acc-h" aria-expanded="false">Популярное<svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="feed-list" data-fit>
+<a class="fi" href="https://blockchain24.pro/kak-podgotovitsya-k-ozhidayemomu-rostu-kriptovalyutnogo-rynka"><time>1</time><span class="cl t-row">Как подготовиться к росту рынка</span></a>
+<a class="fi" href="https://blockchain24.pro/v-rossii-teper-dostupen-servis-dlya-transgranichnykh-raschetov-v-kriptovalyute"><time>2</time><span class="cl t-row">Сервис расчётов в криптовалюте в России</span></a>
+<a class="fi" href="https://blockchain24.pro/kurs-bitkoina"><time>3</time><span class="cl t-row">Курс биткоина онлайн: график</span></a>
+<a class="fi" href="https://blockchain24.pro/chto-takoye-kriptovalyuta-i-kak-ona-rabotayet"><time>4</time><span class="cl t-row">Что такое криптовалюта простыми словами</span></a>
+<a class="fi" href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty"><time>5</time><span class="cl t-row">Законен ли майнинг в России</span></a>
+<a class="fi" href="https://blockchain24.pro/chto-budet-s-bitkoinom-pozitivnye-i-negativnye-scenarii-razvitiya-sobytij"><time>6</time><span class="cl t-row">Что будет с биткоином: два сценария</span></a>
+<a class="fi" href="https://blockchain24.pro/bitcoin-ili-ethereum-kuda-luchshe-investirovat-segodnya"><time>7</time><span class="cl t-row">Биткоин или Ethereum: что выбрать</span></a>
+<a class="fi" href="https://blockchain24.pro/chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token"><time>8</time><span class="cl t-row">NFT-токены простыми словами</span></a>
+</div>
+</div>
+<a class="btn btn-w" href="https://blockchain24.pro/news">Вся лента</a>
+</section>
+</section>
+
+<!-- 2. Рынок сегодня -->
+<section class="wrap sec" id="market" aria-labelledby="mktT">
+<div class="sec-h">
+<div><h2 id="mktT">Рынок сегодня</h2><p id="mktStatus">Данные CoinGecko, обновляются каждую минуту</p></div>
+<div class="mkt-act">
+<div class="pill-sw" role="group" aria-label="Валюта цены"><button type="button" aria-pressed="true" data-cur="usd">$</button><button type="button" aria-pressed="false" data-cur="rub">₽</button></div>
+<button class="btn btn-p" type="button" data-modal="alert" data-coin="bitcoin"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 21h4"/></svg>Оповестить о цене</button>
+</div>
+</div>
+<div class="mkt">
+<a class="card btc" href="https://blockchain24.pro/kurs-bitkoina" id="btcCard">
+<div class="coin-h"><span class="sq coin" style="background:#F7931A">₿<img src="https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png" alt="" onerror="this.parentNode.classList.remove('coin');this.remove()"></span><span><b>Bitcoin</b><small>BTC</small></span>
+<span class="per" role="group" aria-label="Период графика"><button type="button" aria-pressed="false" data-per="1">24 часа</button><button type="button" aria-pressed="true" data-per="7">7 дней</button><button type="button" aria-pressed="false" data-per="30">30 дней</button></span></div>
+<div class="btc-p"><strong id="btcPrice">77 818,51 $</strong><span class="chg down" id="btcChg">▼ 0,03% за 24 часа</span></div>
+<div class="chart"><svg viewBox="0 0 600 160" aria-hidden="true" id="btcChart"></svg></div>
+<div class="btc-f"><span>Объём за 24 часа <b id="btcVol">$10,70 млрд</b></span><span>Капитализация <b id="btcCap">$1,56 трлн</b></span></div>
+</a>
+<div class="card tbl" role="table" aria-label="Курсы криптовалют">
+<div class="tr th" role="row"><span role="columnheader">Монета</span><span role="columnheader" style="text-align:right" id="priceHead">Цена, $</span><span role="columnheader" style="text-align:right">24 часа</span><span role="columnheader"><span class="sr">Оповещение</span></span></div>
+<div id="coinRows"></div>
+</div>
+<div class="card lead-c" id="leadCard">
+<h3>Лидеры суток в топ-50</h3>
+<div><div class="lead-sub up"><span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></span>Рост</div><div id="leadUp"></div></div>
+<div><div class="lead-sub down"><span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 5v14M5.5 12.5 12 19l6.5-6.5"/></svg></span>Падение</div><div id="leadDown"></div></div>
+<div class="digest" id="digest"><b>Сводка рынка</b><span id="digestTxt">Биткоин за сутки почти не изменился и держится около 77 800 $. Сильнее всего среди топ-50 выросли Solana и XRP, в минусе — BNB и Ethereum.</span></div>
+</div>
+</div>
+<p class="mkt-note" id="mktNote">Котировки: CoinGecko, резервный источник — Coinpaprika. Не является инвестиционной рекомендацией.</p>
+</section>
+
+<div class="wrap sec"><div class="ad ad-wide" role="complementary" aria-label="Рекламное место"><b>Реклама</b>1312×250 на всю ширину контента, маркировка и erid рекламодателя</div></div>
+
+<!-- 3. Выбор редакции -->
+<section class="wrap sec" aria-labelledby="picksT">
+<div class="sec-h"><div><h2 id="picksT">Выбор редакции</h2><p>Материалы, которые стоит прочитать на этой неделе</p></div><a class="btn btn-o" href="https://blockchain24.pro/articles">Вся аналитика</a></div>
+<div class="picks" id="picks">
+<a class="card pick wide hov" href="https://blockchain24.pro/v-rossii-teper-dostupen-servis-dlya-transgranichnykh-raschetov-v-kriptovalyute" draggable="false">
+<span class="media"><span class="ml">pick-1.jpg · 1200×600</span><img src="./img/pick-1.jpg" alt="" draggable="false" onerror="this.remove()"></span>
+<span class="pick-b"><span class="meta"><span class="tag">Материал месяца</span></span><span class="hl cl t-card">В России заработал сервис для трансграничных расчётов в криптовалюте</span><span class="cl lead">Как работает сервис</span></span>
+</a>
+<a class="card pick hov" href="https://blockchain24.pro/kak-podgotovitsya-k-ozhidayemomu-rostu-kriptovalyutnogo-rynka" draggable="false">
+<span class="media"><span class="ml">pick-2.jpg · 800×600</span><img src="./img/pick-2.jpg" alt="" draggable="false" onerror="this.remove()"></span>
+<span class="pick-b"><span class="meta"><span class="tag">Материал недели</span></span><span class="hl cl t-card">Как подготовиться к ожидаемому росту криптовалютного рынка</span><span class="cl lead">Что сделать заранее</span></span>
+</a>
+<a class="card pick hov" href="https://blockchain24.pro/blockchain-life-2023-v-dubaye-trend-opredelivshy-gryadushchy-bullran" draggable="false">
+<span class="media"><span class="ml">pick-3.jpg · 800×600</span><img src="./img/pick-3.jpg" alt="" draggable="false" onerror="this.remove()"></span>
+<span class="pick-b"><span class="meta"><span class="tag">Репортаж</span></span><span class="hl cl t-card">Blockchain Life в Дубае: тренд, определивший будущий буллран</span><span class="cl lead">Главное с форума</span></span>
+</a>
+<a class="card pick hov" href="https://blockchain24.pro/kak-otsenit-potentsial-it-i-blockchain-proyektov-na-legat-business-congress" draggable="false">
+<span class="media"><span class="ml">pick-4.jpg · 800×600</span><img src="./img/pick-4.jpg" alt="" draggable="false" onerror="this.remove()"></span>
+<span class="pick-b"><span class="meta"><span class="tag">Аналитика</span></span><span class="hl cl t-card">Как оценить потенциал IT- и блокчейн-проектов: советы с Legat Business Congress</span><span class="cl lead">Критерии для инвестора</span></span>
+</a>
+</div>
+<div class="sl-ctrl"><div class="dots" id="dots"></div><div class="arrows"><button class="ibtn" type="button" id="prev" aria-label="Предыдущий материал"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button class="ibtn" type="button" id="next" aria-label="Следующий материал"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div>
+</section>
+
+<!-- 4. Рубрики -->
+<section class="wrap sec" aria-labelledby="rubT">
+<div class="sec-h"><div><h2 id="rubT">По рубрикам</h2></div><a class="btn btn-o" href="https://blockchain24.pro/news">Все новости</a></div>
+<div class="rubs">
+<div class="card rub open">
+<button class="rub-h" type="button" aria-expanded="true"><h3>Регулирование в России</h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="rub-body">
+<a class="rub-lead hov" href="https://blockchain24.pro/regulirovaniye-kriptovalyut-v-rossii-v-2023-godu"><span class="media r1"><span class="ml">rubric-1.jpg</span><img src="./img/rubric-1.jpg" alt="" onerror="this.remove()"></span><span class="hl cl t-sm">Регулирование криптовалют в России: что изменилось</span></a>
+<a class="rub-i hov" href="https://blockchain24.pro/kriptoregulirovaniye-v-rossii-itogi-2022-goda-tekushcheye-sostoyaniye-i-prognozy-na-2023-god"><span class="hl cl t-row">Крипторегулирование в России: итоги года и прогнозы</span><time datetime="2022-12-30">30 декабря 2022</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/kakiye-izmeneniya-zhdut-sferu-kriptoregulirovaniya-v-2023-godu"><span class="hl cl t-row">Какие изменения ждут рынок цифровых активов</span><time datetime="2022-12-30">30 декабря 2022</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty"><span class="hl cl t-row">Законен ли майнинг и какие налоги платить</span><time>Азбука</time></a>
+</div>
+<a class="lnk lnk-ar" href="https://blockchain24.pro/news">Все материалы рубрики</a>
+</div>
+<div class="card rub">
+<button class="rub-h" type="button" aria-expanded="false"><h3>Рынок и биржи</h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="rub-body">
+<a class="rub-lead hov" href="https://blockchain24.pro/ethereum-foundation-prodala-chast-eth-i-tem-samym-uronila-stoimost-efira"><span class="media r1"><span class="ml">rubric-2.jpg</span><img src="./img/rubric-2.jpg" alt="" onerror="this.remove()"></span><span class="hl cl t-sm">Ethereum Foundation продала часть ETH и уронила стоимость эфира</span></a>
+<a class="rub-i hov" href="https://blockchain24.pro/sovety-treyderam-i-investoram-na-2023-god"><span class="hl cl t-row">Советы трейдерам и инвесторам на новый год</span><time datetime="2022-12-30">30 декабря 2022</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/strategii-investirovaniya-na-2023-god"><span class="hl cl t-row">Стратегии инвестирования в криптовалюту</span><time datetime="2022-12-29">29 декабря 2022</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/itogi-i-prognozy-kakim-byl-2022-god-dlya-kriptindustrii-i-chego-zhdat-v-2023"><span class="hl cl t-row">Итоги и прогнозы для криптоиндустрии</span><time datetime="2022-12-29">29 декабря 2022</time></a>
+</div>
+<a class="lnk lnk-ar" href="https://blockchain24.pro/news">Все материалы рубрики</a>
+</div>
+<div class="card rub">
+<button class="rub-h" type="button" aria-expanded="false"><h3>Технологии и майнинг</h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<div class="rub-body">
+<a class="rub-lead hov" href="https://blockchain24.pro/kak-nachat-mayning-kriptovalyuty-poshagovaya-instruktsiya"><span class="media r1"><span class="ml">rubric-3.jpg</span><img src="./img/rubric-3.jpg" alt="" onerror="this.remove()"></span><span class="hl cl t-sm">Как начать майнинг криптовалюты: пошаговая инструкция</span></a>
+<a class="rub-i hov" href="https://blockchain24.pro/ethereum-perehod-na-pos"><span class="hl cl t-row">Переход Ethereum на Proof-of-Stake: что изменилось</span><time>Азбука</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/kak-zarabotat-odin-bitkoin-za-den-ili-za-mesyats-kak-dolgo-maynit-1-btc"><span class="hl cl t-row">Сколько времени нужно, чтобы добыть 1 BTC</span><time>Азбука</time></a>
+<a class="rub-i hov" href="https://blockchain24.pro/mayning-kto-takiye-maynery-i-kak-oni-zarabatyvayut"><span class="hl cl t-row">Кто такие майнеры и как они зарабатывают</span><time>Азбука</time></a>
+</div>
+<a class="lnk lnk-ar" href="https://blockchain24.pro/news">Все материалы рубрики</a>
+</div>
+</div>
+</section>
+
+<!-- 5. Подписка -->
+<section class="wrap sec" id="subscribe" aria-labelledby="subT">
+<div class="sub">
+<div class="sub-tg">
+<h2 id="subT">5 главных новостей за день — каждый вечер в Telegram</h2>
+<p>Короткая сводка без шума: что произошло на рынке и почему это важно. Срочное приходит сразу.</p>
+<ul aria-label="Что в канале"><li>Вечерний дайджест</li><li>Срочные новости</li><li>Курсы и графики</li></ul>
+<div class="acts">
+<a class="btn btn-w" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg>Открыть канал</a>
+<a class="btn btn-d" href="https://vk.com/blockchain_24" target="_blank" rel="noopener">Мы во ВКонтакте</a>
+</div>
+</div>
+<div class="card sub-app">
+<div class="app-t">
+<h3>Приложение Blockchain24</h3>
+<p>Лента, курсы и оповещения о цене монеты прямо в телефоне.</p>
+<div class="stores">
+<a class="store" href="https://apps.apple.com/us/app/blockchain24/id1558326386" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg><span><small>Загрузить в</small>App Store</span></a>
+<a class="store" href="https://play.google.com/store/apps/details?id=ru.devroom.blockchain24" target="_blank" rel="noopener"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M1 1.2 11.3 11 1 20.8c-.3-.2-.5-.6-.5-1V2.2c0-.4.2-.8.5-1Z" fill="#00D7FE"/><path d="m14.7 7.6-3.4 3.4L1 1.2c.2-.1.5-.2.8-.2.3 0 .5.1.8.2l12.1 6.4Z" fill="#00F076"/><path d="M14.7 14.4 2.6 20.8c-.3.1-.5.2-.8.2-.3 0-.6-.1-.8-.2L11.3 11l3.4 3.4Z" fill="#FF3A44"/><path d="M19 11c0 .6-.3 1.2-.9 1.5l-3.4 1.9-3.4-3.4 3.4-3.4 3.4 1.9c.6.3.9.9.9 1.5Z" fill="#FFD400"/></svg><span><small>Доступно в</small>Google Play</span></a>
+</div>
+</div>
+<div class="iph-wrap" aria-hidden="true"><div class="iph">
+<span class="iph-btn b1"></span><span class="iph-btn b2"></span><span class="iph-btn b3"></span><span class="iph-btn b4"></span>
+<div class="iph-scr">
+<div class="iph-sb"><b>9:41</b><span class="isl"></span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
+<div class="iph-hd"><img src="img/logo.svg" alt="" width="18" height="18" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><b>Blockchain24</b><span class="bell"></span></div>
+<div class="iph-btc"><div class="ir"><img src="https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png" alt=""><span>Bitcoin</span><em class="iph-chg" id="appChg">▲0,98%</em></div><b id="appBtc">78 465 $</b>
+<svg viewBox="0 0 140 40" preserveAspectRatio="none"><defs><linearGradient id="iphA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D6BFF" stop-opacity=".35"/><stop offset="1" stop-color="#3D6BFF" stop-opacity="0"/></linearGradient></defs><path d="M0 28C10 26 14 30 22 24S36 14 44 18 58 30 66 26 80 8 92 12 106 22 116 16 130 6 140 8V40H0Z" fill="url(#iphA)"/><path d="M0 28C10 26 14 30 22 24S36 14 44 18 58 30 66 26 80 8 92 12 106 22 116 16 130 6 140 8" fill="none" stroke="#1845E7" stroke-width="2"/></svg></div>
+<div class="iph-list">
+<div><img src="https://coin-images.coingecko.com/coins/images/279/large/ethereum.png" alt=""><span>ETH</span><em class="up">▲1,2%</em></div>
+<div><img src="https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png" alt=""><span>BNB</span><em class="up">▲1,3%</em></div>
+<div><img src="https://coin-images.coingecko.com/coins/images/4128/large/solana.png" alt=""><span>SOL</span><em class="down">▼0,5%</em></div>
+</div>
+<div class="iph-news"><span class="tg">Тема дня</span><b>Фейковая новость об ETF подняла курс биткоина</b></div>
+<div class="iph-tab"><i class="on"></i><i></i><i></i><i></i></div>
+</div>
+<span class="iph-glare"></span>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- 6. Голоса индустрии -->
+<section class="wrap sec" aria-labelledby="voicesT">
+<div class="voices">
+<div class="sec-h"><div><h2 id="voicesT">Голоса индустрии</h2><p>Интервью с первыми лицами и комментарии экспертов к темам дня</p></div><a class="btn btn-d" href="https://www.youtube.com/c/blockchain_24/videos" target="_blank" rel="noopener">Смотреть на YouTube</a></div>
+<div class="vgrid">
+<a class="video" href="https://youtu.be/nmSjor5heUI" target="_blank" rel="noopener" data-yt="nmSjor5heUI" aria-label="Смотреть интервью с Рафаэлем Манвеляном на YouTube">
+<span class="media r16x9"><span class="ml">video-cover.jpg · 1280×720</span><img src="img/video-cover.jpg" alt="" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/nmSjor5heUI/hqdefault.jpg'"><span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="#fff"/></svg></span></span>
+<span class="video-b"><span class="meta"><span>Интервью</span><time datetime="2022-08-01">1 августа 2022</time></span><span class="cl t-wide">Рафаэль Манвелян («Слёзы Сатоши»): манипуляции биткоином, Chia Network и скам-проекты</span></span>
+</a>
+<div class="experts voices" id="expCol">
+<!-- ЗАГЛУШКИ: цитаты ниже придуманы для макета, перед публикацией заменить на реальные высказывания экспертов -->
+<div class="vq-head"><span class="vq-k">Мнение эксперта</span><span class="vq-bar" aria-hidden="true"><i></i></span></div>
+<figure class="vq" aria-live="polite">
+<svg class="vq-mark" width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path d="M0 34V20.4C0 8.6 6.4 1.6 17.6 0l1.8 5.4C12.6 7 9.6 11 9.4 16H18v18Zm24.6 0V20.4C24.6 8.6 31 1.6 42.2 0L44 5.4C37.2 7 34.2 11 34 16h8.6v18Z"/></svg>
+<blockquote id="vqText"></blockquote>
+<figcaption><a class="vq-who" id="vqWho" href="#"><img id="vqImg" src="" alt="" width="56" height="56"><span><b id="vqName"></b><small id="vqRole"></small></span></a></figcaption>
+</figure>
+<div class="vq-avs" role="tablist" aria-label="Эксперты" id="vqAvs"></div>
+<a class="btn btn-p" href="https://blockchain24.pro/experts">Все эксперты</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. Наши достижения -->
+<section class="wrap sec" aria-labelledby="achT">
+<div class="sec-h"><div><h2 id="achT">Наши достижения</h2></div></div>
+<div class="ach">
+<a class="card big" href="https://blockchain24.pro/blockchain24-pro-luchshee-smi-kriptoindustrii-2022"><span class="ill" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"><span class="sat s1">2022</span><span class="sat s2"><svg width="14" height="14" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span></span><span class="tile"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8"/></svg></span></span><b class="cl">Лучшее СМИ<br>криптоиндустрии</b><span>Награда Blockchain Life 2022</span></a>
+<a class="card" href="https://blockchain24.pro/experts"><span class="ill ill--team" aria-hidden="true"><span class="team"><span class="fc f1"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.6"/><path d="M5.5 20c.8-3.4 3.4-5.3 6.5-5.3s5.7 1.9 6.5 5.3"/></svg></span><span class="fc f2"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.6"/><path d="M5.5 20c.8-3.4 3.4-5.3 6.5-5.3s5.7 1.9 6.5 5.3"/></svg></span><span class="tile"><svg width="30" height="30" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.7 2.6 3 5.2"/></svg></span><span class="fc f3"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.6"/><path d="M5.5 20c.8-3.4 3.4-5.3 6.5-5.3s5.7 1.9 6.5 5.3"/></svg></span><span class="fc f4"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.6"/><path d="M5.5 20c.8-3.4 3.4-5.3 6.5-5.3s5.7 1.9 6.5 5.3"/></svg></span></span><span class="sat cnt">300+</span></span><b class="cl">Сотрудничаем<br>с 300+ экспертами</b><span>Специалисты сферы криптовалют</span></a>
+<a class="card" href="https://www.youtube.com/c/blockchain_24/videos" target="_blank" rel="noopener"><span class="ill ill--wave" aria-hidden="true"><span class="eqs l"><i></i><i></i><i></i><i></i><i></i></span><span class="tile"><svg width="30" height="30" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/></svg></span><span class="eqs r"><i></i><i></i><i></i><i></i><i></i></span><span class="sat live"><b></b>Эфир</span></span><b class="cl">Интервью<br>с первыми лицами</b><span>Лидеры мнений на YouTube</span></a>
+<a class="card" href="https://blockchain24.pro/events"><span class="ill ill--stack" aria-hidden="true"><span class="pg p1"></span><span class="pg p2"></span><span class="tile"><svg width="30" height="30" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dt">17</span></span><span class="sat pin"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Москва</span></span><b class="cl">Участники<br>крупнейших форумов</b><span>Репортажи с площадок</span></a>
+</div>
+</section>
+
+<!-- 8. Азбука -->
+<section class="wrap sec" aria-labelledby="abcT">
+<div class="sec-h"><div><h2 id="abcT">Азбука блокчейна</h2><p>Путь от первого вопроса до уверенной покупки</p></div><a class="btn btn-o" href="https://blockchain24.pro/abc">Вся азбука</a></div>
+<div class="abc">
+<div class="card path">
+<div class="path-h"><h3>Путь новичка</h3><p>4 материала, читать по порядку</p></div>
+<ol class="steps" style="list-style:none;padding:0;margin-top:18px">
+<li><a class="step hov" href="https://blockchain24.pro/chto-takoye-kriptovalyuta-i-kak-ona-rabotayet"><span class="media"><span class="ml">abc-1.jpg · 600×600</span><img src="./img/abc-1.jpg" alt="" onerror="this.remove()"></span><span><em>Основы</em><span class="hl cl t-sm"><b class="sn">01</b>Что такое криптовалюта и как она работает</span></span></a></li>
+<li><a class="step hov" href="https://blockchain24.pro/chto-takoye-altkoin-i-steyblkoin"><span class="media"><span class="ml">abc-2.jpg · 600×600</span><img src="./img/abc-2.jpg" alt="" onerror="this.remove()"></span><span><em>Монеты</em><span class="hl cl t-sm"><b class="sn">02</b>Чем альткоины отличаются от стейблкоинов</span></span></a></li>
+<li><a class="step hov" href="https://blockchain24.pro/trejding-kriptovalyuty-dlya-nachinayushchih-kak-torgovat-kriptovalyutoj-na-birzhe"><span class="media"><span class="ml">abc-3.jpg · 600×600</span><img src="./img/abc-3.jpg" alt="" onerror="this.remove()"></span><span><em>Практика</em><span class="hl cl t-sm"><b class="sn">03</b>Как купить первую криптовалюту на бирже</span></span></a></li>
+<li><a class="step hov" href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty"><span class="media"><span class="ml">abc-4.jpg · 600×600</span><img src="./img/abc-4.jpg" alt="" onerror="this.remove()"></span><span><em>Закон</em><span class="hl cl t-sm"><b class="sn">04</b>Налоги и законы: что важно знать в России</span></span></a></li>
+</ol>
+</div>
+<div class="card dict" id="dictCol">
+<h3>Словарь терминов</h3>
+<form class="term" role="search" action="https://blockchain24.pro/abc" method="get"><label class="sr" for="termIn">Термин</label><input id="termIn" name="q" type="search" placeholder="Например, халвинг" autocomplete="off"><button class="btn btn-p" type="submit">Найти</button></form>
+<div class="words">
+<a href="https://blockchain24.pro/chto-takoye-altkoiny-prostymi-slovami-samyye-populyarnyye-altkoiny-na-2021-god-gde-kupit-altkoiny">Альткоин</a>
+<a href="https://blockchain24.pro/chto-takoye-altkoin-i-steyblkoin">Стейблкоин</a>
+<a href="https://blockchain24.pro/chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token">NFT</a>
+<a href="https://blockchain24.pro/ethereum-perehod-na-pos">Proof-of-Stake</a>
+<a href="https://blockchain24.pro/mayning-kto-takiye-maynery-i-kak-oni-zarabatyvayut">Майнинг</a>
+<a href="https://blockchain24.pro/trejding-kriptovalyuty-dlya-nachinayushchih-kak-torgovat-kriptovalyutoj-na-birzhe">Трейдинг</a>
+</div>
+<div class="tod"><b>Термин дня</b><strong>Альтсезон</strong> — период, когда альткоины растут быстрее биткоина. <a class="lnk" href="https://blockchain24.pro/kak-zarabotat-na-korrekcii-rynka">Как на нём заработать</a></div>
+<div class="ask"><span>Не нашли термин?</span><a class="btn btn-o" href="mailto:info@blockchain24.pro?subject=Вопрос%20в%20Азбуку" style="height:42px">Спросить редакцию</a></div>
+</div>
+</div>
+</section>
+
+<!-- 9. События -->
+<section class="wrap sec" aria-labelledby="evT">
+<div class="sec-h"><div><h2 id="evT">События</h2><p>Форумы и конференции, где будет редакция</p></div><a class="btn btn-o" href="https://blockchain24.pro/events">Все события</a></div>
+<div class="evx">
+<article class="evf" data-start="2026-11-17T10:00:00+03:00" data-end="2026-11-19T19:00:00+03:00">
+<div class="evf-top"><span class="evf-k">Ближайшее событие</span><span class="evf-in" id="evIn">через 15 дней</span></div>
+<div class="evf-date"><b>17–19</b><span>ноября<br>2026</span></div>
+<h3 class="evf-t"><a href="https://blockchain24.pro/events">The Trends: VI международный форум-выставка об инвестициях и технологиях</a></h3>
+<div class="evf-place"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Москва · редакция ведёт репортаж с площадки</div>
+<div class="cd" id="evCd" aria-label="До начала форума"><div><b data-u="d">15</b><span>дней</span></div><div><b data-u="h">00</b><span>часов</span></div><div><b data-u="m">00</b><span>минут</span></div><div><b data-u="s">00</b><span>секунд</span></div></div>
+<div class="evf-act"><a class="btn evf-b1" href="https://blockchain24.pro/events">Подробнее о форуме</a><a class="btn evf-b2" id="evIcs" href="#" download="the-trends-2026.ics"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4M10 15h4"/></svg>В календарь</a></div>
+</article>
+<ul class="tks">
+<li><a class="tk hov" href="https://blockchain24.pro/events"><span class="tk-s"><b>1–2</b><span>дек</span><small>2026</small></span><span class="tk-b"><span class="tk-tag hot">Через месяц</span><span class="hl cl tk-t">Blockchain Life 2026: 17-й форум о Web3, криптовалютах и майнинге</span><span class="tk-p"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Дубай, ОАЭ</span></span></a></li>
+<li><a class="tk hov" href="https://blockchain24.pro/events"><span class="tk-s"><b>1–2</b><span>фев</span><small>2027</small></span><span class="tk-b"><span class="tk-tag">Конференция</span><span class="hl cl tk-t">Digital Assets Forum 4: международная конференция о цифровых активах</span><span class="tk-p"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Лондон, Великобритания</span></span></a></li>
+<li><a class="tk hov" href="https://blockchain24.pro/events"><span class="tk-s"><b>21–22</b><span>апр</span><small>2027</small></span><span class="tk-b"><span class="tk-tag">Конференция</span><span class="hl cl tk-t">TOKEN2049 Dubai: международная конференция о криптовалютах и Web3</span><span class="tk-p"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Дубай, ОАЭ</span></span></a></li>
+</ul>
+</div>
+</section>
+
+<!-- 10. Партнёрские материалы -->
+<section class="wrap sec" aria-labelledby="partT">
+<div class="sec-h"><div><h2 id="partT">Партнёрские материалы</h2></div><a class="btn btn-o" href="mailto:info@blockchain24.pro?subject=Размещение%20на%20Blockchain24">Разместить материал</a></div>
+<div class="partners">
+<a class="card pc hov" href="https://blockchain24.pro/" rel="sponsored"><span class="media"><span class="ml">partner-1.jpg · 800×450</span><img src="./img/partner-1.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="ad-mark"><b>Реклама</b><span>Партнёр, erid: 2Vfnxxxxxx</span></span><span class="hl cl t-card">Как выбрать криптобиржу: 7 проверок безопасности перед регистрацией</span></span></a>
+<a class="card pc hov" href="https://blockchain24.pro/" rel="sponsored"><span class="media"><span class="ml">partner-2.jpg · 800×450</span><img src="./img/partner-2.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="ad-mark"><b>Реклама</b><span>Партнёр, erid: 2Vfnxxxxxx</span></span><span class="hl cl t-card">Холодный кошелёк или биржа: где надёжнее хранить криптовалюту</span></span></a>
+<a class="card pc hov" href="https://blockchain24.pro/" rel="sponsored"><span class="media"><span class="ml">partner-3.jpg · 800×450</span><img src="./img/partner-3.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="ad-mark"><b>Реклама</b><span>Партнёр, erid: 2Vfnxxxxxx</span></span><span class="hl cl t-card">Налоги с криптовалюты для физлиц: что учесть перед продажей</span></span></a>
+</div>
+</section>
+
+<!-- 11. Ещё материалы -->
+<section class="wrap sec" aria-labelledby="moreT">
+<div class="sec-h"><div><h2 id="moreT">Ещё материалы</h2></div><a class="btn btn-o" href="https://blockchain24.pro/news">Все материалы</a></div>
+<div class="more">
+<a class="card mc hov" href="https://blockchain24.pro/chto-budet-s-bitkoinom-pozitivnye-i-negativnye-scenarii-razvitiya-sobytij"><span class="media"><span class="ml">more-1.jpg · 600×375</span><img src="./img/more-1.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Аналитика</span></span><span class="hl cl t-card">Что будет с биткоином: позитивный и негативный сценарии</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/trejding-eto-prosto-mozhno-li-stat-kriptovalyutnym-trejderom-s-nulya"><span class="media"><span class="ml">more-2.jpg · 600×375</span><img src="./img/more-2.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Трейдинг</span></span><span class="hl cl t-card">Можно ли стать криптотрейдером с нуля и с чего начать</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/nft-i-problema-otmyvaniya-deneg"><span class="media"><span class="ml">more-3.jpg · 600×375</span><img src="./img/more-3.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>NFT</span></span><span class="hl cl t-card">NFT и отмывание денег: почему регуляторы следят за рынком</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/" rel="sponsored"><span class="media"><span class="ml">native-ad.jpg · 600×375</span><img src="./img/native-ad.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="ad-mark"><b>Реклама</b><span>Партнёр, erid: 2Vfnxxxxxx</span></span><span class="hl cl t-card">Как бизнесу принимать оплату в криптовалюте легально</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/chto-takoe-nft-segodnya-i-kakim-budet-nft-zavtra"><span class="media"><span class="ml">more-4.jpg · 600×375</span><img src="./img/more-4.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>NFT</span></span><span class="hl cl t-card">Что такое NFT сегодня и каким рынок станет завтра</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/kak-zarabotat-na-korrekcii-rynka"><span class="media"><span class="ml">more-5.jpg · 600×375</span><img src="./img/more-5.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Рынок</span></span><span class="hl cl t-card">Как заработать на коррекции рынка и на альтсезоне</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/bitcoin-ili-ethereum-kuda-luchshe-investirovat-segodnya"><span class="media"><span class="ml">more-6.jpg · 600×375</span><img src="./img/more-6.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Инвестиции</span></span><span class="hl cl t-card">Биткоин или Ethereum: куда лучше инвестировать сегодня</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/chem-obespechena-kriptovalyuta-kakiye-faktory-vliyayut-na-tsennost-kriptovalyut"><span class="media"><span class="ml">more-7.jpg · 600×375</span><img src="./img/more-7.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Азбука</span></span><span class="hl cl t-card">Чем обеспечена криптовалюта и что влияет на её цену</span></span></a>
+</div>
+</section>
+<!-- 12. Частые вопросы (контент со старого сайта, вычитан) -->
+<section class="wrap sec" id="faq" aria-labelledby="faqT">
+<div class="sec-h"><div><h2 id="faqT">Частые вопросы</h2><p>Узнайте всё, что касается мира криптовалют</p></div></div>
+<div class="card faq-main">
+<div class="ftabs" role="tablist" aria-label="Темы вопросов" id="ftabs"></div>
+<div class="fsel" id="fsel"><button class="fsel-b" type="button" aria-expanded="false"><span>Тема: <b id="fselCur">Криптовалюты</b></span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="fsel-l" id="fselList" hidden></div></div>
+<div class="qa-list" id="qaList"></div>
+</div>
+</section>
+
+<!-- 13. Подписка на новости -->
+<section class="wrap sec" aria-labelledby="mailT">
+<div class="sub-mail">
+<div class="sub-mail-t">
+<h2 id="mailT">Подпишитесь на новости и получайте свежие статьи первыми</h2>
+<p>Главные новости, разборы и интервью в одном письме.</p>
+<ul class="perks" aria-label="Что вы получите">
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9 14.5l2 2 4-4"/></svg>Раз в неделю</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6Z"/><path d="m9 12 2 2 4-4"/></svg>Без спама и рекламы</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 9 11 4-5 2-2 5Z"/><path d="M5 3.5v2.5M3.5 5H6M8.5 4.5l-1.5 1.5M4.5 8.5 6 7"/></svg>Отписка в один клик</li>
+</ul>
+<form class="js-form mail-form" novalidate>
+<div class="fields" data-body>
+<div class="mail-row">
+<label class="fld"><span>Имя *</span><input name="name" required autocomplete="given-name" placeholder="Ваше имя"></label>
+<label class="fld"><span>Email *</span><input name="email" type="email" required autocomplete="email" placeholder="you@mail.ru"></label>
+<button class="btn btn-p" type="submit">Подписаться<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
+<p class="err" hidden>Укажите имя и корректный email</p>
+<p class="consent">Нажимая кнопку, вы даёте <a href="https://blockchain24.pro/soglasie" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаете <a href="https://blockchain24.pro/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.</p>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Вы подписаны</b><p>Первое письмо придёт с ближайшим выпуском.</p></div>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="ft">
+<div class="wrap">
+<div class="ft-top">
+<div class="ft-brand">
+<a class="logo" href="https://blockchain24.pro/" aria-label="Blockchain24 — на главную"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span></a>
+<p>Журнал о блокчейн-технологиях, криптовалютах, майнинге и децентрализованных финансах. Копировать материалы можно только с активной ссылкой на Blockchain24.</p>
+<a class="ft-mail" href="mailto:info@blockchain24.pro">info@blockchain24.pro</a>
+<div class="soc">
+<a href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg></a>
+<a href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5Z"/></svg></a>
+<a href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+<div><h4>Разделы</h4><div class="ft-l"><a href="https://blockchain24.pro/news">Новости</a><a href="https://blockchain24.pro/top-news">Главные новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/copyright">Эксклюзивные материалы</a><a href="https://blockchain24.pro/interview">Интервью</a></div></div>
+<div><h4>Сервисы</h4><div class="ft-l"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/coins">Курсы криптовалют</a><a href="#market">Оповещения о цене</a><a href="https://blockchain24.pro/abc">Азбука блокчейна</a></div></div>
+<div><h4>Редакция</h4><div class="ft-l"><a href="https://blockchain24.pro/about">О проекте</a><a href="https://blockchain24.pro/contacts">Редакция и контакты</a><a href="https://blockchain24.pro/experts">Эксперты</a><a href="https://blockchain24.pro/subscribe">Подписаться на новости</a></div></div>
+<div><h4>Партнёрам</h4><div class="ft-l"><a href="mailto:info@blockchain24.pro?subject=Реклама%20на%20Blockchain24">Реклама на сайте</a><a href="mailto:info@blockchain24.pro?subject=Медиакит">Запросить медиакит</a><a href="mailto:info@blockchain24.pro?subject=Пресс-релиз">Прислать пресс-релиз</a></div>
+<div class="stores ft-stores"><a class="store" href="https://apps.apple.com/us/app/blockchain24/id1558326386" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg><span><small>Загрузить в</small>App Store</span></a><a class="store" href="https://play.google.com/store/apps/details?id=ru.devroom.blockchain24" target="_blank" rel="noopener"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M1 1.2 11.3 11 1 20.8c-.3-.2-.5-.6-.5-1V2.2c0-.4.2-.8.5-1Z" fill="#00D7FE"/><path d="m14.7 7.6-3.4 3.4L1 1.2c.2-.1.5-.2.8-.2.3 0 .5.1.8.2l12.1 6.4Z" fill="#00F076"/><path d="M14.7 14.4 2.6 20.8c-.3.1-.5.2-.8.2-.3 0-.6-.1-.8-.2L11.3 11l3.4 3.4Z" fill="#FF3A44"/><path d="M19 11c0 .6-.3 1.2-.9 1.5l-3.4 1.9-3.4-3.4 3.4-3.4 3.4 1.9c.6.3.9.9.9 1.5Z" fill="#FFD400"/></svg><span><small>Доступно в</small>Google Play</span></a></div></div>
+</div>
+<div class="ft-b">
+<span>© 2020–2026 Blockchain24.pro. Все права защищены.</span>
+<nav aria-label="Правовая информация"><a href="https://blockchain24.pro/pravo">Правовая информация</a><a href="https://blockchain24.pro/policy">Политика конфиденциальности</a><a href="https://blockchain24.pro/soglasie">Согласие на обработку персональных данных</a></nav>
+</div>
+</div>
+</footer>
+<button class="totop" type="button" id="toTop" aria-label="Наверх" hidden><svg class="totop-ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/><circle class="pr" cx="28" cy="28" r="26"/></svg><svg class="totop-ar" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+
+<!-- Мобильное меню -->
+<div class="ovl ovl-m" id="menu" hidden>
+<div class="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+<div class="drawer-top">
+<a class="logo" href="https://blockchain24.pro/"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b></span></a>
+<button class="ibtn" type="button" data-close aria-label="Закрыть меню"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+<nav aria-label="Разделы">
+<a href="https://blockchain24.pro/" aria-current="page">Главная</a><a href="https://blockchain24.pro/news">Новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/interview">Интервью</a><a href="https://blockchain24.pro/abc">Азбука</a><a href="https://blockchain24.pro/coins">Курсы</a><a href="https://blockchain24.pro/events">События</a><a href="https://blockchain24.pro/login">Личный кабинет</a>
+</nav>
+<button class="btn btn-o" type="button" data-open="search">Поиск по журналу</button>
+<a class="btn btn-p" href="#subscribe" data-close-nav>Подписаться</a>
+<div class="soc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+</div>
+
+<!-- Поиск -->
+<div class="ovl" id="search" hidden>
+<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="srchT">
+<button class="ibtn x" type="button" data-close aria-label="Закрыть поиск"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+<h2 id="srchT">Поиск по журналу</h2>
+<p class="dlg-sub">Новости, статьи, интервью и курсы монет</p>
+<form class="fields" action="https://blockchain24.pro/search" method="get" role="search">
+<label class="fld"><span>Запрос</span><input type="search" name="q" placeholder="Биткоин, ETF, майнинг"></label>
+<button class="btn btn-p" type="submit">Найти</button>
+</form>
+<div class="srch-res"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token">NFT</a><a href="https://blockchain24.pro/ethereum-perehod-na-pos">Ethereum PoS</a><a href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty">Налоги на майнинг</a></div>
+</div>
+</div>
+
+<!-- Оповещение о цене -->
+<div class="ovl" id="alert" hidden>
+<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="alT">
+<button class="ibtn x" type="button" data-close aria-label="Закрыть форму"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+<form class="js-form" novalidate>
+<div data-body>
+<h2 id="alT">Оповещение о цене</h2>
+<p class="dlg-sub">Сообщим, когда монета дойдёт до нужного уровня</p>
+<div class="fields">
+<div class="row2">
+<label class="fld"><span>Монета</span><select name="coin" id="alCoin"></select></label>
+<label class="fld"><span>Когда цена</span><select name="dir"><option value="above">выше</option><option value="below">ниже</option></select></label>
+</div>
+<div class="row2">
+<label class="fld"><span>Порог, $</span><input name="price" inputmode="decimal" id="alPrice" placeholder="80 000"></label>
+<label class="fld"><span>Email или Telegram *</span><input name="contact" required placeholder="@username"></label>
+</div>
+<p class="err" hidden>Укажите контакт, чтобы мы могли прислать оповещение</p>
+<button class="btn btn-p" type="submit">Включить оповещение</button>
+<p class="consent">Нажимая кнопку, вы даёте <a href="https://blockchain24.pro/soglasie" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаете <a href="https://blockchain24.pro/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.</p>
+</div>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Оповещение включено</b><p>Напишем, как только цена дойдёт до заданного уровня.</p><button class="btn btn-p" type="button" data-close>Готово</button></div>
+</form>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+
+/* ---------- FAQ: контент со старого сайта, вычитан ---------- */
+var FAQ=[
+ ['Криптовалюты','Что такое криптовалюта?','Криптовалюта — это виртуальные деньги, которые, в отличие от фиатных средств, не имеют физического выражения. Единицей такой валюты является «coin», что в переводе с английского означает «монета». Слово складывается из «crypto» — нечто тайное, скрытое — и «currency» — валюта.','chto-takoye-kriptovalyuta-i-kak-ona-rabotayet'],
+ ['Криптовалюты','Чем обеспечена криптовалюта?','Стоимость криптовалюты — это соотношение спроса и предложения. Фиатные валюты поддерживает выпустившее их правительство, а цифровые деньги вроде Bitcoin никем не поддерживаются и не привязаны к физическим резервам, поэтому их цена меняется под влиянием разных факторов. Ценность криптовалютам даёт майнинг — процесс проверки транзакций, который требует работы, электричества и вложений.','chem-obespechena-kriptovalyuta-kakiye-faktory-vliyayut-na-tsennost-kriptovalyut'],
+ ['Криптовалюты','Какие бывают криптовалюты?','В мире создано более 8000 цифровых монет, что само собой образовало систему их классификации. Каждая криптовалюта разрабатывается с определённой идеей и заточена под конкретные функции. Все монеты можно разделить на несколько групп.','chto-takoye-altkoin-i-steyblkoin'],
+ ['Биткоин','Сколько стоит биткоин сегодня?','Курс биткоина меняется каждую секунду. Волатильность — главное и самое опасное свойство биткоина. Актуальный курс и график онлайн — в блоке «Рынок сегодня» выше и в статье о курсе биткоина.','kurs-bitkoina'],
+ ['Биткоин','Почему биткоин падает?','Биткоин, как и другие криптовалюты, отличается высокой волатильностью — отсюда резкие скачки и падения. Снижению курса способствуют повышение ставок, ужесточение монетарной политики для борьбы с инфляцией, укрепление доллара и ухудшение прогнозов глобального роста.','chto-budet-s-bitkoinom-pozitivnye-i-negativnye-scenarii-razvitiya-sobytij'],
+ ['Биткоин','Как получить биткоин?','С появлением криптовалюты многие задумались, как заработать 1 биткоин. Если раньше добыча была доступна новичкам, то сейчас она усложнилась: для приличной прибыли нужны высокотехнологичная аппаратура и специальные знания.','kak-zarabotat-odin-bitkoin-za-den-ili-za-mesyats-kak-dolgo-maynit-1-btc'],
+ ['Эфириум','Чем Эфириум отличается от Биткоина?','Биткоин часто называют блокчейном первого поколения: язык смарт-контрактов в нём крайне упрощён. Эфир — вторая криптовалюта по капитализации, относится ко второму поколению блокчейнов и даёт разработчикам гораздо больше свободы для создания децентрализованных приложений.','bitcoin-ili-ethereum-kuda-luchshe-investirovat-segodnya'],
+ ['Эфириум','Когда Ethereum перешёл на Proof-of-Stake?','Переход Ethereum с Proof-of-Work на Proof-of-Stake состоялся в сентябре 2022 года. Плюсы алгоритма: экологичность по сравнению с доказательством работы, более высокая масштабируемость и лучшая экономика протокола.','ethereum-perehod-na-pos'],
+ ['Эфириум','Как майнить эфир?','Пользователи направляют вычислительные мощности оборудования на генерацию нового блока в цепочке и поддерживают работоспособность децентрализованной сети. За найденный блок майнер получает вознаграждение в монетах. После перехода Ethereum на Proof-of-Stake майнинг эфира невозможен — сегодня так добывают другие монеты.','kak-nachat-mayning-kriptovalyuty-poshagovaya-instruktsiya'],
+ ['Альткоины','Что такое альткоины?','Альткоин — любая криптовалюта, которая появилась после биткоина. Название происходит от английских слов alternative и coin, то есть «альтернативная монета». По данным сервисов, отслеживающих цены, в мире существует более 10 тысяч таких монет.','chto-takoye-altkoiny-prostymi-slovami-samyye-populyarnyye-altkoiny-na-2021-god-gde-kupit-altkoiny'],
+ ['Альткоины','Что такое альтсезон?','Альтсезон — отрезок времени, когда котировки альткоинов растут быстрее биткоина. Так как все монеты, кроме первой криптовалюты, называют альткоинами, явление получило соответствующее название.','kak-zarabotat-na-korrekcii-rynka'],
+ ['NFT','Что такое NFT?','NFT-токен (невзаимозаменяемый токен) — уникальный цифровой сертификат, который хранится в блокчейне, гарантирует оригинальность предмета и даёт эксклюзивные права на него. Такой токен нельзя незаметно подменить, разделить или заменить, поэтому система подходит для закрепления прав на произведение искусства, недвижимость или предмет в игре.','chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token'],
+ ['NFT','Как приобрести NFT?','NFT можно купить только за криптовалюту той сети, на которой они построены. Самая популярная сеть — Ethereum, но из-за более низких комиссий всё больше людей переходят на Polygon и Solana.','chto-takoe-nft-segodnya-i-kakim-budet-nft-zavtra'],
+ ['NFT','Безопасно ли покупать NFT-объекты?','Рынок искусства давно называют удобной площадкой для отмывания денег, и NFT могут усугубить эту проблему. Регулирование ужесточается, поэтому перед покупкой стоит проверять продавца, историю токена и площадку.','nft-i-problema-otmyvaniya-deneg'],
+ ['Трейдинг','Что такое трейдинг криптовалют?','Криптотрейдинг — это спекуляция на движениях цен цифровых валют: обмен одной криптовалюты на другую, покупка и продажа монет, обмен фиатных денег на криптовалюту. Трейдер изучает новости и совершает сделки в надежде продать актив дороже.','trejding-kriptovalyuty-dlya-nachinayushchih-kak-torgovat-kriptovalyutoj-na-birzhe'],
+ ['Трейдинг','Как выбрать биржу для торговли?','Убедитесь, что биржа не экономит на безопасности. Низкие комиссии не помогут при взломе и потере средств. Следите за новостями: если появились сведения о крупной атаке или проблемах с транзакциями, лучше быстро вывести средства.','trejding-kriptovalyuty-dlya-nachinayushchih-kak-torgovat-kriptovalyutoj-na-birzhe'],
+ ['Трейдинг','С чего начать трейдинг?','Сначала определитесь с целями и стратегией. Основных стратегий две: инвестирование — покупка актива и долгое хранение, и торговля — краткосрочные спекуляции с постоянным анализом новостей и множеством сделок.','trejding-eto-prosto-mozhno-li-stat-kriptovalyutnym-trejderom-s-nulya'],
+ ['Майнинг','Что такое майнинг криптовалют?','Слово «mining» дословно означает добычу полезных ископаемых, а теперь — и добычу цифровых активов. Майнер — человек, который добывает монеты, то есть осуществляет майнинг криптовалют.','mayning-kto-takiye-maynery-i-kak-oni-zarabatyvayut'],
+ ['Майнинг','Законно ли майнить криптовалюту в России?','Появляются постановления и законопроекты, внедряется налогообложение, на законодательном уровне закреплён статус ЦФА, но многие вопросы ещё остаются открытыми. Следим за изменениями и разбираем каждое в статьях.','zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty'],
+ ['Майнинг','Как выбрать оборудование для майнинга?','Ключевые показатели видеокарты: надёжность, энергопотребление, охлаждение и производитель. Кроме неё нужны блок питания, материнская плата с несколькими слотами, оперативная память от 4 ГБ и каркас. Можно купить готовые ASIC или арендовать мощность в облачном проекте.','kak-nachat-mayning-kriptovalyuty-poshagovaya-instruktsiya']
+];
+var CATS=['Криптовалюты','Биткоин','Эфириум','Альткоины','NFT','Трейдинг','Майнинг'];
+var curCat=CATS[0];
+var plus='<span class="qa-ic" aria-hidden="true"><svg class="ic" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>';
+$('#ftabs').innerHTML=CATS.map(function(c,i){return '<button type="button" role="tab" aria-selected="'+(i===0)+'">'+c+'</button>'}).join('');
+$('#fselList').innerHTML=CATS.map(function(c,i){return '<button type="button" aria-selected="'+(i===0)+'">'+c+'</button>'}).join('');
+function renderFaq(){
+ $('#qaList').innerHTML=FAQ.filter(function(q){return q[0]===curCat}).map(function(q,i){
+  return '<div class="qa"><button class="qa-q" type="button" aria-expanded="false" id="q'+i+'"><span>'+esc(q[1])+'</span>'+plus+'</button><div class="qa-a" role="region" aria-labelledby="q'+i+'"><p>'+esc(q[2])+'</p><a class="lnk" href="https://blockchain24.pro/'+q[3]+'">Читать статью</a></div></div>';
+ }).join('');
+ $$('#ftabs button,#fselList button').forEach(function(b){b.setAttribute('aria-selected',String(b.textContent===curCat))});
+ $('#fselCur').textContent=curCat;
+ typo($('#qaList'));
+}
+$$('#ftabs button,#fselList button').forEach(function(b){b.addEventListener('click',function(){curCat=b.textContent;$('#fselList').hidden=true;$('#fsel').classList.remove('open');$('.fsel-b').setAttribute('aria-expanded','false');renderFaq()})});
+$('.fsel-b').addEventListener('click',function(){var l=$('#fselList'),o=l.hidden;l.hidden=!o;$('#fsel').classList.toggle('open',o);this.setAttribute('aria-expanded',String(o))});
+$('#qaList').addEventListener('click',function(e){var b=e.target.closest('.qa-q');if(!b)return;var q=b.parentNode,on=!q.classList.contains('open');$$('.qa',$('#qaList')).forEach(function(x){x.classList.remove('open');$('.qa-q',x).setAttribute('aria-expanded','false')});if(on){q.classList.add('open');b.setAttribute('aria-expanded','true')}});
+
+/* ---------- Типографика: предлоги и союзы привязываются к следующему слову ---------- */
+function typo(root){
+ var re=/(^|[\s(«—])(в|во|и|о|об|на|с|со|к|ко|по|не|за|от|до|для|из|у|а|но|без|при|про|что|как|это)\s/gi;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode&&n.parentNode.nodeName;return /SCRIPT|STYLE|TEXTAREA|OPTION/.test(p)?2:1}});
+ var n;while((n=w.nextNode())){var t=n.nodeValue,o=t;for(var i=0;i<2;i++)t=t.replace(re,'$1$2\u00A0');t=t.replace(/(\d)\s(млн|млрд|трлн|\$|₽|%|ETH|BTC|ГБ)/g,'$1\u00A0$2').replace(/(\d) (\d{3})/g,'$1\u00A0$2').replace(/ — /g,'\u00A0— ');if(t!==o)n.nodeValue=t}
+}
+typo(document.body);
+renderFaq();
+
+/* ---------- Котировки: CoinGecko, резерв — Coinpaprika ---------- */
+var COINS=[
+ {id:'bitcoin',pp:'btc-bitcoin',t:'BTC',n:'Bitcoin',s:'₿',bg:'#F7931A',u:'https://blockchain24.pro/kurs-bitkoina',p:77818.51,c:-0.03,v:10.70e9,m:1.56e12},
+ {id:'ethereum',pp:'eth-ethereum',t:'ETH',n:'Ethereum',s:'Ξ',bg:'#5468D4',u:'https://blockchain24.pro/coins',p:2262.90,c:-0.04},
+ {id:'tether',pp:'usdt-tether',t:'USDT',n:'Tether',s:'₮',bg:'#168A6B',u:'https://blockchain24.pro/coins',p:1.00,c:0.01},
+ {id:'binancecoin',pp:'bnb-binance-coin',t:'BNB',n:'BNB',s:'B',bg:'#B98900',u:'https://blockchain24.pro/coins',p:707.59,c:-0.06},
+ {id:'ripple',pp:'xrp-xrp',t:'XRP',n:'XRP',s:'X',bg:'#23292F',u:'https://blockchain24.pro/coins',p:1.25,c:0.05},
+ {id:'usd-coin',pp:'usdc-usd-coin',t:'USDC',n:'USD Coin',s:'$',bg:'#2775CA',u:'https://blockchain24.pro/coins',p:1.00,c:0.01},
+ {id:'solana',pp:'sol-solana',t:'SOL',n:'Solana',s:'S',bg:'#7A3FE4',u:'https://blockchain24.pro/coins',p:94.32,c:0.05},
+ {id:'tron',pp:'trx-tron',t:'TRX',n:'TRON',s:'T',bg:'#C4302B',u:'https://blockchain24.pro/coins',p:0.31,c:0.05}
+];
+var CGI='https://coin-images.coingecko.com/coins/images/';
+var ICONS={bitcoin:'1/large/bitcoin.png',ethereum:'279/large/ethereum.png',tether:'325/large/Tether.png',binancecoin:'825/large/bnb-icon2_2x.png',ripple:'44/large/xrp-symbol-white-128.png','usd-coin':'6319/large/usdc.png',solana:'4128/large/solana.png',tron:'1094/large/tron-logo.png'};
+COINS.forEach(function(c){c.img=CGI+ICONS[c.id]});
+var TICK=null;
+/* обёрнутые копии монет и токенизированные активы в бегущую строку не берём */
+var WRAPPED=/^(wbtc|weth|steth|wsteth|wbeth|weeth|cbbtc|reth|meth|lbtc|solvbtc|jitosol|bnsol|figr_heloc|buidl|ousg|usyc)$/i;
+var STABLE=/^(usdt|usdc|dai|fdusd|tusd|usde|usds|pyusd|busd|usdd|usd0|rlusd|usdtb|bsc-usd|usd1|susde|usdx|eurc|xaut|paxg)$/i;
+var LEADERS={up:[{n:'Solana',s:'S',bg:'#7A3FE4',c:0.05},{n:'XRP',s:'X',bg:'#23292F',c:0.05},{n:'TRON',s:'T',bg:'#C4302B',c:0.05}],down:[{n:'BNB',s:'B',bg:'#B98900',c:-0.06},{n:'Ethereum',s:'Ξ',bg:'#5468D4',c:-0.04},{n:'Bitcoin',s:'₿',bg:'#F7931A',c:-0.03}]};
+var CUR='usd',RUB={},SPARK=null,CHARTS={},PER=7;
+var nf=function(x,d){return x.toLocaleString('ru-RU',{minimumFractionDigits:d,maximumFractionDigits:d})};
+function price(x){var d=x>=0.1?2:x>=0.001?4:6;return nf(x,d)}
+function money(x,sym){var a=Math.abs(x),s=sym||'$';if(a>=1e12)return s+nf(x/1e12,2)+' трлн';if(a>=1e9)return s+nf(x/1e9,2)+' млрд';if(a>=1e6)return s+nf(x/1e6,2)+' млн';return s+nf(x,0)}
+function pct(c){var a=nf(Math.abs(c),2);return c>0.005?'▲'+a+'%':c<-0.005?'▼'+a+'%':a+'%'}
+function cls(c){return Math.abs(c)<0.02?'flat':(c>0?'up':'down')}
+var bell='<svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 21h4"/></svg>';
+function badge(o,w){
+ var img=o.img;if(!img)COINS.forEach(function(c){if(c.n===o.n)img=c.img});
+ return '<span class="sq'+(img?' coin':'')+'" style="background:'+o.bg+'">'+o.s+(img?'<img src="'+img+'" alt="" loading="lazy" onerror="this.parentNode.classList.remove(\'coin\');this.remove()">':'')+'</span>'}
+/* бегущая строка: при обновлении меняются только цифры, анимация не сбрасывается */
+function renderTicker(){
+ var list=TICK||COINS.filter(function(c){return !STABLE.test(c.t)});
+ var box=$('#hdrRates'),track=box.querySelector('.rates-track'),key=list.map(function(c){return c.t}).join();
+ if(track&&track.dataset.key===key){
+  list.forEach(function(c,i){$$('.rate[data-i="'+i+'"]',track).forEach(function(a){a.querySelector('.rp').textContent=price(c.p)+' $';var s=a.querySelector('.rc');s.className='rc '+(c.c>=0?'up':'down');s.textContent=pct(c.c)})});
+  return;
+ }
+ var one=list.map(function(c,i){return '<a class="rate" data-i="'+i+'" href="'+(c.u||'https://blockchain24.pro/coins')+'">'+badge(c)+c.t+' <span class="rp">'+price(c.p)+' $</span><span class="rc '+(c.c>=0?'up':'down')+'">'+pct(c.c)+'</span></a>'}).join('');
+ box.innerHTML='<div class="rates-track" data-key="'+key+'">'+one+one.replace(/<a class="rate"/g,'<a class="rate" aria-hidden="true" tabindex="-1"')+'</div>';
+ track=box.querySelector('.rates-track');
+ track.style.setProperty('--dur',Math.max(30,track.scrollWidth/2/45)+'s');
+}
+function curPrice(c){return CUR==='rub'&&RUB[c.id]!=null?RUB[c.id]:c.p}
+function render(){
+ var sym=CUR==='rub'?'₽':'$';
+ $('#priceHead').textContent='Цена, '+sym;
+ $('#coinRows').innerHTML=COINS.map(function(c){
+  return '<div class="tr" role="row"><a class="c" role="cell" href="'+c.u+'">'+badge(c)+'<span><b>'+esc(c.n)+'</b><small>'+c.t+'</small></span></a><span class="p" role="cell">'+price(curPrice(c))+'</span><span class="chg '+cls(c.c)+'" role="cell">'+pct(c.c)+'</span><button class="bell" type="button" data-modal="alert" data-coin="'+c.id+'" aria-label="Оповещение о цене '+esc(c.n)+'">'+bell+'</button></div>';
+ }).join('');
+ renderTicker();
+ if($('#appBtc')){$('#appBtc').textContent=nf(Math.round(COINS[0].p),0)+' $';var ac=$('#appChg');ac.textContent=pct(COINS[0].c);ac.className='iph-chg'+(COINS[0].c<0?' neg':'')}
+ var b=COINS[0];
+ $('#btcPrice').textContent=price(curPrice(b))+'\u00A0'+sym;
+ var ch=$('#btcChg');ch.className='chg '+cls(b.c);ch.textContent=pct(b.c).replace(/^([▲▼])/,'$1 ')+' за 24 часа';
+ if(b.v)$('#btcVol').textContent=money(b.v);
+ if(b.m)$('#btcCap').textContent=money(b.m);
+ var lr=function(o){return '<div class="lr">'+badge(o)+'<span class="nm">'+esc(o.n)+'</span><span class="chg '+cls(o.c)+'">'+pct(o.c)+'</span></div>'};
+ $('#leadUp').innerHTML=LEADERS.up.map(lr).join('');
+ $('#leadDown').innerHTML=LEADERS.down.map(lr).join('');
+ $('#alCoin').innerHTML=COINS.map(function(c){return '<option value="'+c.id+'">'+esc(c.n)+' ('+c.t+')</option>'}).join('');
+ drawChart();
+ fitAll();
+}
+function digest(){
+ var b=COINS[0],u=LEADERS.up[0],d=LEADERS.down[0];
+ var dir=b.c>0.3?'вырос на '+nf(b.c,2)+'%':b.c<-0.3?'снизился на '+nf(Math.abs(b.c),2)+'%':'почти не изменился';
+ $('#digestTxt').textContent='Биткоин за сутки '+dir+', курс '+price(b.p)+' $. В топ-50 больше всех вырос '+u.n+' ('+pct(u.c)+'), сильнее всех упал '+d.n+' ('+pct(d.c)+').';
+}
+function series(seed,n){var v=50,r=seed,a=[];for(var i=0;i<n;i++){r=(r*9301+49297)%233280;v+=(r/233280-.5)*12-0.25;a.push(v)}return a}
+/* график биткоина: рисуется в реальных пикселях контейнера, чтобы линия, точки и подписи не растягивались */
+var CH={};
+function compact(x){return x>=1000?nf(x/1000,x>=1e5?0:1)+'K':price(x)}
+function drawChart(){
+ var raw=CHARTS[PER]||(PER===7&&SPARK);
+ if(!raw){var s=series(PER*5+2,48),a=Math.min.apply(null,s),z=Math.max.apply(null,s),bp=COINS[0].p;raw=s.map(function(v){return bp*(.97+.06*(v-a)/((z-a)||1))})}
+ /* лёгкое сглаживание и не больше ~140 точек */
+ var step=Math.max(1,Math.floor(raw.length/140)),pts=[];
+ for(var i=0;i<raw.length;i+=step){var sum=0,k=0;for(var j=Math.max(0,i-step);j<=Math.min(raw.length-1,i+step);j++){sum+=raw[j];k++}pts.push(sum/k)}
+ pts[pts.length-1]=raw[raw.length-1];
+ var box=$('#btcChart').parentNode,W=box.clientWidth,H=box.clientHeight;if(!W||!H)return;
+ var L=0,R=W-58,T=14,B=H-24,n=pts.length;
+ var mn=Math.min.apply(null,pts),mx=Math.max.apply(null,pts),pad=(mx-mn)*.12||mn*.01;mn-=pad;mx+=pad;
+ var X=function(i){return L+i/(n-1)*(R-L)},Y=function(p){return T+(1-(p-mn)/(mx-mn))*(B-T)};
+ var P=pts.map(function(p,i){return [X(i),Y(p)]});
+ /* плавная кривая: Catmull-Rom → кубические Безье */
+ var d='M'+P[0][0].toFixed(1)+','+P[0][1].toFixed(1);
+ for(i=0;i<n-1;i++){var p0=P[i-1]||P[i],p1=P[i],p2=P[i+1],p3=P[i+2]||p2;
+  d+='C'+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+','+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+' '+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+','+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+' '+p2[0].toFixed(1)+','+p2[1].toFixed(1)}
+ var g='';
+ for(i=0;i<4;i++){var v=mn+(mx-mn)*(i+.5)/4,y=Y(v).toFixed(1);
+  g+='<line x1="'+L+'" x2="'+R+'" y1="'+y+'" y2="'+y+'" stroke="#E4E8F2" stroke-dasharray="3 5"/><text x="'+(W-2)+'" y="'+(+y+4)+'" text-anchor="end" class="ax">'+compact(v)+'</text>'}
+ var now=Date.now(),span=PER*864e5,dt=function(i){return new Date(now-span+span*i/(n-1))};
+ var lbl=function(t){return PER===1?String(t.getHours()).padStart(2,'0')+':00':t.toLocaleDateString('ru-RU',{day:'numeric',month:'short'}).replace('.','')};
+ for(i=0;i<4;i++){var ix=Math.round((n-1)*(i+.5)/4);g+='<text x="'+X(ix).toFixed(1)+'" y="'+(H-4)+'" text-anchor="middle" class="ax">'+lbl(dt(ix))+'</text>'}
+ var hi=pts.indexOf(Math.max.apply(null,pts)),lo=pts.indexOf(Math.min.apply(null,pts));
+ var mark=function(ix,top){var x=P[ix][0],y=P[ix][1],a=x<60?'start':x>R-60?'end':'middle';
+  return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="#fff" stroke="#1845E7" stroke-width="1.5"/><text x="'+x.toFixed(1)+'" y="'+(top?y-9:y+17).toFixed(1)+'" text-anchor="'+a+'" class="mk">'+price(pts[ix])+'</text>'};
+ var last=P[n-1];
+ $('#btcChart').setAttribute('viewBox','0 0 '+W+' '+H);
+ $('#btcChart').innerHTML='<defs><linearGradient id="cgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D6BFF" stop-opacity=".28"/><stop offset=".6" stop-color="#3D6BFF" stop-opacity=".07"/><stop offset="1" stop-color="#3D6BFF" stop-opacity="0"/></linearGradient>'
+  +'<linearGradient id="cgL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7AA0FF"/><stop offset=".55" stop-color="#2E5BFF"/><stop offset="1" stop-color="#1845E7"/></linearGradient>'
+  +'<filter id="cgG" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6"/></filter></defs>'
+  +g+'<path d="'+d+'L'+R+','+B+'L'+L+','+B+'Z" fill="url(#cgA)"/>'
+  +'<path d="'+d+'" fill="none" stroke="#2E5BFF" stroke-width="6" opacity=".22" filter="url(#cgG)" transform="translate(0 6)"/>'
+  +'<path d="'+d+'" fill="none" stroke="url(#cgL)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+  +mark(hi,true)+mark(lo,false)
+  +'<line x1="'+last[0].toFixed(1)+'" x2="'+R+'" y1="'+last[1].toFixed(1)+'" y2="'+last[1].toFixed(1)+'" stroke="#1845E7" stroke-dasharray="2 3" opacity=".5"/>'
+  +'<circle class="pulse" cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="5" fill="#1845E7"/><circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="4.5" fill="#1845E7" stroke="#fff" stroke-width="2"/>'
+  +'<g class="hv" style="opacity:0"><line class="hv-l" y1="'+T+'" y2="'+B+'" stroke="#9AA6C8" stroke-dasharray="3 3"/><circle class="hv-d" r="5" fill="#fff" stroke="#1845E7" stroke-width="2.5"/></g>';
+ CH={P:P,pts:pts,dt:dt,lbl:lbl,R:R};
+}
+(function(){
+ var box=$('#btcChart').parentNode,tip=document.createElement('div');tip.className='ch-tip';box.appendChild(tip);
+ function move(e){
+  if(!CH.P)return;var r=box.getBoundingClientRect(),x=e.clientX-r.left,P=CH.P,i=Math.round(x/CH.R*(P.length-1));
+  i=Math.max(0,Math.min(P.length-1,i));var p=P[i],hv=$('#btcChart .hv');if(!hv)return;
+  hv.style.opacity=1;$('.hv-l',hv).setAttribute('x1',p[0]);$('.hv-l',hv).setAttribute('x2',p[0]);$('.hv-d',hv).setAttribute('cx',p[0]);$('.hv-d',hv).setAttribute('cy',p[1]);
+  var t=CH.dt(i);tip.innerHTML='<b>'+price(CH.pts[i])+' $</b><span>'+t.toLocaleDateString('ru-RU',{day:'numeric',month:'long'})+', '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0')+'</span>';
+  tip.style.opacity=1;tip.style.left=Math.max(4,Math.min(p[0]-tip.offsetWidth/2,r.width-tip.offsetWidth-4))+'px';tip.style.top=Math.max(0,p[1]-tip.offsetHeight-14)+'px';
+ }
+ box.addEventListener('pointermove',move);
+ box.addEventListener('pointerleave',function(){tip.style.opacity=0;var hv=$('#btcChart .hv');if(hv)hv.style.opacity=0});
+ var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(drawChart,120)});
+})();
+function stamp(src){var d=new Date();$('#mktStatus').textContent='Данные '+src+', обновлено в '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}
+function getJSON(url){return fetch(url,{headers:{accept:'application/json'}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})}
+var CG='https://api.coingecko.com/api/v3';
+function loadCG(){
+ return getJSON(CG+'/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=24h').then(function(list){
+  var by={};list.forEach(function(x){by[x.id]=x});
+  TICK=list.filter(function(x){return !STABLE.test(x.symbol)&&!WRAPPED.test(x.symbol)&&x.current_price!=null}).slice(0,20).map(function(x){
+   var own=null;COINS.forEach(function(c){if(c.id===x.id)own=c});
+   return {t:x.symbol.toUpperCase(),n:x.name,s:x.symbol.slice(0,1).toUpperCase(),bg:own?own.bg:'#5C627F',img:x.image,p:x.current_price,c:x.price_change_percentage_24h||0,u:own?own.u:'https://blockchain24.pro/coins'}});
+  COINS.forEach(function(c){var x=by[c.id];if(!x)return;c.p=x.current_price;if(x.image)c.img=x.image;c.c=x.price_change_percentage_24h||0;c.v=x.total_volume;c.m=x.market_cap;if(c.id==='bitcoin'&&x.sparkline_in_7d)SPARK=x.sparkline_in_7d.price});
+  var pool=list.filter(function(x){return !STABLE.test(x.symbol)&&x.price_change_percentage_24h!=null}).sort(function(a,b){return b.price_change_percentage_24h-a.price_change_percentage_24h});
+  var conv=function(x){return {n:x.name,s:x.symbol.slice(0,1).toUpperCase(),bg:'#5C627F',c:x.price_change_percentage_24h,img:x.image}};
+  LEADERS.up=pool.slice(0,3).map(conv);LEADERS.down=pool.slice(-3).reverse().map(conv);
+  stamp('CoinGecko');
+ });
+}
+function loadPaprika(){
+ return Promise.all(COINS.map(function(c){return getJSON('https://api.coinpaprika.com/v1/tickers/'+c.pp+'?quotes=USD').then(function(x){var q=x.quotes.USD;c.p=q.price;c.c=q.percent_change_24h;c.v=q.volume_24h;c.m=q.market_cap})})).then(function(){stamp('Coinpaprika')});
+}
+function loadRub(){
+ return getJSON(CG+'/simple/price?ids='+COINS.map(function(c){return c.id}).join(',')+'&vs_currencies=rub').then(function(r){COINS.forEach(function(c){if(r[c.id])RUB[c.id]=r[c.id].rub})});
+}
+function loadChart(days){
+ if(CHARTS[days]||days===7&&SPARK)return Promise.resolve();
+ return getJSON(CG+'/coins/bitcoin/market_chart?vs_currency=usd&days='+days).then(function(r){CHARTS[days]=r.prices.map(function(p){return p[1]})});
+}
+function refresh(){
+ loadCG().catch(function(){return loadPaprika()}).then(function(){digest();render()}).catch(function(){
+  $('#mktStatus').textContent='Показаны данные на 2 ноября, 14:35: сервис котировок недоступен';
+ });
+}
+render();
+refresh();
+setInterval(refresh,60000);
+function setCur(c){CUR=c;$$('[data-cur]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.cur===c))});render()}
+$$('[data-cur]').forEach(function(b){b.addEventListener('click',function(){
+ var c=b.dataset.cur;
+ if(c==='rub'&&!Object.keys(RUB).length){loadRub().then(function(){setCur('rub')}).catch(function(){setCur('usd');$('#mktStatus').textContent='Цены в рублях временно недоступны: нет связи с сервисом котировок'});return}
+ setCur(c);
+})});
+$$('[data-per]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();$$('[data-per]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});PER=+b.dataset.per;drawChart();loadChart(PER).then(drawChart).catch(function(){})})});
+
+/* ---------- Подгонка: в колонках остаётся столько пунктов, сколько помещается целиком ---------- */
+function fit(list){
+ var items=Array.prototype.slice.call(list.children);items.forEach(function(i){i.style.display=''});
+ if(window.innerWidth<1100)return;
+ var box=list.getBoundingClientRect().bottom;
+ items.forEach(function(i){if(i.getBoundingClientRect().bottom>box+1)i.style.display='none'});
+}
+function fitAll(){$$('[data-fit]').forEach(fit)}
+
+/* ---------- Шапка: сама переходит в мобильный вид, если пункты не помещаются ---------- */
+var hdr=$('#hdr'),card=$('#hdrCard'),lastY=0;
+function overflowing(el){
+ if(el.scrollWidth>el.clientWidth+1)return true;
+ var r=el.getBoundingClientRect(),pr=parseFloat(getComputedStyle(el).paddingRight)||0,kids=Array.prototype.filter.call(el.children,function(k){return k.offsetParent!==null});
+ for(var i=0;i<kids.length;i++){var k=kids[i].getBoundingClientRect();if(k.right>r.right-pr+0.5)return true;if(i&&k.left<kids[i-1].getBoundingClientRect().right+4)return true}
+ return false}
+function fitHeader(){
+ hdr.classList.remove('collapsed','wide-search','no-topics','tiny');
+ if(window.innerWidth<1280||overflowing(card))hdr.classList.add('collapsed');
+ if(hdr.classList.contains('collapsed')&&overflowing(card))hdr.classList.add('tiny');
+ else{hdr.classList.add('wide-search');if(overflowing(card))hdr.classList.remove('wide-search')}
+ var row=$('#row2');if(row.scrollWidth>row.clientWidth+1||$('.rates').clientWidth<360)hdr.classList.add('no-topics');
+ if(!hdr.classList.contains('compact'))document.documentElement.style.setProperty('--hh',hdr.offsetHeight+'px');
+}
+function layout(){fitHeader();fitAll()}
+layout();
+window.addEventListener('resize',layout);
+window.addEventListener('load',layout);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+window.addEventListener('scroll',function(){var y=window.scrollY,d=y-lastY;if(Math.abs(d)<8)return;if(y>200&&d>0)hdr.classList.add('compact');else if(d<0||y<=200)hdr.classList.remove('compact');lastY=y},{passive:true});
+
+/* ---------- Срочно ---------- */
+try{if(sessionStorage.getItem('b24-urgent')==='hidden')$('#urgent').hidden=true}catch(e){}
+$('#urgentClose').addEventListener('click',function(){$('#urgent').hidden=true;try{sessionStorage.setItem('b24-urgent','hidden')}catch(e){}fitHeader()});
+
+/* ---------- Лента: вкладки на десктопе, аккордеон на мобильном ---------- */
+var tabs=$$('.seg [role=tab]');
+tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',String(on));var p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;p.classList.toggle('open',on);$('.acc-h',p).setAttribute('aria-expanded',String(on))});fitAll()})});
+$$('.feed .acc-h').forEach(function(h){h.addEventListener('click',function(){var p=h.parentNode,on=!p.classList.contains('open');p.classList.toggle('open',on);h.setAttribute('aria-expanded',String(on))})});
+
+/* ---------- Рубрики: аккордеон на мобильном ---------- */
+$$('.rub-h').forEach(function(h){h.addEventListener('click',function(){if(window.innerWidth>1099)return;var r=h.parentNode,on=!r.classList.contains('open');r.classList.toggle('open',on);h.setAttribute('aria-expanded',String(on))})});
+
+/* ---------- Выбор редакции: слайдер на мобильном, свайп и мышь ---------- */
+var track=$('#picks'),cards=$$('.pick',track),dotsW=$('#dots');
+dotsW.innerHTML=cards.map(function(c,i){return '<button class="dot'+(i?'':' on')+'" type="button" aria-label="Материал '+(i+1)+'"></button>'}).join('');
+var dots=$$('.dot',dotsW);
+function step(){return cards[0].getBoundingClientRect().width+12}
+function go(i){i=Math.max(0,Math.min(cards.length-1,i));track.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:'smooth'})}
+function cur(){var i=Math.round(track.scrollLeft/step());if(track.scrollLeft+track.clientWidth>=track.scrollWidth-4)i=cards.length-1;return Math.min(i,cards.length-1)}
+var st;track.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var i=cur();dots.forEach(function(d,k){d.classList.toggle('on',k===i)})},60)},{passive:true});
+dots.forEach(function(d,i){d.addEventListener('click',function(){go(i)})});
+$('#prev').addEventListener('click',function(){go(cur()-1)});
+$('#next').addEventListener('click',function(){go(cur()+1)});
+var drag=null,block=false;
+track.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0||track.scrollWidth<=track.clientWidth)return;drag={x:e.clientX,s:track.scrollLeft,m:false}});
+window.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x;if(!drag.m&&Math.abs(dx)>5){drag.m=true;track.classList.add('drag')}if(drag.m)track.scrollLeft=drag.s-dx});
+window.addEventListener('pointerup',function(){if(!drag)return;var m=drag.m;drag=null;if(m){track.classList.remove('drag');go(cur());block=true;setTimeout(function(){block=false},60)}});
+track.addEventListener('click',function(e){if(block){e.preventDefault();e.stopPropagation()}},true);
+track.addEventListener('dragstart',function(e){e.preventDefault()});
+
+/* ---------- Окна ---------- */
+var last=null;
+function openO(id){closeAll(true);var o=document.getElementById(id);last=document.activeElement;o.hidden=false;document.body.classList.add('lock');var f=$('input:not([type=hidden]),select,button',o);if(f)setTimeout(function(){f.focus()},30)}
+function closeAll(keep){$$('.ovl').forEach(function(o){o.hidden=true});document.body.classList.remove('lock');if(!keep&&last)last.focus()}
+$$('.ovl').forEach(function(o){o.addEventListener('click',function(e){if(e.target===o)closeAll()})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+document.addEventListener('click',function(e){
+ var t=e.target.closest('[data-open],[data-modal],[data-close],[data-close-nav],#menu nav a');if(!t)return;
+ if(t.matches('[data-close]')){closeAll();return}
+ if(t.matches('[data-close-nav],#menu nav a')){closeAll(true);return}
+ if(t.dataset.open){openO(t.dataset.open);return}
+ if(t.dataset.modal){e.preventDefault();var f=$('#'+t.dataset.modal+' form');reset(f);if(t.dataset.coin){$('#alCoin').value=t.dataset.coin;var c=COINS.filter(function(x){return x.id===t.dataset.coin})[0];if(c)$('#alPrice').placeholder=price(c.p)}openO(t.dataset.modal)}
+});
+
+/* ---------- Формы ---------- */
+function reset(f){if(!f)return;f.reset();$('[data-body]',f).hidden=false;$('[data-ok]',f).hidden=true;$('.err',f).hidden=true;$$('.fld',f).forEach(function(l){l.classList.remove('bad')})}
+$$('.js-form').forEach(function(f){f.addEventListener('submit',function(e){
+ e.preventDefault();var bad=false;
+ $$('[required]',f).forEach(function(i){var v=i.value.trim(),ok=v.length>0&&(i.type!=='email'||/^\S+@\S+\.\S+$/.test(v));i.closest('.fld').classList.toggle('bad',!ok);if(!ok)bad=true});
+ $('.err',f).hidden=!bad;if(bad)return;
+ /* TODO: отправка на сервер — fetch('/api/forms',{method:'POST',body:new FormData(f)}) */
+ $('[data-body]',f).hidden=true;$('[data-ok]',f).hidden=false;
+})});
+
+/* ---------- События: обратный отсчёт до ближайшего форума и файл для календаря ---------- */
+(function(){
+ var f=$('.evf');if(!f)return;
+ var start=new Date(f.dataset.start),end=new Date(f.dataset.end),cd=$('#evCd'),inn=$('#evIn');
+ var plural=function(n,a,b,c){var m=n%10,h=n%100;return m===1&&h!==11?a:m>=2&&m<=4&&(h<12||h>14)?b:c};
+ function tick(){
+  var ms=start-Date.now();
+  if(ms<=0){inn.textContent=Date.now()<end?'идёт сейчас':'завершилось';cd.hidden=true;return}
+  var d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
+  $('[data-u=d]',cd).textContent=d;$('[data-u=h]',cd).textContent=String(h).padStart(2,'0');$('[data-u=m]',cd).textContent=String(m).padStart(2,'0');$('[data-u=s]',cd).textContent=String(s).padStart(2,'0');
+  $('[data-u=d]',cd).nextElementSibling.textContent=plural(d,'день','дня','дней');
+  inn.textContent=d?'через '+d+' '+plural(d,'день','дня','дней'):'уже завтра';
+ }
+ tick();setInterval(tick,1000);
+ var z=function(t){return t.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'')};
+ var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Blockchain24//RU','BEGIN:VEVENT','UID:the-trends-2026@blockchain24.pro','DTSTAMP:'+z(new Date()),'DTSTART:'+z(start),'DTEND:'+z(end),'SUMMARY:The Trends 2026','LOCATION:Москва','URL:https://blockchain24.pro/events','END:VEVENT','END:VCALENDAR'].join('\r\n');
+ $('#evIcs').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+})();
+
+/* ---------- Карточка форума: цифровой фон — потоки цифр ---------- */
+(function(){
+ var card=$('.evf');if(!card||!window.HTMLCanvasElement)return;
+ var cv=document.createElement('canvas');cv.className='evf-art';cv.setAttribute('aria-hidden','true');card.insertBefore(cv,card.firstChild);
+ var ctx=cv.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var CH='0123456789ABCDEF',FS=14,cols=[],w=0,h=0,run=false,raf=0,last=0;
+ function rnd(){return CH[Math.random()*CH.length|0]}
+ function size(){
+  w=card.clientWidth;h=card.clientHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+  var n=Math.ceil(w/(FS*1.15));cols=[];
+  for(var i=0;i<n;i++)cols.push({y:Math.random()*h,v:.35+Math.random()*.9,len:8+(Math.random()*16|0),ch:[],a:.35+Math.random()*.65});
+  cols.forEach(function(c){for(var k=0;k<c.len;k++)c.ch.push(rnd())});
+  draw(0);
+ }
+ function draw(dt){
+  ctx.clearRect(0,0,w,h);ctx.font='600 '+FS+'px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';ctx.textAlign='center';
+  for(var i=0;i<cols.length;i++){
+   var c=cols[i],x=i*FS*1.15+FS/2;
+   if(!still){c.y+=c.v*dt*.06;if(c.y-c.len*FS>h){c.y=-Math.random()*h*.5;c.v=.35+Math.random()*.9}
+    if(Math.random()<.04)c.ch[Math.random()*c.len|0]=rnd()}
+   for(var k=0;k<c.len;k++){
+    var y=c.y-k*FS;if(y<-FS||y>h+FS)continue;
+    var t=1-k/c.len;
+    ctx.fillStyle=k===0?'rgba(235,242,255,'+(.95*c.a)+')':'rgba('+(110+60*t|0)+','+(140+60*t|0)+',255,'+(t*.55*c.a).toFixed(3)+')';
+    ctx.fillText(c.ch[k],x,y);
+   }
+  }
+ }
+ function loop(t){var dt=last?Math.min(t-last,50):16;last=t;draw(dt);raf=run?requestAnimationFrame(loop):0}
+ function play(on){run=on&&!still;if(run&&!raf){last=0;raf=requestAnimationFrame(loop)}}
+ size();
+ if(window.ResizeObserver)new ResizeObserver(function(){if(Math.abs(card.clientWidth-w)>1||Math.abs(card.clientHeight-h)>1)size()}).observe(card);
+ if(window.IntersectionObserver)new IntersectionObserver(function(e){play(e[0].isIntersecting)}).observe(card);else play(true);
+})();
+
+/* ---------- Подписка и Telegram: фон — сеть узлов, которая обходит текст и кнопки ---------- */
+function digitalNet(box,textSel,blockSel){
+ if(!box||!window.HTMLCanvasElement)return;
+ var cv=document.createElement('canvas');cv.className='sm-bg';cv.setAttribute('aria-hidden','true');box.insertBefore(cv,box.firstChild);
+ var ctx=cv.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var w=0,h=0,pts=[],zones=[],run=false,raf=0,PAD=12,FADE=40;
+ var glow=document.createElement('canvas');glow.width=glow.height=64;
+ (function(){var g=glow.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.18,'rgba(200,220,255,.9)');r.addColorStop(.45,'rgba(140,175,255,.3)');r.addColorStop(1,'rgba(120,160,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64)})();
+ /* зоны текста и формы: внутри них сети нет, к краям она плавно гаснет */
+ function measure(){
+  var b=box.getBoundingClientRect();zones=[];
+  $$(textSel+','+blockSel,box).forEach(function(el){
+   if(el.closest('[hidden]'))return;
+   if(el.matches(textSel)){
+    /* у текста берём реальные строки, а не всю ширину блока */
+    var rg=document.createRange();rg.selectNodeContents(el);Array.prototype.forEach.call(rg.getClientRects(),function(r){zones.push([r.left-b.left,r.top-b.top,r.right-b.left,r.bottom-b.top])});
+   }else{var r=el.getBoundingClientRect();zones.push([r.left-b.left,r.top-b.top,r.right-b.left,r.bottom-b.top])}
+  });
+ }
+ function vis(x,y){
+  var m=1;for(var i=0;i<zones.length;i++){var z=zones[i];
+   var dx=Math.max(z[0]-PAD-x,0,x-z[2]-PAD),dy=Math.max(z[1]-PAD-y,0,y-z[3]-PAD),d=Math.sqrt(dx*dx+dy*dy);
+   var inside=x>z[0]-PAD&&x<z[2]+PAD&&y>z[1]-PAD&&y<z[3]+PAD;
+   m=Math.min(m,inside?0:Math.min(1,d/FADE))}
+  return m}
+ function seed(){
+  var n=Math.round(Math.min(170,Math.max(50,w*h/4200)));pts=[];
+  for(var i=0;i<n;i++){var z=Math.random();pts.push({x:Math.random()*w,y:Math.random()*h,z:z,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,hub:Math.random()<.07,ph:Math.random()*6.28})}
+ }
+ function size(){w=box.clientWidth;h=box.clientHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);measure();seed();draw(0)}
+ function draw(t){
+  ctx.clearRect(0,0,w,h);var L=Math.min(150,Math.max(100,w/10)),i,j,a,b,dx,dy,d;
+  for(i=0;i<pts.length;i++){a=pts[i];a.v=vis(a.x,a.y);
+   if(!still){a.x+=a.vx*(.5+a.z);a.y+=a.vy*(.5+a.z);if(a.x<-20)a.x=w+20;else if(a.x>w+20)a.x=-20;if(a.y<-20)a.y=h+20;else if(a.y>h+20)a.y=-20}}
+  ctx.lineWidth=1;
+  for(i=0;i<pts.length;i++){a=pts[i];if(!a.v)continue;
+   for(j=i+1;j<pts.length;j++){b=pts[j];if(!b.v)continue;dx=a.x-b.x;dy=a.y-b.y;if(dx>L||dx<-L||dy>L||dy<-L)continue;d=Math.sqrt(dx*dx+dy*dy);if(d>L)continue;
+    /* середина линии тоже не должна заходить на текст */
+    var mv=Math.min(a.v,b.v,vis((a.x+b.x)/2,(a.y+b.y)/2));if(!mv)continue;
+    ctx.strokeStyle='rgba(190,212,255,'+((1-d/L)*(.3+.45*Math.min(a.z,b.z))*mv).toFixed(3)+')';
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
+  for(i=0;i<pts.length;i++){a=pts[i];if(!a.v)continue;
+   var tw=still?1:.8+.2*Math.sin(t/1100+a.ph),s=a.hub?22:6+a.z*a.z*24;
+   ctx.globalAlpha=(a.z>.85&&!a.hub?.3:.45+a.z*.45)*tw*a.v;ctx.drawImage(glow,a.x-s/2,a.y-s/2,s,s);
+   if(a.hub){ctx.globalAlpha=.55*a.v;ctx.strokeStyle='#DCE6FF';ctx.beginPath();ctx.arc(a.x,a.y,8+2*Math.sin(t/700+a.ph),0,6.283);ctx.stroke()}}
+  ctx.globalAlpha=1;
+ }
+ function loop(t){draw(t);raf=run?requestAnimationFrame(loop):0}
+ function play(on){run=on&&!still;if(run&&!raf)raf=requestAnimationFrame(loop)}
+ size();
+ if(window.ResizeObserver)new ResizeObserver(function(){if(Math.abs(box.clientWidth-w)>1||Math.abs(box.clientHeight-h)>1)size();else{measure();draw(0)}}).observe(box);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure()});
+ if(window.IntersectionObserver)new IntersectionObserver(function(e){play(e[0].isIntersecting)}).observe(box);else play(true);
+}
+digitalNet($('.sub-mail'),'h2,.sub-mail-t>p','.perks li,.mail-form');
+digitalNet($('.sub-tg'),'h2,p','li,.acts a');
+
+/* ---------- Кнопка «наверх»: появляется после первого экрана, кольцо показывает прогресс ---------- */
+(function(){
+ var b=$('#toTop');if(!b)return;var pr=$('.pr',b),L=163.4,tk=false;
+ b.hidden=false;
+ function upd(){tk=false;var y=window.scrollY,m=document.documentElement.scrollHeight-window.innerHeight;
+  b.classList.toggle('on',y>window.innerHeight*.8);pr.style.strokeDashoffset=(L*(1-(m>0?Math.min(1,y/m):0))).toFixed(1)}
+ window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(upd)}},{passive:true});
+ window.addEventListener('resize',upd);upd();
+ b.addEventListener('click',function(){var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});var f=$('a,button',$('#hdr'));if(f)f.focus({preventScroll:true})});
+})();
+
+/* ---------- Видео: по клику обложка меняется на плеер YouTube прямо в блоке ---------- */
+$$('[data-yt]').forEach(function(a){a.addEventListener('click',function(e){
+ if(e.ctrlKey||e.metaKey||e.shiftKey)return;e.preventDefault();
+ var m=$('.media',a),f=document.createElement('iframe');
+ f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.title=a.getAttribute('aria-label')||'Видео';
+ f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;
+ m.innerHTML='';m.appendChild(f);a.classList.add('is-playing');a.removeAttribute('href');
+},{once:true})});
+
+/* ---------- Голоса индустрии: цитаты экспертов, автосмена с паузой при наведении ---------- */
+/* ЗАГЛУШКИ: тексты цитат придуманы для макета, заменить на реальные */
+(function(){
+ var box=$('#expCol.voices');if(!box)return;
+ var Q=[
+  {n:'Gleb Jount',r:'CEO Bitget CIS',img:'jount',u:'gleb-jount',t:'Биржи больше не соревнуются комиссиями. Выигрывает тот, кому пользователь доверяет свои деньги в момент паники на рынке.'},
+  {n:'Аарон Хомский',r:'ICB Fund',img:'khomsky',u:'aaron-khomsky',t:'Институциональные деньги приходят в крипту медленно, но каждый новый фонд остаётся на рынке надолго.'},
+  {n:'Алекс Райнхардт',r:'Предприниматель, эксперт в криптотехнологиях',img:'rajnhardt',u:'aleks-rajnhardt',t:'Хороший проект виден не по white paper, а по тому, что команда делает, когда рынок падает.'},
+  {n:'Антон Ефименко',r:'Консультант по токеномике',img:'yefimenko',u:'-anton-yefimenko',t:'Токеномика — это не таблица с распределением. Это ответ на вопрос, зачем человеку держать токен через год.'},
+  {n:'Айгерим Джаксыбаева',r:'Партнёр WE Legal',img:'dzhaksybayeva',u:'aygerim-dzhaksybayeva',t:'Регулирование не убивает рынок. Оно отсекает тех, кто строил бизнес на отсутствии правил.'},
+  {n:'Александр Беленов',r:'Блокчейн-лаборатория «Идея»',img:'belenov',u:'aleksandr-belenov',t:'Блокчейн полезен там, где участникам не нужно доверять друг другу. Во всех остальных случаях хватит обычной базы данных.'}
+ ];
+ var cur=-1,timer=0,DUR=7000,still=window.matchMedia('(prefers-reduced-motion: reduce)').matches,fig=$('.vq',box),bar=$('.vq-bar i',box),avs=$('#vqAvs');
+ box.style.setProperty('--vq',DUR+'ms');
+ avs.innerHTML=Q.map(function(q,i){return '<button class="vq-av" type="button" role="tab" aria-selected="false" aria-label="'+esc(q.n)+'" data-i="'+i+'"><img src="./img/experts/'+q.img+'.webp" alt="" loading="lazy"></button>'}).join('');
+ function fill(i){var q=Q[i];$('#vqText').textContent='«'+q.t+'»';$('#vqName').textContent=q.n;$('#vqRole').textContent=q.r;$('#vqImg').src='./img/experts/'+q.img+'.webp';$('#vqWho').href='https://blockchain24.pro/experts/'+q.u}
+ function show(i){
+  if(i===cur)return;cur=i;
+  $$('.vq-av',avs).forEach(function(b,k){b.setAttribute('aria-selected',String(k===i))});
+  if(still){fill(i);return}
+  fig.classList.add('out');setTimeout(function(){fill(i);fig.classList.remove('out')},300);
+  bar.classList.remove('run');void bar.offsetWidth;bar.classList.add('run');
+ }
+ bar.addEventListener('animationend',function(){show((cur+1)%Q.length)});
+ avs.addEventListener('click',function(e){var b=e.target.closest('.vq-av');if(b)show(+b.dataset.i)});
+ fill(0);show(0);
+})();
+})();
+</script>
+</body>
+</html>
