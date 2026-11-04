@@ -709,6 +709,15 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 .sub-app .stores .store,.ft-stores .store{font-size:17px;line-height:20px;font-weight:700;letter-spacing:-.01em}
 .sub-app .stores .store small,.ft-stores .store small{font-size:12px;line-height:14px;margin-bottom:1px}
 .sub-app .stores .store svg,.ft-stores .store svg{width:28px;height:28px}
+/* мобильные: в подвале кнопки сторов на всю ширину; в «Приложении» — в одну строку, телефон выше, блок ниже */
+@media (max-width:767px){.ft-stores{align-items:stretch}.ft-stores .store{width:100%}}
+@media (max-width:560px){
+ .sub-app .stores{flex-direction:row;flex-wrap:wrap;align-items:stretch;gap:10px}
+ .sub-app .stores .store{flex:1 1 140px;width:auto;min-width:0;height:52px;padding:0 12px;gap:8px;font-size:15px;line-height:18px}
+ .sub-app .stores .store small{font-size:11px;line-height:13px}
+ .sub-app .stores .store svg{width:24px;height:24px}
+ .sub-app{padding-bottom:244px}
+}
 /* кнопка «наверх» с кольцом прогресса прокрутки */
 .totop{position:fixed;right:24px;bottom:24px;z-index:60;width:56px;height:56px;border:0;border-radius:50%;padding:0;cursor:pointer;display:grid;place-items:center;color:#fff;background:var(--blue);
  box-shadow:0 14px 30px -12px rgba(24,69,231,.8);opacity:0;transform:translateY(16px) scale(.9);transition:opacity .25s,transform .25s cubic-bezier(.2,.7,.2,1),background .2s}
