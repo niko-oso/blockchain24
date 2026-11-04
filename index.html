@@ -928,6 +928,29 @@ div:has(>#leadUp)+div .lead-sub{margin-top:14px}
 @media (min-width:1100px) and (max-width:1439px){.mf-at{display:none}}
 @media (max-width:767px){.mf-tile{width:48px;height:48px;border-radius:16px;top:-20px;right:-8px}.mf-tile svg{width:22px;height:22px}.mf-tile b{display:none}.mf-at{display:none}}
 @media (prefers-reduced-motion:reduce){.tg-art *,.mail-art *,.mf-tile,.mf-at{animation:none!important}}
+/* голоса индустрии: адаптив. Две колонки только с 1100px, высоту ряда задаёт более высокая карточка — ничего не обрезается */
+.vgrid{grid-template-columns:minmax(0,1fr)}
+@media (min-width:1100px){.vgrid{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}.vgrid>.experts{height:auto;min-height:0}}
+.video-b{flex:1;display:flex;flex-direction:column;justify-content:center}
+.vq-foot{flex-wrap:wrap;row-gap:12px}
+.vq-fact{flex:1 1 160px}
+@media (max-width:1099px){.vq blockquote{font-size:20px}}
+@media (max-width:767px){
+ .voices .sec-h{margin-bottom:16px}
+ .vgrid{gap:14px}
+ .video-b{padding:14px 16px 16px}
+ .video .t-wide{font-size:18px;line-height:24px;height:48px}
+ .play{width:56px;height:56px;border-radius:18px}
+ .vq-card{padding:20px 18px 18px}
+ .vq-k{font-size:11px}
+ .vq blockquote{font-size:18px;line-height:1.4}
+ .vq-who img{width:44px;height:44px}
+ .vq-who b{font-size:15px;line-height:20px}
+}
+@media (max-width:480px){.vq-foot{flex-direction:column;align-items:flex-start}.vq-fact{flex:none}}
+@media (max-width:360px){.voices{padding:20px 12px}.vq-card{padding:18px 14px 16px}.vq blockquote{font-size:17px}.vq-av{width:36px;height:36px;flex-basis:36px}}
+/* планшет: видео горизонтальной карточкой, чтобы не растягивалось на всю ширину */
+@media (min-width:768px) and (max-width:1099px){.video{flex-direction:row}.video .media{flex:0 0 58%;align-self:center}.video-b{padding:20px 24px}.video .t-wide{-webkit-line-clamp:5;height:auto;font-size:19px;line-height:25px}}
 </style>
 </head>
 <body>
@@ -1836,7 +1859,19 @@ $$('[data-yt]').forEach(function(a){a.addEventListener('click',function(e){
  }
  bar.addEventListener('animationend',function(){show((cur+1)%Q.length)});
  avs.addEventListener('click',function(e){var b=e.target.closest('.vq-av');if(b)show(+b.dataset.i)});
- fill(0);show(0);
+ /* высота цитаты — по самой длинной, чтобы карточка не прыгала при смене */
+ var fw=0;
+ function fit(){
+  var w=fig.clientWidth;if(!w||w===fw)return;fw=w;
+  var c=fig.cloneNode(true);c.removeAttribute('aria-live');c.classList.remove('out');c.style.cssText='position:absolute;visibility:hidden;left:0;top:0;min-height:0;width:'+w+'px';
+  $$('[id]',c).forEach(function(n){n.removeAttribute('id')});box.appendChild(c);
+  var t=$('blockquote',c),nm=$('.vq-who b',c),rl=$('.vq-who small',c),m=0;
+  Q.forEach(function(q){t.textContent='«'+q.t+'»';nm.textContent=q.n;rl.textContent=q.r;m=Math.max(m,c.offsetHeight)});
+  box.removeChild(c);fig.style.minHeight=m+'px';
+ }
+ if(window.ResizeObserver)new ResizeObserver(fit).observe(box);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fw=0;fit()});
+ fill(0);show(0);fit();
 })();
 })();
 </script>
