@@ -1,15 +1,6 @@
 /* ---------- Страница статьи: на общих токенах и компонентах из main.css ---------- */
 .art-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:70;background:linear-gradient(90deg,#4C74FF,#1845E7);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
 
-/* хлебные крошки */
-.art-top{margin-top:8px}
-.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;font-size:13px;line-height:20px;color:var(--muted)}
-.crumbs a{color:var(--muted);transition:color .15s}
-.crumbs a::after{content:"";display:inline-block;width:14px;height:14px;margin:0 6px;vertical-align:-2px;background:currentColor;opacity:.5;
- -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6 6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
- mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6 6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
-@media (hover:hover){.crumbs a:hover{color:var(--blue)}}
-.crumbs span{color:var(--ink);font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* сетка: статья + боковая колонка */
 .art-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;margin-top:16px}
@@ -172,8 +163,6 @@
 
 /* боковая колонка */
 .art-side{display:flex;flex-direction:column;gap:20px;align-self:stretch}
-.side-stick{position:sticky;top:calc(var(--hh,150px) + 12px);display:flex;flex-direction:column;gap:20px;transition:top .3s}
-html:has(.hdr.compact) .side-stick{top:92px}
 .coin-w{padding:22px 24px}
 .coin-h{display:flex;align-items:center;gap:12px}
 .coin-ic{width:44px;height:44px;border-radius:14px;flex-shrink:0;display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;background:linear-gradient(135deg,#2B2D42,#0C1033);overflow:hidden}
@@ -186,13 +175,6 @@ html:has(.hdr.compact) .side-stick{top:92px}
 .coin-p .chg.down{background:var(--downbg);color:var(--down)}.coin-p .chg.up{background:var(--upbg);color:var(--up)}
 .coin-s{margin-top:6px;font-size:12px;color:var(--muted)}
 .coin-w .lnk{margin-top:14px}
-.tg-mini{position:relative;overflow:hidden;isolation:isolate;padding:24px;border-radius:22px;background:var(--blue);color:#fff}
-.tg-mini::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;z-index:-1;border:1.5px dashed rgba(255,255,255,.28);box-shadow:0 0 0 30px rgba(255,255,255,.05),0 0 0 31.5px rgba(255,255,255,.12)}
-.tg-mini-ic{width:52px;height:52px;border-radius:17px;display:grid;place-items:center;background:#fff;color:var(--blue);box-shadow:0 14px 24px -12px rgba(8,14,60,.55);rotate:-4deg}
-.tg-mini-ic svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.tg-mini h2{margin-top:16px;font-size:19px;line-height:24px;font-weight:700;letter-spacing:-.01em}
-.tg-mini p{margin-top:4px;font-size:14px;color:#DCE3FF}
-.tg-mini .btn{margin-top:16px;width:100%;height:44px;color:var(--blue)}
 
 
 /* содержание: блок в начале статьи */
@@ -226,14 +208,6 @@ html:has(.hdr.compact) .side-stick{top:92px}
 @media (max-width:767px){.toc-fl{left:16px;right:78px;bottom:17px;max-width:none;align-items:stretch}.toc-pill{width:100%}.toc-pop{width:auto}}
 @media (prefers-reduced-motion:reduce){.toc-fl{transition:none}}
 
-/* боковая колонка: популярное в рубрике */
-.side-pop{padding:22px 24px 14px}
-.side-pop h2{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.side-pop ol{list-style:none;margin:8px 0 0;padding:0;counter-reset:p}
-.side-pop li+li{border-top:1px solid var(--line)}
-.side-pop a{display:flex;gap:14px;padding:12px 0;font-size:15px;line-height:21px;font-weight:600;color:var(--ink);transition:color .15s}
-.side-pop a::before{counter-increment:p;content:counter(p);flex-shrink:0;width:26px;height:26px;border-radius:9px;background:#F3F5FB;color:var(--blue);font-size:13px;font-weight:800;display:grid;place-items:center}
-@media (hover:hover){.side-pop a:hover{color:var(--blue)}}
 /* адаптив */
 @media (max-width:1279px){.art-grid{grid-template-columns:minmax(0,1fr) 300px}}
 @media (max-width:1099px){
@@ -267,6 +241,4 @@ html:has(.hdr.compact) .side-stick{top:92px}
  .pn-a .media{width:72px;flex-basis:72px}
  .cm{padding:24px 18px;border-radius:24px}
  .art-side{grid-template-columns:minmax(0,1fr)}
- .crumbs span{max-width:60vw}
 }
-@media (prefers-reduced-motion:reduce){.side-stick{transition:none}}
