@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог криптовалютных и блокчейн-компаний России — Blockchain24</title>
+<meta name="description" content="Майнинг, хостинг ASIC, юристы, разработчики, сервисные центры и агентства из сферы криптовалют и блокчейна в России.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.coingecko.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/listing.css">
+<link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+<!-- Блок 0. Срочно: появляется, только когда редактор ставит срочную новость -->
+<div class="urgent" id="urgent">
+<div class="wrap">
+<b>Срочно</b>
+<a href="https://blockchain24.pro/events">The Trends пройдёт в Москве 17–19 ноября: главное о форуме и программе</a>
+<time datetime="2026-11-02">Сегодня</time>
+<button type="button" aria-label="Скрыть срочную новость" id="urgentClose"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</div>
+<div class="wrap hdr-in">
+<div class="card hdr-card" id="hdrCard">
+<div class="hdr-l">
+<button class="ibtn burger" type="button" aria-label="Открыть меню" data-open="menu"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11"/></svg></button>
+<a class="logo" href="index.html" aria-label="Blockchain24 — на главную">
+<img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'">
+<span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span>
+</a>
+</div>
+<nav class="capsule" aria-label="Разделы">
+<a href="index.html">Главная</a>
+<a href="news.html">Новости</a>
+<a href="https://blockchain24.pro/articles">Аналитика</a>
+<a href="https://blockchain24.pro/interview">Интервью</a>
+<a href="https://blockchain24.pro/abc">Азбука</a>
+<a href="https://blockchain24.pro/coins">Курсы</a>
+<a href="https://blockchain24.pro/events">События</a>
+</nav>
+<div class="hdr-act">
+<div class="hsoc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+<button class="search" type="button" data-open="search" aria-label="Поиск по журналу"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Поиск по журналу</span></button>
+<a class="ibtn usr" href="https://blockchain24.pro/login" aria-label="Личный кабинет"><svg class="ic" width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Войти</span></a>
+<a class="btn btn-p cta-l" href="#subscribe" style="height:44px">Подписаться</a>
+<a class="btn btn-p cta-s" href="#subscribe">Подписка</a>
+</div>
+</div>
+<div class="hdr-row" id="row2">
+<div class="rates" aria-label="Курсы криптовалют" id="hdrRates"></div>
+<div class="topics"><span>Темы дня</span><a href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov">ETF</a><a href="https://blockchain24.pro/sber-prisoyedinyayetsya-k-testirovaniyu-tsifrovogo-rublya-s-realnymi-kliyentami">Цифровой рубль</a><a href="https://blockchain24.pro/regulirovaniye-kriptovalyut-v-rossii-v-2023-godu">Регулирование</a></div>
+</div>
+</div>
+</header>
+<div id="hdrSpace" aria-hidden="true"></div>
+
+<main>
+<!-- ДЕМО-ДАННЫЕ: компании, контакты, рейтинги и счётчики ниже придуманы для макета каталога -->
+<div class="wrap art-top">
+<nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span aria-current="page">Каталог компаний</span></nav>
+</div>
+
+<section class="wrap ls-head" aria-labelledby="lsT">
+<div class="ls-title">
+<h1 id="lsT">Каталог компаний</h1>
+<p>Майнинг, юристы, разработчики, сервисные центры и агентства из сферы криптовалют и блокчейна в России. Проверяем данные компаний перед публикацией.</p>
+</div>
+</section>
+
+<!-- Поиск по каталогу -->
+<section class="wrap" aria-label="Поиск по каталогу">
+<form class="card ct-search" id="ctSearch" role="search">
+<label class="ct-q"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Название или услуга</span><input type="search" id="ctQ" placeholder="Название компании или услуга, например «ремонт ASIC»" autocomplete="off"></label>
+<label class="ct-city"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="sr">Город</span><select id="ctCity"><option value="">Вся Россия</option><option>Москва</option><option>Санкт-Петербург</option><option>Екатеринбург</option><option>Новосибирск</option><option>Иркутск</option><option>Красноярск</option><option>Казань</option></select></label>
+<button class="btn btn-p" type="submit">Найти</button>
+</form>
+</section>
+
+<!-- Категории: в стилистике иллюстраций «Наших достижений» -->
+<section class="wrap ct-cats-w" aria-labelledby="catsT">
+<h2 id="catsT" class="sr">Категории</h2>
+<div class="ct-cats" id="ctCats">
+<button type="button" class="ct-cat" data-cat="mining" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span><span class="ct-n"><b>Майнинг</b><small>64 компании</small></span></button>
+<button type="button" class="ct-cat" data-cat="hosting" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></svg></span><span class="ct-n"><b>Хостинг оборудования</b><small>27 компаний</small></span></button>
+<button type="button" class="ct-cat" data-cat="service" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8 7.2 20l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.8-.6-.6-2.8Z"/></svg></span><span class="ct-n"><b>Ремонт и обслуживание</b><small>41 компания</small></span></button>
+<button type="button" class="ct-cat" data-cat="law" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-2.5 6a3 3 0 0 0 5 0Zm14 0-2.5 6a3 3 0 0 0 5 0Z"/></svg></span><span class="ct-n"><b>Юридические услуги</b><small>35 компаний</small></span></button>
+<button type="button" class="ct-cat" data-cat="dev" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span class="ct-n"><b>Разработка</b><small>52 компании</small></span></button>
+<button type="button" class="ct-cat" data-cat="promo" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="ct-n"><b>Продвижение</b><small>29 компаний</small></span></button>
+<button type="button" class="ct-cat" data-cat="otc" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></span><span class="ct-n"><b>Обмен и OTC</b><small>18 компаний</small></span></button>
+<button type="button" class="ct-cat" data-cat="consult" aria-pressed="false"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></span><span class="ct-n"><b>Консалтинг и аудит</b><small>23 компании</small></span></button>
+</div>
+</section>
+
+<!-- Сортировка и фильтры выдачи -->
+<div class="wrap ls-barw">
+<div class="ls-bar ct-bar">
+<div class="ls-sort" role="group" aria-label="Сортировка"><button type="button" aria-pressed="true" data-sort="rate">По рейтингу</button><button type="button" aria-pressed="false" data-sort="new">Новые</button><button type="button" aria-pressed="false" data-sort="name">А–Я</button></div>
+<label class="ct-ver"><input type="checkbox" id="ctVer"><span class="ct-sw" aria-hidden="true"></span>Только проверенные</label>
+<p class="ct-found" id="ctFound" aria-live="polite"></p>
+</div>
+</div>
+
+<div class="wrap ls-grid">
+<div class="ls-col">
+<div class="ct-list" id="ctList">
+<!-- Платное размещение: закреплено первым, помечено -->
+<article class="card co promo" data-cat="mining hosting" data-city="Иркутск" data-ver="1" data-rate="4.9" data-date="2024-02-10" data-name="ХэшПарк">
+<span class="co-lg" style="background:linear-gradient(135deg,#4C74FF,#1845E7)" aria-hidden="true">ХП</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">ХэшПарк</a></h3><span class="co-v" title="Компания проверена редакцией"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span><span class="co-ad">Продвигается</span></div>
+<p class="co-meta"><span>Майнинг · Хостинг</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Иркутск</span><span>с 2018 года</span></p>
+<p class="co-d">Дата-центр для майнингового оборудования на 12 МВт: размещение ASIC, обслуживание и мониторинг 24/7, тариф от 5,2 ₽ за кВт·ч.</p>
+<ul class="co-tags"><li>Хостинг ASIC</li><li>Продажа оборудования</li><li>Мониторинг 24/7</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,9</b><small>48 отзывов</small></span>
+<a class="btn btn-p" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">hashpark.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="law consult" data-city="Москва" data-ver="1" data-rate="4.8" data-date="2023-11-02" data-name="Кодекс Блок">
+<span class="co-lg" style="background:linear-gradient(135deg,#2B2D42,#0C1033)" aria-hidden="true">КБ</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Кодекс Блок</a></h3><span class="co-v"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span></div>
+<p class="co-meta"><span>Юридические услуги</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Москва</span><span>с 2017 года</span></p>
+<p class="co-d">Сопровождение майнинговых компаний и ЦФА: регистрация в реестре майнеров, налоги, договоры хостинга, защита в спорах.</p>
+<ul class="co-tags"><li>Реестр майнеров</li><li>Налоги на криптовалюту</li><li>Выпуск ЦФА</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,8</b><small>31 отзыв</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">kodeks-block.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="service" data-city="Екатеринбург" data-ver="1" data-rate="4.7" data-date="2023-09-14" data-name="АсикСервис">
+<span class="co-lg" style="background:linear-gradient(135deg,#F7931A,#C46A00)" aria-hidden="true">АС</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">АсикСервис</a></h3><span class="co-v"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span></div>
+<p class="co-meta"><span>Ремонт и обслуживание</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Екатеринбург</span><span>с 2019 года</span></p>
+<p class="co-d">Сервисный центр по ремонту ASIC-майнеров Bitmain и Whatsminer: диагностика за 24 часа, замена плат хэширования, гарантия 90 дней.</p>
+<ul class="co-tags"><li>Ремонт ASIC</li><li>Прошивка</li><li>Выездной сервис</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,7</b><small>112 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">asic-service.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="dev" data-city="Санкт-Петербург" data-ver="1" data-rate="4.6" data-date="2024-01-18" data-name="ЧейнЛаб">
+<span class="co-lg" style="background:linear-gradient(135deg,#7A4BF7,#4A33C9)" aria-hidden="true">ЧЛ</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">ЧейнЛаб</a></h3><span class="co-v"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span></div>
+<p class="co-meta"><span>Разработка</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Санкт-Петербург</span><span>с 2020 года</span></p>
+<p class="co-d">Разработка смарт-контрактов, токенизация активов и аудит кода. Команда из 40 инженеров, более 60 запущенных проектов.</p>
+<ul class="co-tags"><li>Смарт-контракты</li><li>Аудит кода</li><li>Токенизация</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,6</b><small>19 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">chainlab.dev<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<!-- Вставка: приглашение разместить компанию -->
+<aside class="ct-cta">
+<span class="ct-cta-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><b>+</b></span>
+<div><b>Ваша компания в каталоге Blockchain24</b><p>Карточка с услугами и контактами, бейдж «Проверено» и упоминания в материалах журнала.</p></div>
+<button class="btn btn-w" type="button" data-modal="addCo">Добавить компанию</button>
+</aside>
+
+<article class="card co" data-cat="promo" data-city="Москва" data-ver="0" data-rate="4.5" data-date="2024-03-01" data-name="Токен Пиар">
+<span class="co-lg" style="background:linear-gradient(135deg,#FF5C8A,#C2185B)" aria-hidden="true">ТП</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Токен Пиар</a></h3></div>
+<p class="co-meta"><span>Продвижение</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Москва</span><span>с 2021 года</span></p>
+<p class="co-d">Маркетинг для криптопроектов: публикации в СМИ, работа с блогерами, ведение Telegram-каналов и запуск комьюнити.</p>
+<ul class="co-tags"><li>PR в СМИ</li><li>Telegram-маркетинг</li><li>Комьюнити</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,5</b><small>12 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">token-pr.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="hosting mining" data-city="Красноярск" data-ver="1" data-rate="4.4" data-date="2023-06-20" data-name="Енисей Майнинг Хаб">
+<span class="co-lg" style="background:linear-gradient(135deg,#1FA0FF,#0B5FD1)" aria-hidden="true">ЕМ</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Енисей Майнинг Хаб</a></h3><span class="co-v"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span></div>
+<p class="co-meta"><span>Хостинг оборудования</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Красноярск</span><span>с 2019 года</span></p>
+<p class="co-d">Площадка рядом с ГЭС на 30 МВт: размещение от одного устройства, охлаждение, видеонаблюдение и отчёты по хешрейту.</p>
+<ul class="co-tags"><li>Хостинг ASIC</li><li>От 1 устройства</li><li>Отчёты по хешрейту</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,4</b><small>27 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">enisey-hub.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="consult" data-city="Казань" data-ver="0" data-rate="4.3" data-date="2023-12-05" data-name="Финтех Аудит">
+<span class="co-lg" style="background:linear-gradient(135deg,#A855F7,#6B21A8)" aria-hidden="true">ФА</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Финтех Аудит</a></h3></div>
+<p class="co-meta"><span>Консалтинг и аудит</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Казань</span><span>с 2016 года</span></p>
+<p class="co-d">Финансовый учёт для майнинговых ферм и криптокомпаний: бухгалтерия, налоговое планирование, подготовка к проверкам.</p>
+<ul class="co-tags"><li>Бухгалтерия</li><li>Налоговое планирование</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,3</b><small>8 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">fintech-audit.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="otc" data-city="Москва" data-ver="1" data-rate="4.2" data-date="2022-08-11" data-name="Мост Обмен">
+<span class="co-lg" style="background:linear-gradient(135deg,#334155,#0F172A)" aria-hidden="true">МО</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Мост Обмен</a></h3><span class="co-v"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.4 21.4 9.3 20.4 12.4 21.4 15.5 18.8 17.4 17.8 20.5 14.6 20.4 12 22.3 9.4 20.4 6.2 20.5 5.2 17.4 2.6 15.5 3.6 12.4 2.6 9.3 5.2 7.4 6.2 4.3 9.4 4.4Z"/><path d="m8.5 12.3 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверено</span></div>
+<p class="co-meta"><span>Обмен и OTC</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Москва</span><span>с 2018 года</span></p>
+<p class="co-d">OTC-сделки для бизнеса от 1 млн ₽, обмен в офисе, проверка происхождения средств и сопровождение сделки.</p>
+<ul class="co-tags"><li>OTC от 1 млн ₽</li><li>Обмен в офисе</li><li>AML-проверка</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,2</b><small>64 отзыва</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">most-obmen.ru<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+
+<article class="card co" data-cat="dev" data-city="Новосибирск" data-ver="0" data-rate="4.1" data-date="2024-02-27" data-name="Смарт Студио">
+<span class="co-lg" style="background:linear-gradient(135deg,#6366F1,#3730A3)" aria-hidden="true">СС</span>
+<div class="co-b">
+<div class="co-top"><h3><a href="company.html">Смарт Студио</a></h3></div>
+<p class="co-meta"><span>Разработка</span><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Новосибирск</span><span>с 2022 года</span></p>
+<p class="co-d">Криптокошельки, платёжные шлюзы и Telegram-боты для приёма оплаты в криптовалюте. Поддержка после запуска.</p>
+<ul class="co-tags"><li>Кошельки</li><li>Платёжные шлюзы</li><li>Telegram-боты</li></ul>
+</div>
+<div class="co-side">
+<span class="co-rate"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><b>4,1</b><small>6 отзывов</small></span>
+<a class="btn btn-o" href="company.html">Подробнее</a>
+<a class="co-site" href="#" rel="nofollow">smart-studio.dev<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+</div>
+</article>
+</div>
+<p class="ls-empty" id="ctEmpty" hidden>По этим условиям компаний пока нет. <button type="button" class="lnk" data-reset>Сбросить фильтры</button></p>
+
+<div class="ls-more">
+<button class="btn btn-o ls-more-b" type="button"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>Показать ещё</button>
+<nav class="pager" aria-label="Страницы каталога">
+<a class="pg-ar" href="#" aria-label="Предыдущая страница" aria-disabled="true"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></a>
+<a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">29</a>
+<a class="pg-ar" href="#" aria-label="Следующая страница"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+</nav>
+</div>
+</div>
+
+<aside class="art-side" aria-label="Дополнительно">
+<!-- Размещение компании: в стиле иллюстраций «Достижений» -->
+<section class="ct-add" id="add" aria-labelledby="addT">
+<span class="ill ct-add-ill" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"><span class="sat s1"><svg width="14" height="14" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span><span class="sat s2">+1</span></span><span class="tile"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-5h6v5M8 11h.01M12 11h.01M16 11h.01"/></svg></span></span>
+<h2 id="addT">Добавьте свою компанию</h2>
+<p>Базовая карточка бесплатно. Расширенная — с логотипом, кейсами и местом в начале категории.</p>
+<ul><li>Проверка редакцией и бейдж</li><li>Отзывы клиентов</li><li>Упоминания в статьях</li></ul>
+<button class="btn btn-w" type="button" data-modal="addCo">Разместить компанию</button>
+</section>
+<section class="card side-pop" aria-labelledby="newT">
+<h2 id="newT">Новые в каталоге</h2>
+<ol class="ct-new">
+<li><a href="company.html"><span class="co-lg sm" style="background:linear-gradient(135deg,#FF5C8A,#C2185B)" aria-hidden="true">ТП</span><span><b>Токен Пиар</b><small>Продвижение · Москва</small></span></a></li>
+<li><a href="company.html"><span class="co-lg sm" style="background:linear-gradient(135deg,#6366F1,#3730A3)" aria-hidden="true">СС</span><span><b>Смарт Студио</b><small>Разработка · Новосибирск</small></span></a></li>
+<li><a href="company.html"><span class="co-lg sm" style="background:linear-gradient(135deg,#4C74FF,#1845E7)" aria-hidden="true">ХП</span><span><b>ХэшПарк</b><small>Майнинг · Иркутск</small></span></a></li>
+</ol>
+</section>
+<section class="card side-pop" aria-labelledby="artT">
+<h2 id="artT">Статьи по теме</h2>
+<ol>
+<li><a href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty">Законен ли майнинг в России и какие налоги платить</a></li>
+<li><a href="https://blockchain24.pro/kak-nachat-mayning-kriptovalyuty-poshagovaya-instruktsiya">Как начать майнинг: пошаговая инструкция</a></li>
+<li><a href="https://blockchain24.pro/sazmining-zapustila-ekologichnuyu-mayning-ploshchadku-v-paragvaye">Sazmining открыла майнинг-площадку в Парагвае</a></li>
+</ol>
+</section>
+</aside>
+</div>
+
+<section class="wrap sec" aria-labelledby="seoT">
+<div class="card ls-seo" id="lsSeo">
+<h2 id="seoT">Каталог криптовалютных и блокчейн-компаний России</h2>
+<div class="ls-seo-t">
+<p>В каталоге Blockchain24 собраны компании, которые работают в сфере криптовалют и блокчейна в России: майнинговые фермы и дата-центры, сервисные центры по ремонту ASIC, юридические и бухгалтерские фирмы, разработчики смарт-контрактов, маркетинговые агентства и обменные сервисы.</p>
+<p>Перед публикацией редакция проверяет регистрацию компании и контакты. Бейдж «Проверено» получают компании, которые подтвердили данные документами.</p>
+<p>Карточки с пометкой «Продвигается» размещены на платной основе — это не влияет на рейтинг и отзывы.</p>
+</div>
+<button class="lnk ls-seo-b" type="button" aria-expanded="false" aria-controls="lsSeo">Читать полностью</button>
+</div>
+</section>
+
+<!-- 13. Подписка на новости -->
+<section class="wrap sec" id="subscribe" aria-labelledby="mailT">
+<div class="sub-mail">
+<div class="mail-art" aria-hidden="true"><span class="ma-r r1"></span><span class="ma-r r2"></span><span class="ma-r r3"></span></div>
+<div class="sub-mail-t">
+<h2 id="mailT">Подпишитесь на новости и получайте свежие статьи первыми</h2>
+<p>Главные новости, разборы и интервью в одном письме.<span class="mf-at" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.4a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.5 7"/></svg></span></p>
+<ul class="perks" aria-label="Что вы получите">
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9 14.5l2 2 4-4"/></svg>Раз в неделю</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6Z"/><path d="m9 12 2 2 4-4"/></svg>Без спама и рекламы</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 9 11 4-5 2-2 5Z"/><path d="M5 3.5v2.5M3.5 5H6M8.5 4.5l-1.5 1.5M4.5 8.5 6 7"/></svg>Отписка в один клик</li>
+</ul>
+<form class="js-form mail-form" novalidate>
+<span class="mf-tile" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><b>+1</b></span>
+<div class="fields" data-body>
+<div class="mail-row">
+<label class="fld"><span>Имя *</span><input name="name" required autocomplete="given-name" placeholder="Ваше имя"></label>
+<label class="fld"><span>Email *</span><input name="email" type="email" required autocomplete="email" placeholder="you@mail.ru"></label>
+<button class="btn btn-p" type="submit">Подписаться<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
+<p class="err" hidden>Укажите имя и корректный email</p>
+<p class="consent">Нажимая кнопку, вы даёте <a href="https://blockchain24.pro/soglasie" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаете <a href="https://blockchain24.pro/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.</p>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Вы подписаны</b><p>Первое письмо придёт с ближайшим выпуском.</p></div>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="ft">
+<div class="wrap">
+<div class="ft-top">
+<div class="ft-brand">
+<a class="logo" href="index.html" aria-label="Blockchain24 — на главную"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span></a>
+<p>Журнал о блокчейн-технологиях, криптовалютах, майнинге и децентрализованных финансах. Копировать материалы можно только с активной ссылкой на Blockchain24.</p>
+<a class="ft-mail" href="mailto:info@blockchain24.pro">info@blockchain24.pro</a>
+<div class="soc">
+<a href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg></a>
+<a href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5Z"/></svg></a>
+<a href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+<div><h4>Разделы</h4><div class="ft-l"><a href="https://blockchain24.pro/news">Новости</a><a href="https://blockchain24.pro/top-news">Главные новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/copyright">Эксклюзивные материалы</a><a href="https://blockchain24.pro/interview">Интервью</a><a href="catalog.html">Каталог компаний</a></div></div>
+<div><h4>Сервисы</h4><div class="ft-l"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/coins">Курсы криптовалют</a><a href="index.html#market">Оповещения о цене</a><a href="https://blockchain24.pro/abc">Азбука блокчейна</a></div></div>
+<div><h4>Редакция</h4><div class="ft-l"><a href="https://blockchain24.pro/about">О проекте</a><a href="https://blockchain24.pro/contacts">Редакция и контакты</a><a href="https://blockchain24.pro/experts">Эксперты</a><a href="https://blockchain24.pro/subscribe">Подписаться на новости</a></div></div>
+<div><h4>Партнёрам</h4><div class="ft-l"><a href="mailto:info@blockchain24.pro?subject=Реклама%20на%20Blockchain24">Реклама на сайте</a><a href="mailto:info@blockchain24.pro?subject=Медиакит">Запросить медиакит</a><a href="mailto:info@blockchain24.pro?subject=Пресс-релиз">Прислать пресс-релиз</a></div>
+<div class="stores ft-stores"><a class="store" href="https://apps.apple.com/us/app/blockchain24/id1558326386" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg><span><small>Загрузить в</small>App Store</span></a><a class="store" href="https://play.google.com/store/apps/details?id=ru.devroom.blockchain24" target="_blank" rel="noopener"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M1 1.2 11.3 11 1 20.8c-.3-.2-.5-.6-.5-1V2.2c0-.4.2-.8.5-1Z" fill="#00D7FE"/><path d="m14.7 7.6-3.4 3.4L1 1.2c.2-.1.5-.2.8-.2.3 0 .5.1.8.2l12.1 6.4Z" fill="#00F076"/><path d="M14.7 14.4 2.6 20.8c-.3.1-.5.2-.8.2-.3 0-.6-.1-.8-.2L11.3 11l3.4 3.4Z" fill="#FF3A44"/><path d="M19 11c0 .6-.3 1.2-.9 1.5l-3.4 1.9-3.4-3.4 3.4-3.4 3.4 1.9c.6.3.9.9.9 1.5Z" fill="#FFD400"/></svg><span><small>Доступно в</small>Google Play</span></a></div></div>
+</div>
+<div class="ft-b">
+<span>© 2020–2026 Blockchain24.pro. Все права защищены.</span>
+<nav aria-label="Правовая информация"><a href="https://blockchain24.pro/pravo">Правовая информация</a><a href="https://blockchain24.pro/policy">Политика конфиденциальности</a><a href="https://blockchain24.pro/soglasie">Согласие на обработку персональных данных</a></nav>
+</div>
+</div>
+</footer>
+<button class="totop" type="button" id="toTop" aria-label="Наверх" hidden><svg class="totop-ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/><circle class="pr" cx="28" cy="28" r="26"/></svg><svg class="totop-ar" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+
+<!-- Мобильное меню -->
+<div class="ovl ovl-m" id="menu" hidden>
+<div class="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+<div class="drawer-top">
+<a class="logo" href="index.html"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b></span></a>
+<button class="ibtn" type="button" data-close aria-label="Закрыть меню"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+<nav aria-label="Разделы">
+<a href="index.html">Главная</a><a href="news.html">Новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/interview">Интервью</a><a href="https://blockchain24.pro/abc">Азбука</a><a href="https://blockchain24.pro/coins">Курсы</a><a href="https://blockchain24.pro/events">События</a><a href="catalog.html" aria-current="page">Каталог</a><a href="https://blockchain24.pro/login">Личный кабинет</a>
+</nav>
+<button class="btn btn-o" type="button" data-open="search">Поиск по журналу</button>
+<a class="btn btn-p" href="#subscribe" data-close-nav>Подписаться</a>
+<div class="soc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+</div>
+
+<!-- Поиск -->
+<div class="ovl" id="search" hidden>
+<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="srchT">
+<button class="ibtn x" type="button" data-close aria-label="Закрыть поиск"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+<h2 id="srchT">Поиск по журналу</h2>
+<p class="dlg-sub">Новости, статьи, интервью и курсы монет</p>
+<form class="fields" action="https://blockchain24.pro/search" method="get" role="search">
+<label class="fld"><span>Запрос</span><input type="search" name="q" placeholder="Биткоин, ETF, майнинг"></label>
+<button class="btn btn-p" type="submit">Найти</button>
+</form>
+<div class="srch-res"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token">NFT</a><a href="https://blockchain24.pro/ethereum-perehod-na-pos">Ethereum PoS</a><a href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty">Налоги на майнинг</a></div>
+</div>
+</div>
+
+
+<!-- Заявка на размещение компании в каталоге -->
+<div class="ovl" id="addCo" hidden>
+<div class="dlg dlg-co" role="dialog" aria-modal="true" aria-labelledby="addCoT">
+<button class="ibtn x" type="button" data-close aria-label="Закрыть форму"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+<form class="js-form" novalidate>
+<div data-body>
+<h2 id="addCoT">Добавить компанию в каталог</h2>
+<p class="dlg-sub">Проверим данные и опубликуем карточку в течение 3 рабочих дней</p>
+<div class="fields">
+<fieldset class="plan" aria-label="Формат размещения">
+<label class="plan-o"><input type="radio" name="plan" value="base" checked><span><b>Базовая</b><small>Бесплатно</small><em>Название, описание, контакты</em></span></label>
+<label class="plan-o"><input type="radio" name="plan" value="pro"><span><b>Расширенная</b><small>По запросу</small><em>Логотип, кейсы, место в начале категории</em></span></label>
+</fieldset>
+<p class="co-f-h">О компании</p>
+<label class="fld"><span>Название компании *</span><input name="company" required autocomplete="organization" placeholder="ООО «Пример»"></label>
+<div class="row2">
+<label class="fld"><span>Категория *</span><select name="category" required><option value="">Выберите</option><option>Майнинг</option><option>Хостинг оборудования</option><option>Ремонт и обслуживание</option><option>Юридические услуги</option><option>Разработка</option><option>Продвижение</option><option>Обмен и OTC</option><option>Консалтинг и аудит</option></select></label>
+<label class="fld"><span>Город *</span><input name="city" required autocomplete="address-level2" placeholder="Москва"></label>
+</div>
+<div class="row2">
+<label class="fld"><span>Сайт</span><input name="site" type="url" inputmode="url" placeholder="https://"></label>
+<label class="fld"><span>ИНН</span><input name="inn" inputmode="numeric" maxlength="12" placeholder="10 или 12 цифр"></label>
+</div>
+<label class="fld"><span>Чем занимается компания</span><textarea name="about" maxlength="400" placeholder="Коротко об услугах — появится в карточке. До 400 знаков"></textarea></label>
+<p class="co-f-h">Контакт для связи</p>
+<div class="row2">
+<label class="fld"><span>Имя *</span><input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+<label class="fld"><span>Телефон или Telegram *</span><input name="contact" required placeholder="+7 или @username"></label>
+</div>
+<label class="fld"><span>Email *</span><input name="email" type="email" required autocomplete="email" placeholder="you@company.ru"></label>
+<p class="err" hidden>Заполните обязательные поля и проверьте email</p>
+<button class="btn btn-p" type="submit">Отправить заявку</button>
+<p class="consent">Нажимая кнопку, вы даёте <a href="https://blockchain24.pro/soglasie" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаете <a href="https://blockchain24.pro/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.</p>
+</div>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Заявка отправлена</b><p>Проверим данные и напишем вам в течение 3 рабочих дней. Если понадобятся документы, редакция свяжется по указанным контактам.</p><button class="btn btn-p" type="button" data-close>Готово</button></div>
+</form>
+</div>
+</div>
+<script src="js/main.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
