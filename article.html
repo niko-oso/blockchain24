@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everscale (EVER) за сутки потерял 20% стоимости на новости о краже токенов — Blockchain24</title>
+<meta name="description" content="Стоимость Everscale (EVER) резко упала на 20%, при этом команда проекта утверждала, что их токены были похищены и продаются на биржах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.coingecko.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+<!-- Блок 0. Срочно: появляется, только когда редактор ставит срочную новость -->
+<div class="urgent" id="urgent">
+<div class="wrap">
+<b>Срочно</b>
+<a href="https://blockchain24.pro/events">The Trends пройдёт в Москве 17–19 ноября: главное о форуме и программе</a>
+<time datetime="2026-11-02">Сегодня</time>
+<button type="button" aria-label="Скрыть срочную новость" id="urgentClose"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</div>
+<div class="wrap hdr-in">
+<div class="card hdr-card" id="hdrCard">
+<div class="hdr-l">
+<button class="ibtn burger" type="button" aria-label="Открыть меню" data-open="menu"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h11"/></svg></button>
+<a class="logo" href="index.html" aria-label="Blockchain24 — на главную">
+<img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'">
+<span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span>
+</a>
+</div>
+<nav class="capsule" aria-label="Разделы">
+<a href="index.html">Главная</a>
+<a href="https://blockchain24.pro/news" aria-current="page">Новости</a>
+<a href="https://blockchain24.pro/articles">Аналитика</a>
+<a href="https://blockchain24.pro/interview">Интервью</a>
+<a href="https://blockchain24.pro/abc">Азбука</a>
+<a href="https://blockchain24.pro/coins">Курсы</a>
+<a href="https://blockchain24.pro/events">События</a>
+</nav>
+<div class="hdr-act">
+<div class="hsoc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+<button class="search" type="button" data-open="search" aria-label="Поиск по журналу"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Поиск по журналу</span></button>
+<a class="ibtn usr" href="https://blockchain24.pro/login" aria-label="Личный кабинет"><svg class="ic" width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Войти</span></a>
+<a class="btn btn-p cta-l" href="#subscribe" style="height:44px">Подписаться</a>
+<a class="btn btn-p cta-s" href="#subscribe">Подписка</a>
+</div>
+</div>
+<div class="hdr-row" id="row2">
+<div class="rates" aria-label="Курсы криптовалют" id="hdrRates"></div>
+<div class="topics"><span>Темы дня</span><a href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov">ETF</a><a href="https://blockchain24.pro/sber-prisoyedinyayetsya-k-testirovaniyu-tsifrovogo-rublya-s-realnymi-kliyentami">Цифровой рубль</a><a href="https://blockchain24.pro/regulirovaniye-kriptovalyut-v-rossii-v-2023-godu">Регулирование</a></div>
+</div>
+</div>
+</header>
+<div id="hdrSpace" aria-hidden="true"></div>
+
+<div class="art-progress" id="artProgress" aria-hidden="true"></div>
+
+<main>
+<div class="wrap art-top">
+<nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><a href="https://blockchain24.pro/news" aria-current="page">Новости</a><span aria-current="page">Everscale потерял 20% стоимости</span></nav>
+</div>
+
+<div class="wrap art-grid">
+<div class="art-col">
+<article class="card art" id="art">
+<header class="art-h">
+<div class="art-meta">
+<a class="tag tag-b" href="https://blockchain24.pro/news">Новости</a>
+<time datetime="2023-10-20"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>20 октября 2023</time>
+<span><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>3 мин чтения</span>
+<span><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>51 899</span>
+</div>
+<h1 class="art-t">Everscale (EVER) за сутки потерял 20 процентов стоимости на новости о краже токенов</h1>
+<p class="art-lead">Стоимость Everscale (EVER) резко упала на 20%, при этом команда проекта утверждала, что их токены были похищены и продаются на биржах.</p>
+<div class="art-by">
+<a class="art-author" href="https://blockchain24.pro/about"><span class="art-ava"><img src="img/logo.svg" alt="" width="26" height="26" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"></span><span><b>Редакция Blockchain24</b><small>Новостная служба</small></span></a>
+<div class="art-acts">
+<button class="art-ib" type="button" data-save aria-pressed="false" aria-label="Сохранить в закладки"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4Z"/></svg><span>В закладки</span></button>
+<div class="share" aria-label="Поделиться">
+<a class="share-a s-tg" href="https://t.me/share/url?url=https%3A%2F%2Fblockchain24.pro%2Feverscale-ever-za-sutki-poteryal-20-protsentov-stoimosti-na-novosti-o-krazhe-tokenov" target="_blank" rel="noopener" aria-label="Поделиться в Telegram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="share-a s-vk" href="https://vk.com/share.php?url=https%3A%2F%2Fblockchain24.pro%2Feverscale-ever-za-sutki-poteryal-20-protsentov-stoimosti-na-novosti-o-krazhe-tokenov" target="_blank" rel="noopener" aria-label="Поделиться во ВКонтакте"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<button class="share-a" type="button" data-copy aria-label="Скопировать ссылку"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></button>
+</div>
+</div>
+</div>
+</header>
+
+<figure class="art-cover">
+<span class="media"><img src="img/article-everscale.jpg" alt="Логотип Everscale и график падения курса" width="1140" height="456"></span>
+<figcaption>Иллюстрация: Blockchain24</figcaption>
+</figure>
+
+<nav class="toc-in" id="tocIn" aria-labelledby="tocInT"><h2 id="tocInT"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>Содержание</h2><ol id="toc"></ol></nav>
+
+<div class="prose" id="prose">
+<aside class="keys" aria-label="Коротко">
+<b class="keys-t"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5 4.5 13.5H12l-1 8 8.5-11H12Z"/></svg>Коротко</b>
+<ul>
+<li>EVER подешевел больше чем на 20% меньше чем за сутки.</li>
+<li>Команда заявила о краже токенов и приостановила Octus Bridge.</li>
+<li>19 октября проект сообщил, что все сервисы снова работают, — о краже в заявлении уже ни слова.</li>
+</ul>
+</aside>
+
+<h2 id="s1">Что произошло</h2>
+<p>Криптовалютный рынок переменчив, и особенно рискованны альткоины с небольшой рыночной капитализацией. На них сильно влияют неожиданные события, взломы, кражи и «ковровые» атаки (rug pull).</p>
+<p>В начале недели, чуть меньше чем за сутки, стоимость EVER снизилась более чем на 20%. В списке цифровых монет по рыночной капитализации эта криптовалюта занимает 391-е место — около 50 млн долларов. На сайте компании Everscale называют «самым масштабируемым блокчейном».</p>
+
+<div class="stats" aria-label="EVER в цифрах">
+<div class="stat hot"><b>−20%</b><span>курс EVER за сутки</span></div>
+<div class="stat"><b>391</b><span>место по капитализации</span></div>
+<div class="stat"><b>≈50 млн $</b><span>капитализация</span></div>
+<div class="stat"><b>2,33 млн $</b><span>TVL протокола, −13%</span></div>
+</div>
+
+<h2 id="s2">Что сказала команда</h2>
+<p>Команда проекта связала снижение цены с массовым хищением токенов EVER и действиями злоумышленников.</p>
+<blockquote class="quote">
+<svg class="quote-m" width="34" height="26" viewBox="0 0 44 34" aria-hidden="true"><path d="M0 34V20.4C0 8.6 6.4 1.6 17.6 0l1.8 5.4C12.6 7 9.6 11 9.4 16H18v18Zm24.6 0V20.4C24.6 8.6 31 1.6 42.2 0L44 5.4C37.2 7 34.2 11 34 16h8.6v18Z"/></svg>
+<p>К сожалению, большое количество EVER было украдено. Мы объединяемся с биржами, на которых котируются EVER, чтобы остановить дальнейший уход монет. Пожалуйста, сохраняйте спокойствие и не принимайте поспешных решений.</p>
+<footer><span class="quote-ava" aria-hidden="true">E</span><span><b>Команда Everscale</b><small>Официальное заявление</small></span></footer>
+</blockquote>
+<p>Компания приостановила работу Octus Bridge, чтобы пресечь новые случаи мошенничества, и пообещала информировать сообщество о ходе расследования.</p>
+
+<h2 id="s3">Похоже ли это на скам</h2>
+<p>Шансы на обман со стороны разработчиков невелики. По данным DefiLlama, совокупная стоимость средств, заблокированных в протоколе (TVL), снизилась до 2,33 млн долларов — на 13% меньше первоначальных 2,7 млн.</p>
+<div class="tbl" role="region" aria-label="Показатели Everscale" tabindex="0">
+<table>
+<thead><tr><th scope="col">Показатель</th><th scope="col">До новости</th><th scope="col">После</th><th scope="col">Изменение</th></tr></thead>
+<tbody>
+<tr><th scope="row">TVL протокола</th><td>2,7 млн $</td><td>2,33 млн $</td><td><span class="chg down">▼13%</span></td></tr>
+<tr><th scope="row">Курс EVER</th><td colspan="2">за сутки</td><td><span class="chg down">▼20%</span></td></tr>
+<tr><th scope="row">Капитализация</th><td colspan="2">≈50 млн $, 391-е место</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+<p>Когда команда планирует скрыться с деньгами и закрыть проект, обычно происходит следующее:</p>
+<ul>
+<li>TVL падает почти до нуля — пользователи и команда выводят средства;</li>
+<li>официальный сайт перестаёт открываться;</li>
+<li>аккаунты проекта в социальных сетях уходят в офлайн.</li>
+</ul>
+<p>У Everscale ничего из этого не произошло.</p>
+<aside class="means note">
+<span class="sq" aria-hidden="true"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" style="color:#fff"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3Z"/></svg></span>
+<span><b>Что это значит</b><span>Резкое падение цены после новости о взломе — ещё не признак мошенничества. Смотрите на TVL и поведение команды: при exit scam средства выводят почти полностью, а сайт и соцсети пропадают.</span></span>
+</aside>
+
+<h2 id="s4">Чем всё закончилось</h2>
+<ol class="tl">
+<li><time>Начало недели</time><p>EVER теряет больше 20% меньше чем за сутки, команда сообщает о краже токенов.</p></li>
+<li><time>Следом</time><p>Работа Octus Bridge приостановлена до выяснения обстоятельств.</p></li>
+<li class="on"><time datetime="2023-10-19">19 октября</time><p>Команда сообщает, что все продукты экосистемы снова работают в штатном режиме.</p></li>
+</ol>
+<p>В заявлении от 19 октября говорится:</p>
+<blockquote class="quote quote-s">
+<p>Все продукты экосистемы снова работают в штатном режиме. Техническая проблема, которая затронула EVER Wallet, Everscan.io и FlatQube, была решена, и сервисы снова доступны онлайн. Была обнаружена проблема с базой данных, которая вызвала перебои в работе RPC. Octus Bridge также снова доступен и функционирует!</p>
+</blockquote>
+<p>Упоминания о краже монет в этом заявлении уже нет.</p>
+</div>
+
+<!-- Компании из материала: связка статьи с каталогом организаций -->
+<section class="art-co" aria-labelledby="coT">
+<h2 id="coT" class="art-sub">Компании в материале</h2>
+<div class="co-card">
+<span class="co-logo" aria-hidden="true">E</span>
+<div class="co-b">
+<div class="co-h"><b>Everscale</b><span class="tag">Блокчейн-платформы</span></div>
+<p>Масштабируемый блокчейн с собственной экосистемой: кошелёк EVER Wallet, обозреватель Everscan, биржа FlatQube и мост Octus Bridge.</p>
+</div>
+<a class="btn btn-o co-btn" href="#">Карточка в каталоге</a>
+</div>
+</section>
+
+<footer class="art-f">
+<div class="art-tags" aria-label="Теги"><a href="https://blockchain24.pro/search?q=Everscale">#Everscale</a><a href="https://blockchain24.pro/search?q=альткоины">#Альткоины</a><a href="https://blockchain24.pro/search?q=взлом">#Взломы</a><a href="https://blockchain24.pro/search?q=DeFi">#DeFi</a></div>
+<div class="react">
+<span class="react-t">Полезный материал?</span>
+<div class="react-b">
+<button type="button" class="rb" data-vote="up" aria-pressed="false"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v10H4V10Z"/><path d="M7 10l4-7c1.7 0 2.6 1.2 2.2 2.8L12.5 9H19a2 2 0 0 1 2 2.3l-1.2 6.8a2 2 0 0 1-2 1.9H7"/></svg><span>Да</span><b>24</b></button>
+<button type="button" class="rb" data-vote="down" aria-pressed="false"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="transform:scaleY(-1)"><path d="M7 10v10H4V10Z"/><path d="M7 10l4-7c1.7 0 2.6 1.2 2.2 2.8L12.5 9H19a2 2 0 0 1 2 2.3l-1.2 6.8a2 2 0 0 1-2 1.9H7"/></svg><span>Нет</span><b>3</b></button>
+</div>
+</div>
+</footer>
+</article>
+
+<!-- Навигация по соседним материалам вместо бесконечной подгрузки -->
+<nav class="pn" aria-label="Соседние материалы">
+<a class="card pn-a hov" href="https://blockchain24.pro/sazmining-zapustila-ekologichnuyu-mayning-ploshchadku-v-paragvaye"><span class="media r1"><img src="img/rubric-3.jpg" alt="" onerror="this.remove()"></span><span class="pn-b"><small><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Предыдущая</small><span class="hl cl t-sm">Sazmining открыла экологичную майнинг-площадку в Парагвае</span></span></a>
+<a class="card pn-a nx hov" href="https://blockchain24.pro/forum-blockchain-life-2024-v-dubaye-gotovy-li-vy-k-to-the-moon"><span class="media r1"><img src="img/pick-3.jpg" alt="" onerror="this.remove()"></span><span class="pn-b"><small>Следующая<svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></small><span class="hl cl t-sm">Blockchain Life 2024 в Дубае: готовы ли вы к to the moon</span></span></a>
+</nav>
+
+<!-- Комментарии. ЗАГЛУШКИ: два комментария ниже придуманы для макета -->
+<section class="card cm" id="comments" aria-labelledby="cmT">
+<div class="cm-h"><h2 id="cmT">Комментарии <span>2</span></h2><a class="lnk" href="https://blockchain24.pro/login">Войти, чтобы обсуждать</a></div>
+<form class="cm-form js-form" novalidate>
+<div data-body>
+<label class="fld"><span class="sr">Комментарий</span><textarea name="comment" required placeholder="Что думаете о новости?"></textarea></label>
+<div class="cm-row"><p class="err" hidden>Напишите текст комментария</p><button class="btn btn-p" type="submit">Отправить</button></div>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Комментарий отправлен</b><p>Он появится после проверки модератором.</p></div>
+</form>
+<ul class="cm-list">
+<li class="cmi"><span class="cm-ava" style="background:#5468D4" aria-hidden="true">А</span><div><div class="cm-top"><b>Алексей</b><time datetime="2023-10-20T18:12">20 октября, 18:12</time></div><p>Если TVL упал всего на 13%, это точно не похоже на выход команды. Скорее паника на новостях.</p><div class="cm-act"><button type="button">Ответить</button><button type="button" class="cm-like"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg>5</button></div></div></li>
+<li class="cmi"><span class="cm-ava" style="background:#7A3FE4" aria-hidden="true">М</span><div><div class="cm-top"><b>Марина</b><time datetime="2023-10-21T09:40">21 октября, 09:40</time></div><p>Интересно, что в итоговом заявлении про кражу уже ничего нет. Ждём подробностей расследования.</p><div class="cm-act"><button type="button">Ответить</button><button type="button" class="cm-like"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg>2</button></div></div></li>
+</ul>
+</section>
+</div>
+
+<aside class="art-side" aria-label="Дополнительно">
+<!-- Монета из статьи: курс подтягивается из CoinGecko -->
+<section class="card coin-w" aria-labelledby="coinT">
+<div class="coin-h"><span class="coin-ic" aria-hidden="true">E</span><div><h2 id="coinT">Everscale</h2><small>EVER · монета в статье</small></div></div>
+<div class="coin-p"><b id="everP">0,0056 $</b><span class="chg down" id="everC">▼2,10%</span></div>
+<p class="coin-s" id="everS">за 24 часа · данные на 20 октября 2023</p>
+<a class="lnk lnk-ar" href="https://blockchain24.pro/coins">Курс и график EVER</a>
+</section>
+<section class="card side-pop" aria-labelledby="popT">
+<h2 id="popT">Популярное в рубрике</h2>
+<ol>
+<li><a href="https://blockchain24.pro/feykovaya-novost-pro-odobreniye-etf-podnyala-stoimost-bitkoina-pochti-do-30000-dollarov">Фейковая новость об ETF подняла курс биткоина почти до 30 000 $</a></li>
+<li><a href="https://blockchain24.pro/khakery-vernuli-birzhe-htx-8-mln-dollarov-i-poluchili-obeshchanoye-voznagrazhdeniye-v-razmere-250-eth">Хакеры вернули HTX 8 млн долларов</a></li>
+<li><a href="https://blockchain24.pro/koshelek-metamask-udalen-iz-marketpleysa-apple-app-store">MetaMask удалили из Apple App Store</a></li>
+<li><a href="https://blockchain24.pro/avstralii-vvodit-litsenzirovaniye-dlya-kriptobirzh">Австралия вводит лицензии для криптобирж</a></li>
+<li><a href="https://blockchain24.pro/kitayskaya-it-korporatsiya-tencent-vvodit-uslugi-smart-kontraktov-v-tsifrovykh-yuanyakh">Tencent запустила смарт-контракты в цифровых юанях</a></li>
+</ol>
+</section>
+<div class="side-stick">
+<section class="tg-mini" aria-labelledby="tgmT">
+<span class="tg-mini-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg></span>
+<h2 id="tgmT">5 главных новостей за день</h2>
+<p>Вечерняя сводка в Telegram</p>
+<a class="btn btn-w" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener">Открыть канал</a>
+</section>
+</div>
+</aside>
+</div>
+
+<!-- Читайте также -->
+<section class="wrap sec" aria-labelledby="alsoT">
+<div class="sec-h"><div><h2 id="alsoT">Читайте также</h2></div><a class="btn btn-o" href="https://blockchain24.pro/news">Все новости</a></div>
+<div class="more">
+<a class="card mc hov" href="https://blockchain24.pro/protiv-benkmana-frida-dayut-pokazaniya-kollegi-podtverzhdaya-rastratu-sredstv-kliyentov-ftx"><span class="media"><img src="./img/important-3.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Новости</span><time datetime="2023-10-10">10 октября 2023</time></span><span class="hl cl t-card">Коллеги Бэнкмана-Фрида подтвердили растрату средств клиентов FTX</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/kak-zarabotat-na-korrekcii-rynka"><span class="media"><img src="./img/more-5.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Рынок</span></span><span class="hl cl t-card">Как заработать на коррекции рынка и на альтсезоне</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/chto-budet-s-bitkoinom-pozitivnye-i-negativnye-scenarii-razvitiya-sobytij"><span class="media"><img src="./img/more-1.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Аналитика</span></span><span class="hl cl t-card">Что будет с биткоином: позитивный и негативный сценарии</span></span></a>
+<a class="card mc hov" href="https://blockchain24.pro/bitcoin-ili-ethereum-kuda-luchshe-investirovat-segodnya"><span class="media"><img src="./img/more-6.jpg" alt="" onerror="this.remove()"></span><span class="b"><span class="meta"><span>Инвестиции</span></span><span class="hl cl t-card">Биткоин или Ethereum: куда лучше инвестировать сегодня</span></span></a>
+</div>
+</section>
+
+<!-- 13. Подписка на новости -->
+<section class="wrap sec" id="subscribe" aria-labelledby="mailT">
+<div class="sub-mail">
+<div class="mail-art" aria-hidden="true"><span class="ma-r r1"></span><span class="ma-r r2"></span><span class="ma-r r3"></span></div>
+<div class="sub-mail-t">
+<h2 id="mailT">Подпишитесь на новости и получайте свежие статьи первыми</h2>
+<p>Главные новости, разборы и интервью в одном письме.<span class="mf-at" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.4a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.5 7"/></svg></span></p>
+<ul class="perks" aria-label="Что вы получите">
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9 14.5l2 2 4-4"/></svg>Раз в неделю</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6Z"/><path d="m9 12 2 2 4-4"/></svg>Без спама и рекламы</li>
+<li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 9 11 4-5 2-2 5Z"/><path d="M5 3.5v2.5M3.5 5H6M8.5 4.5l-1.5 1.5M4.5 8.5 6 7"/></svg>Отписка в один клик</li>
+</ul>
+<form class="js-form mail-form" novalidate>
+<span class="mf-tile" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><b>+1</b></span>
+<div class="fields" data-body>
+<div class="mail-row">
+<label class="fld"><span>Имя *</span><input name="name" required autocomplete="given-name" placeholder="Ваше имя"></label>
+<label class="fld"><span>Email *</span><input name="email" type="email" required autocomplete="email" placeholder="you@mail.ru"></label>
+<button class="btn btn-p" type="submit">Подписаться<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+</div>
+<p class="err" hidden>Укажите имя и корректный email</p>
+<p class="consent">Нажимая кнопку, вы даёте <a href="https://blockchain24.pro/soglasie" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаете <a href="https://blockchain24.pro/policy" target="_blank" rel="noopener">политику конфиденциальности</a>.</p>
+</div>
+<div class="ok" data-ok hidden><span class="sq" aria-hidden="true"><svg class="ic" width="24" height="24" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span><b>Вы подписаны</b><p>Первое письмо придёт с ближайшим выпуском.</p></div>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="ft">
+<div class="wrap">
+<div class="ft-top">
+<div class="ft-brand">
+<a class="logo" href="index.html" aria-label="Blockchain24 — на главную"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b><small>Журнал о блокчейне</small></span></a>
+<p>Журнал о блокчейн-технологиях, криптовалютах, майнинге и децентрализованных финансах. Копировать материалы можно только с активной ссылкой на Blockchain24.</p>
+<a class="ft-mail" href="mailto:info@blockchain24.pro">info@blockchain24.pro</a>
+<div class="soc">
+<a href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l7 2 2 7 9-16Z"/><path d="m10 13 4-3"/></svg></a>
+<a href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5Z"/></svg></a>
+<a href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+<div><h4>Разделы</h4><div class="ft-l"><a href="https://blockchain24.pro/news">Новости</a><a href="https://blockchain24.pro/top-news">Главные новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/copyright">Эксклюзивные материалы</a><a href="https://blockchain24.pro/interview">Интервью</a></div></div>
+<div><h4>Сервисы</h4><div class="ft-l"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/coins">Курсы криптовалют</a><a href="index.html#market">Оповещения о цене</a><a href="https://blockchain24.pro/abc">Азбука блокчейна</a></div></div>
+<div><h4>Редакция</h4><div class="ft-l"><a href="https://blockchain24.pro/about">О проекте</a><a href="https://blockchain24.pro/contacts">Редакция и контакты</a><a href="https://blockchain24.pro/experts">Эксперты</a><a href="https://blockchain24.pro/subscribe">Подписаться на новости</a></div></div>
+<div><h4>Партнёрам</h4><div class="ft-l"><a href="mailto:info@blockchain24.pro?subject=Реклама%20на%20Blockchain24">Реклама на сайте</a><a href="mailto:info@blockchain24.pro?subject=Медиакит">Запросить медиакит</a><a href="mailto:info@blockchain24.pro?subject=Пресс-релиз">Прислать пресс-релиз</a></div>
+<div class="stores ft-stores"><a class="store" href="https://apps.apple.com/us/app/blockchain24/id1558326386" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg><span><small>Загрузить в</small>App Store</span></a><a class="store" href="https://play.google.com/store/apps/details?id=ru.devroom.blockchain24" target="_blank" rel="noopener"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M1 1.2 11.3 11 1 20.8c-.3-.2-.5-.6-.5-1V2.2c0-.4.2-.8.5-1Z" fill="#00D7FE"/><path d="m14.7 7.6-3.4 3.4L1 1.2c.2-.1.5-.2.8-.2.3 0 .5.1.8.2l12.1 6.4Z" fill="#00F076"/><path d="M14.7 14.4 2.6 20.8c-.3.1-.5.2-.8.2-.3 0-.6-.1-.8-.2L11.3 11l3.4 3.4Z" fill="#FF3A44"/><path d="M19 11c0 .6-.3 1.2-.9 1.5l-3.4 1.9-3.4-3.4 3.4-3.4 3.4 1.9c.6.3.9.9.9 1.5Z" fill="#FFD400"/></svg><span><small>Доступно в</small>Google Play</span></a></div></div>
+</div>
+<div class="ft-b">
+<span>© 2020–2026 Blockchain24.pro. Все права защищены.</span>
+<nav aria-label="Правовая информация"><a href="https://blockchain24.pro/pravo">Правовая информация</a><a href="https://blockchain24.pro/policy">Политика конфиденциальности</a><a href="https://blockchain24.pro/soglasie">Согласие на обработку персональных данных</a></nav>
+</div>
+</div>
+</footer>
+<button class="totop" type="button" id="toTop" aria-label="Наверх" hidden><svg class="totop-ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/><circle class="pr" cx="28" cy="28" r="26"/></svg><svg class="totop-ar" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+<!-- Плавающее содержание: появляется, когда оглавление в начале статьи ушло за экран -->
+<div class="toc-fl" id="tocFl">
+<div class="toc-pop" id="tocPop" hidden><b>Содержание</b><ol></ol></div>
+<button class="toc-pill" type="button" id="tocPill" aria-expanded="false" aria-controls="tocPop" aria-label="Содержание статьи"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span class="toc-n" id="tocN">1/4</span><span class="toc-c" id="tocC"></span><svg class="ic toc-ch" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg><i class="toc-pr" aria-hidden="true"><i id="tocBar"></i></i></button>
+</div>
+
+<!-- Мобильное меню -->
+<div class="ovl ovl-m" id="menu" hidden>
+<div class="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+<div class="drawer-top">
+<a class="logo" href="index.html"><img class="logo-mark" src="img/logo.svg" alt="" width="36" height="36" onerror="this.onerror=null;this.src='https://blockchain24.pro/static/common/logo.svg'"><span class="logo-t"><b>Blockchain24</b></span></a>
+<button class="ibtn" type="button" data-close aria-label="Закрыть меню"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+<nav aria-label="Разделы">
+<a href="index.html">Главная</a><a href="https://blockchain24.pro/news" aria-current="page">Новости</a><a href="https://blockchain24.pro/articles">Аналитика</a><a href="https://blockchain24.pro/interview">Интервью</a><a href="https://blockchain24.pro/abc">Азбука</a><a href="https://blockchain24.pro/coins">Курсы</a><a href="https://blockchain24.pro/events">События</a><a href="https://blockchain24.pro/login">Личный кабинет</a>
+</nav>
+<button class="btn btn-o" type="button" data-open="search">Поиск по журналу</button>
+<a class="btn btn-p" href="#subscribe" data-close-nav>Подписаться</a>
+<div class="soc">
+<a class="bs bs-tg" href="https://t.me/blockchain24_pro" target="_blank" rel="noopener" aria-label="Telegram-канал Blockchain24"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M5.4 11.7 16.9 7.3c.5-.2 1 .1.8 1l-2 9.2c-.1.6-.6.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6.1-.9Z"/></svg></a>
+<a class="bs bs-vk" href="https://vk.com/blockchain_24" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.8 17.6C6.6 17.6 3.1 13.4 3 6.4h3.1c.1 5.1 2.4 7.3 4.2 7.8V6.4h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.7h-3.2c-.7-2.2-2.4-3.9-4.7-4.1v4.1h-.4Z"/></svg></a>
+<a class="bs bs-yt" href="https://www.youtube.com/channel/UCxp7e_NhKW5kE62bEnx2N1w" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" d="M8.5 6.5 18 12l-9.5 5.5Z"/></svg></a>
+<a class="bs bs-dz" href="https://zen.yandex.ru/id/6181284bb79a3d0793bf7cbc?lang=ru" target="_blank" rel="noopener" aria-label="Дзен"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2c.3 5.6 1.2 9.7 10 10-8.8.3-9.7 4.4-10 10-.3-5.6-1.2-9.7-10-10 8.8-.3 9.7-4.4 10-10Z"/></svg></a>
+</div>
+</div>
+</div>
+
+<!-- Поиск -->
+<div class="ovl" id="search" hidden>
+<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="srchT">
+<button class="ibtn x" type="button" data-close aria-label="Закрыть поиск"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+<h2 id="srchT">Поиск по журналу</h2>
+<p class="dlg-sub">Новости, статьи, интервью и курсы монет</p>
+<form class="fields" action="https://blockchain24.pro/search" method="get" role="search">
+<label class="fld"><span>Запрос</span><input type="search" name="q" placeholder="Биткоин, ETF, майнинг"></label>
+<button class="btn btn-p" type="submit">Найти</button>
+</form>
+<div class="srch-res"><a href="https://blockchain24.pro/kurs-bitkoina">Курс биткоина</a><a href="https://blockchain24.pro/chto-takoe-nft-tokeny-prostymi-slovami-spisok-nft-token">NFT</a><a href="https://blockchain24.pro/ethereum-perehod-na-pos">Ethereum PoS</a><a href="https://blockchain24.pro/zakonen-li-mayning-bitkoina-v-rossii-i-kakimi-budut-nalogi-na-dobychu-kriptovalyuty">Налоги на майнинг</a></div>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/article.js"></script>
+</body>
+</html>
