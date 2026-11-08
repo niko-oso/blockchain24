@@ -53,5 +53,9 @@ mb.addEventListener('click',function(){mb.classList.add('busy');setTimeout(funct
 var seo=$('#lsSeo'),sb=$('.ls-seo-b');
 sb.addEventListener('click',function(){var on=!seo.classList.contains('open');seo.classList.toggle('open',on);sb.setAttribute('aria-expanded',String(on));sb.textContent=on?'Свернуть':'Читать полностью'});
 
+/* ссылка вида catalog.html?cat=mining открывает каталог с выбранной категорией */
+var pc=new URLSearchParams(location.search).get('cat'),pcb=pc&&$('.ct-cat[data-cat="'+pc+'"]');
+if(pcb){cat=pc;pcb.setAttribute('aria-pressed','true')}
+
 run();
 })();

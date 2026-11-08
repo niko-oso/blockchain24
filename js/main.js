@@ -255,7 +255,8 @@ layout();
 window.addEventListener('resize',layout);
 window.addEventListener('load',layout);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
-window.addEventListener('scroll',function(){var y=window.scrollY,d=y-lastY;if(Math.abs(d)<8)return;if(y>200&&d>0)hdr.classList.add('compact');else if(d<0||y<=200)hdr.classList.remove('compact');lastY=y},{passive:true});
+/* data-hdr-lock: страница сама держит состояние шапки на время программной прокрутки (табы карточки компании) */
+window.addEventListener('scroll',function(){var y=window.scrollY,d=y-lastY;if(document.documentElement.hasAttribute('data-hdr-lock')){lastY=y;return}if(Math.abs(d)<8)return;if(y>200&&d>0)hdr.classList.add('compact');else if(d<0||y<=200)hdr.classList.remove('compact');lastY=y},{passive:true});
 
 /* ---------- Срочно ---------- */
 try{if(sessionStorage.getItem('b24-urgent')==='hidden')$('#urgent').hidden=true}catch(e){}
