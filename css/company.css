@@ -39,7 +39,7 @@
 .cp-stats .ill .tile svg{width:22px;height:22px}
 .cp-stats .ill--team .fc{width:30px;height:30px;border-radius:10px}
 .cp-stats .ill--team .fc svg{width:17px;height:17px}
-.cp-stats .ill--team .cnt{top:0;translate:72px 0}
+.cp-stats .ill--team .cnt{top:0;translate:72px 0;z-index:3}
 .cp-stats .ill--stack .pg{width:46px;height:46px;border-radius:15px;background:#C9D4FF}
 .cp-stats .ill--stack .p1{background:#EEF2FF}
 .cp-stats .ill--stack .pin{bottom:4px}
@@ -218,7 +218,7 @@
  .cp-stats .ill{height:86px}
  .cp-stats .ill .o2{width:76px;height:76px}
  .cp-stats .ill .o1{width:60px;height:60px}
- .cp-stats .ill--team .cnt{translate:40px 0;top:0}
+ .cp-stats .ill--team .cnt{translate:60px 0;top:0}
  .cp-stats dd{font-size:19px;line-height:25px}
  .cp-stats small{display:block;margin:0}
  .cp-nav{padding:4px}
@@ -245,5 +245,5 @@
  .cp-bar .btn{flex:1;height:56px;padding:0 12px;box-shadow:0 14px 30px -12px rgba(16,24,64,.45)}
  .cp-bar .btn-o{box-shadow:inset 0 0 0 1px #D6D9E6,0 14px 30px -12px rgba(16,24,64,.35)}
 }
-@media (max-width:374px){.cp-stats>div{padding:8px 10px 12px}.cp-stats dt{font-size:12px;hyphens:auto}.cp-stats .ill{height:78px}.cp-stats .ill--wave{gap:4px}.cp-stats .ill--wave .eqs i:nth-child(-n+2){display:none}.cp-stats .ill>*{scale:.74}.cp-stats .ill--team .cnt{translate:30px 0}.cp-stats dd{font-size:17px}.cp-bar .btn svg{display:none}}
+@media (max-width:374px){.cp-stats>div{padding:8px 10px 12px}.cp-stats dt{font-size:12px;hyphens:auto}.cp-stats .ill{height:78px}.cp-stats .ill--wave{gap:4px}.cp-stats .ill--wave .eqs i:nth-child(-n+2){display:none}.cp-stats .ill>*{scale:.74}.cp-stats .ill--team .cnt{translate:46px 0}.cp-stats dd{font-size:17px}.cp-bar .btn svg{display:none}}
 @media (prefers-reduced-motion:reduce){.cp-bar,.cp-nav{transition:none}}
